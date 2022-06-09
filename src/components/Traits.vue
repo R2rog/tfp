@@ -6,50 +6,31 @@ export default {
         return{
             classesJSON : {},
             champJSON: {},
-            champ: {},
-            champOrigins: '',
-            champTraits: '',
+            fetchedChampArr: [],
+            champName: '',
         }
     },
     methods:{
         champInfo: function(champ){
-            for (let i = 0; i < this.champJSON.length; i++) {
-                if(this.champJSON[i].name == champ){
-                    this.champ = this.champJSON[i];
-                    break;
-                };
-            };
-            if(this.champ.origins.length==1) this.champOrigins = this.champ.origins[0];
-            else{
-                this.champ.origins.forEach(origin => {
-                    this.champOrigins += origin + ' ';
-                });
-            };
-            if(this.champ.classes.length>1) this.champTraits = this.champ.classes[0];
-            else{
-                this.champ.classes.forEach(trait => {
-                    this.champTraits += trait + ' ';
-                });
-            };
+            this.champName = champ
         },
         hideInfo: function(){
-            this.champ = {};
-            this.champOrigins = '';
-            this.champTraits = '';
+            this.champName = '';
         }
     },
     async mounted(){
        const classesArr = await fetch(`./src/assets/data/classes.json`);
        const champsArr = await fetch(`./src/assets/data/champions.json`);
        this.classesJSON = await classesArr.json();
-       this.champJSON = await champsArr.json();
+       this.fetchedChampArr = await champsArr.json();
+       //this.champJSON = await champsArr.json();
     }
 };
 </script>
 
 <template>
     <div id="classes">
-        <h1>Clases in set 6.5</h1>
+        <h1>Traits in set 6.5</h1>
         <div v-for=" element in classesJSON"
         :key="element"
         class="class-info">
@@ -61,7 +42,8 @@ export default {
                         <img v-bind:src="'./src/assets/icons/champions/'+champ+'.jpg'" alt="{{champ}} image"
                             v-on:mouseover="champInfo(champ)"
                             v-on:mouseleave="hideInfo">
-                        <ChampTooltip v-show="champ==this.champ.name" :champion="this.champ" :champOrigins="this.champOrigins" :champTraits="this.champTraits" ></ChampTooltip>  
+                        <!--ChampTooltip v-show="champ==this.champ.name" :champion="this.champ" :champOrigins="this.champOrigins" :champTraits="this.champTraits" ></ChampTooltip-->  
+                        <ChampTooltip v-show="champ==this.champName" :champion="this.champName" :champArr="this.fetchedChampArr"></ChampTooltip>
                     </a>
                 </div>
             </div>

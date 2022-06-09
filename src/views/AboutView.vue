@@ -3,6 +3,7 @@ import Champions from "@/components/Champions.vue";
 import Items from "@/components/Items.vue";
 import Traits from "../components/Traits.vue";
 import Origins from "@/components/Origins.vue"
+import Team from "@/components/Team.vue";
 </script>
 
 <template>
@@ -11,8 +12,9 @@ import Origins from "@/components/Origins.vue"
   </div-->
   <!--Champions></Champions-->
   <!--Items></Items-->
-  <!--Traits></Traits-->
-  <Origins></Origins>
+  <Traits></Traits>
+  <!--Team></Team-->
+  <!--Origins></Origins-->
 </template>
 
 <style>
