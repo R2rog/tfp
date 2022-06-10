@@ -5,16 +5,37 @@ export default{
     data(){
         return{
             champCost: [],
-            fetchedChampArr: [],
-            champName: '',
+            champArr: [],
+            champ: {},
+            champOrigins: '',
+            champTraits: ''
         }
     },
     methods: {
         champInfo: function(champ){
-            this.champName = champ
+            for (let i = 0; i < this.champArr.length; i++) {
+            if(this.champArr[i].name == champ){
+                    this.champ = this.champArr[i];
+                    break;
+                };
+            };
+            if(this.champ.origins.length==1) this.champOrigins = this.champ.origins[0];
+            else{
+                this.champ.origins.forEach(origin => {
+                    this.champOrigins += origin + ' ';
+                });
+            };
+            if(this.champ.classes.length==1) this.champTraits = this.champ.classes[0];
+            else{
+                this.champ.classes.forEach(trait => {
+                    this.champTraits += trait + ' ';
+                });
+            };
         },
         hideInfo: function(){
-            this.champName = '';
+            this.champ = {};
+            this.champOrigins = '';
+            this.champTraits = '';
         }
     },
     async mounted(){
@@ -23,9 +44,9 @@ export default{
         let cost3 = [];
         let cost4 = [];
         let cost5 = [];
-        const champsArr = await fetch(`./src/assets/data/champions.json`);
-        this.fetchedChampArr = await champsArr.json();
-        this.fetchedChampArr.forEach(champ => {
+        const champJSON = await fetch(`./src/assets/data/champions.json`);
+        this.champArr = await champJSON.json();
+        this.champArr.forEach(champ => {
             if(champ.cost==1) cost1.push(champ.name);
             else if(champ.cost==2)cost2.push(champ.name);
             else if(champ.cost==3)cost3.push(champ.name);
@@ -55,7 +76,13 @@ export default{
                     v-bind:class="'cost'+(index+1)"
                     v-on:mouseover="champInfo(champ)"
                     v-on:mouseleave="hideInfo">
-                    <ChampTooltip v-show="champ == this.champName" :champion="this.champName" :champArr="fetchedChampArr"></ChampTooltip>
+                    <!--ChampTooltip v-show="champ == this.champName" :champion="this.champName" :champArr="fetchedChampArr"></ChampTooltip-->
+                    <span v-show="this.champ.name == champ" class="pool-champ-tooltip">
+                        <h2>Champion: {{this.champ.name}}</h2>
+                        <h2>Cost: {{this.champ.cost}}</h2>
+                        <h2>Origins: {{this.champOrigins}}</h2>
+                        <h2>Traits: {{this.champTraits}}</h2>
+                    </span>
                 </a>
             </div>
         </div>
@@ -69,10 +96,15 @@ export default{
 .champ{
     flex: auto;
 }
-.champ-img{
-    height:4rem;
+.pool-champ-tooltip{
+    background-color: #00bd7e;
+    color: #111;
+    position:absolute;
+    font-size: 0.75rem;
+    z-index: 2;
+    height: 600%;
+    width: 350%;
 }
-
 .cost1{
     height: 4rem;
     border-style: solid;

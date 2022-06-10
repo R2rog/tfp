@@ -1,6 +1,7 @@
 <script>
 export default {
-    props: ["champion", "champArr"],
+    //props: ["champion", "champArr","elArr"], TODO: uncomment all this if it fails
+    props: ["elArr", "champArr"],
     data(){
         return {
             champ: {},
@@ -8,45 +9,52 @@ export default {
             champTraits: '',
         };
     },
-    watch: {
-        champion(newChamp, oldChamp){
-            console.log('New name', newChamp, 'Old champ', oldChamp);
-            if(newChamp == ''){
-                this.champ={};
-                this.champOrigins = '';
-                this.champTraits = '';
-            }else{
-                for (let i = 0; i < this.champArr.length; i++) {
-                if(this.champArr[i].name == newChamp){
-                        this.champ = this.champArr[i];
-                        break;
-                    };
-                };
-                if(this.champ.origins.length==1) this.champOrigins = this.champ.origins[0];
-                else{
-                    this.champ.origins.forEach(origin => {
-                        this.champOrigins += origin + ' ';
-                    });
-                };
-                if(this.champ.classes.length>1) this.champTraits = this.champ.classes[0];
-                else{
-                    this.champ.classes.forEach(trait => {
-                        this.champTraits += trait + ' ';
-                    });
+    methods: {
+        champInfo: function(champ){
+            console.log('Champ recieved: ', champ);
+            for (let i = 0; i < this.champArr.length; i++) {
+            if(this.champArr[i].name == champ){
+                    this.champ = this.champArr[i];
+                    break;
                 };
             };
+            console.log('This champ: ', this.champ.name);
+            if(this.champ.origins.length==1) this.champOrigins = this.champ.origins[0];
+            else{
+                this.champ.origins.forEach(origin => {
+                    this.champOrigins += origin + ' ';
+                });
+            };
+            if(this.champ.classes.length==1) this.champTraits = this.champ.classes[0];
+            else{
+                this.champ.classes.forEach(trait => {
+                    this.champTraits += trait + ' ';
+                });
+            };
         },
+        hideInfo: function(){
+            this.champ = {};
+            this.champOrigins = '';
+            this.champTraits = '';
+        }
     },
 };
 </script>
 
 <template>
-    <span class="champ-tooltip">
-        <h2>Champion: {{this.champ.name}}</h2>
-        <h2>Cost: {{this.champ.cost}}</h2>
-        <h2>Origins: {{this.champOrigins}}</h2>
-        <h2>Traits: {{this.champTraits}}</h2>
-    </span>
+    <div v-for="element in elArr" :key="element">
+        <a href="#">
+            <img class="champ-img" v-bind:src="'./src/assets/icons/champions/'+element+'.jpg'" alt="{{element}} image"
+                v-on:mouseover="champInfo(element)"
+                v-on:mouseleave="hideInfo">
+            <span v-show="this.champ.name == element" class="champ-tooltip">
+                <h2>Champion: {{this.champ.name}}</h2>
+                <h2>Cost: {{this.champ.cost}}</h2>
+                <h2>Origins: {{this.champOrigins}}</h2>
+                <h2>Traits: {{this.champTraits}}</h2>
+            </span>
+        </a>
+    </div>
 </template>
 
 <style>
@@ -54,8 +62,12 @@ export default {
     background-color: #00bd7e;
     color: #111;
     position:absolute;
+    font-size: 0.65rem;
     z-index: 2;
-    height: 110%;
-    width: 250%;
+    height: 600%;
+    width: 350%;
+}
+.champ-img{
+    height:4rem;
 }
 </style>

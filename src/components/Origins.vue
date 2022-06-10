@@ -2,9 +2,6 @@
 import ChampTooltip from './ChampTooltip.vue';
 
 export default {
-    /*props: {
-        champArr: Array
-    },*/
     components: { ChampTooltip },
     data() {
         return {
@@ -12,14 +9,6 @@ export default {
             fetchedChampArr:[],
             champName: '',
         };
-    },
-    methods: {
-        champInfo: function(champ){
-            this.champName = champ;
-        },
-        hideInfo: function(){
-            this.champName = '';
-        }
     },
     async mounted() {
         const originsArr = await fetch(`./src/assets/data/origins.json`);
@@ -38,15 +27,7 @@ export default {
         class="class-info">
             <h1>{{origin.name}}</h1>
             <div id="origin-champs">
-                <div id="champion" v-for="champ in origin.champions"
-                    :key="champ">
-                    <a href="#">
-                        <img v-bind:src="'./src/assets/icons/champions/'+champ+'.jpg'" alt="champ image"
-                        v-on:mouseover="champInfo(champ)"
-                        v-on:mouseleave="hideInfo">
-                        <ChampTooltip v-show="champ==this.champName" :champion="this.champName" :champArr="fetchedChampArr"></ChampTooltip>    
-                    </a>
-                </div>
+               <ChampTooltip v-bind:elArr="origin.champions" v-bind:champArr="fetchedChampArr"></ChampTooltip>
             </div>
             <p>{{origin.bonus}}</p>
             <div id="bonus">

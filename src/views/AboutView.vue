@@ -4,6 +4,7 @@ import Items from "@/components/Items.vue";
 import Traits from "../components/Traits.vue";
 import Origins from "@/components/Origins.vue"
 import Team from "@/components/Team.vue";
+import TraitsPool from "../components/TraitsPool.vue";
 </script>
 
 <template>
@@ -12,8 +13,8 @@ import Team from "@/components/Team.vue";
   </div-->
   <!--Champions></Champions-->
   <!--Items></Items-->
-  <Traits></Traits>
-  <!--Team></Team-->
+  <!--Traits></Traits-->
+  <Team></Team>
   <!--Origins></Origins-->
 </template>
 

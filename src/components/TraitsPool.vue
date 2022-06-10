@@ -1,20 +1,12 @@
 <script>
 import ChampTooltip from './ChampTooltip.vue';
 export default{
-    components: ["ChampTooltip"],
+    components: {ChampTooltip},
     data(){
         return{
             traitsArr:[],
             champName:'',
             fetchedChampArr: [],
-        }
-    },
-    methods: {
-        champInfo: function(champ){
-            this.champName = champ
-        },
-        hideInfo: function(){
-            this.champName = '';
         }
     },
     async mounted(){
@@ -26,19 +18,11 @@ export default{
 }
 </script>
 
-<template>
+<template>  
     <div id="traits">
         <div class="pool-row" v-for="trait in traitsArr" :key="trait">
             <h3 class="trait-name">{{trait.name}}</h3>
-            <div class="'champ" v-for="champ in trait.champions" :key="champ">
-                <a href="#">
-                    <img v-bind:src="'./src/assets/icons/champions/'+champ+'.jpg'" alt="{{champ}} image"
-                    class="champ-img"
-                    v-on:mouseover="champInfo(champ)"
-                    v-on:mouseleave="hideInfo">
-                    <ChampTooltip v-show="champ == this.champName" :champion="this.champName" :champArr="fetchedChampArr"></ChampTooltip>
-                </a>
-            </div>
+            <ChampTooltip v-bind:elArr="trait.champions" v-bind:champArr="fetchedChampArr"></ChampTooltip>
         </div>
     </div>
 </template>
