@@ -3,8 +3,9 @@ import ChampTooltip from './ChampTooltip.vue';
 import ChampCost from './CostPool.vue';
 import TraitsPool from './TraitsPool.vue';
 import OriginsPool from './OriginsPool.vue';
+import Board from './Board.vue';
 export default{
-    components: { ChampTooltip, ChampCost,TraitsPool, OriginsPool },
+    components: { ChampTooltip, ChampCost,TraitsPool, OriginsPool,Board },
     data(){
         return{
             selectedPool:1,
@@ -25,6 +26,7 @@ export default{
         <TraitsPool v-show="selectedPool == 2" ></TraitsPool>
         <OriginsPool v-show="selectedPool == 3" ></OriginsPool>
     </div>
+    <!--Board></Board-->
 </template>
 
 <style>

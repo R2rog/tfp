@@ -46,7 +46,8 @@ export default {
         <a href="#">
             <img class="champ-img" v-bind:src="'./src/assets/icons/champions/'+element+'.jpg'" alt="{{element}} image"
                 v-on:mouseover="champInfo(element)"
-                v-on:mouseleave="hideInfo">
+                v-on:mouseleave="hideInfo"
+                draggable>
             <span v-show="this.champ.name == element" class="champ-tooltip">
                 <h2>Champion: {{this.champ.name}}</h2>
                 <h2>Cost: {{this.champ.cost}}</h2>
