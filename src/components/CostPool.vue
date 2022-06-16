@@ -1,7 +1,8 @@
 <script>
 import ChampTooltip from './ChampTooltip.vue';
+import Board from './Board.vue';
 export default{
-    components: ["ChampTooltip"],
+    components: {ChampTooltip, Board},
     data(){
         return{
             champCost: [],
@@ -10,45 +11,7 @@ export default{
             champCounter: 0,
             champOrigins: '',
             champTraits: '',
-            champDragged: {},
-            boardValues: [
-                [{},{},{},{},{},{},{}],
-                [{},{},{},{},{},{},{}],
-                [{},{},{},{},{},{},{}],
-                [{},{},{},{},{},{},{}]
-            ],
-            boardClasses:{
-                arcanist: 0,
-                assassin: 0,
-                bodyguard: 0,
-                bruiser: 0,
-                challenger: 0,
-                colossus: 0,
-                enchanter: 0,
-                innovator: 0,
-                scholar: 0,
-                sniper: 0,
-                striker: 0,
-                transformer: 0,
-                twinshot: 0
-            },
-            boardOrigins:{
-                chemtech: 0,
-                clockwork: 0,
-                debonair: 0,
-                enforcerer: 0,
-                glutton: 0,
-                hextech: 0,
-                mastermind: 0,
-                mercenary: 0,
-                mutant: 0,
-                rival: 0,
-                scrap: 0,
-                socialite: 0,
-                syndicate: 0,
-                yordle: 0,
-                yordleLord: 0
-            }
+            localChampDragged: {}
         }
     },
     methods: {
@@ -85,37 +48,8 @@ export default{
                     break;
                 };
             };
-            this.champDragged = selectedChamp;
-            console.log('champ being dragged: ', this.champDragged);
+            this.localChampDragged = selectedChamp;
         },
-        innerDrag: function(e){
-            console.log('Inner drag started from slot id: ', e.target.id, 'champ dragged', this.champDragged);
-            e.target.src = '';
-            let i = e.target.id[0]-1;
-            let j = e.target.id[1]-1;
-            this.champDragged = this.boardValues[i][j];
-            this.boardValues[i][j]= {};
-            console.log('Board after inner drag: ', this.boardValues);
-        },
-        champDrop: function(e){
-            let i = e.target.id[4]-1;
-            let j = e.target.id[11]-1;
-            let target = document.getElementById(e.target.id);
-            this.champDragged.classes.forEach(element => {
-                this.boardClasses[element.toLowerCase()] = this.boardClasses[element.toLowerCase()] + 1;
-            });
-            this.champDragged.origins.forEach(origin => {
-                this.boardOrigins[origin.toLowerCase()] = this.boardOrigins[origin.toLowerCase()]+1;
-            });
-            console.log('index', i,j);
-            if(target.hasChildNodes()) target.children[0].src = this.champDragged.icon;
-            else target.src = this.champDragged.icon;
-            this.champCounter += 1; 
-            this.boardValues[i][j] = this.champDragged;
-            console.log('Board after champ dropped: ', this.boardValues);
-            console.log('Board classes', this.boardClasses);
-            console.log('Board origins', this.boardOrigins);
-        }
     },
     async mounted(){
         let cost1 = [];
@@ -158,7 +92,6 @@ export default{
                     v-on:mouseleave="hideInfo"
                     draggable
                     @dragstart="startDrag(champ)">
-                    <!--ChampTooltip v-show="champ == this.champName" :champion="this.champName" :champArr="fetchedChampArr"></ChampTooltip-->
                     <span v-show="this.champ.name == champ" class="pool-champ-tooltip">
                         <h2>Champion: {{this.champ.name}}</h2>
                         <h2>Cost: {{this.champ.cost}}</h2>
@@ -169,18 +102,7 @@ export default{
             </div>
         </div>
     </div>
-    <div id="board" >
-        <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
-            <div class="champ-slot" v-for="champ in 7" :key="'champ'+champ"
-                v-bind:id="'row-'+row+'-slot-'+champ"
-                @drop="champDrop"
-                @dragover.prevent
-                @dragenter.prevent>
-                <img v-bind:id="row+''+champ" draggable src="" alt=""
-                    @dragleave="innerDrag">
-            </div>
-        </div>
-    </div>
+    <Board v-bind:champions="champArr" v-bind:champDragged="localChampDragged"></Board>
 </div>
       
 </template>
@@ -191,12 +113,6 @@ export default{
 }
 .champ{
     flex: auto;
-}
-.champ-slot{
-    image-resolution: 4rem;
-}
-.champ-slot img{
-    height: 4rem;
 }
 .pool-champ-tooltip{
     background-color: #00bd7e;
