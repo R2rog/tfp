@@ -15,6 +15,7 @@ export default{
             selectedChamp: {},
             originsProps: {},
             traitsProps: {},
+            boardProps: {},
             dataFetched: false
         };
     },
@@ -31,6 +32,10 @@ export default{
         };
         this.traitsProps = {
             champArr: this.fetchedChampArr,
+            traitsArr: this.fetchedTraitsArr
+        };
+        this.boardProps = {
+            originsArr: this.fetchedOriginsArr,
             traitsArr: this.fetchedTraitsArr
         };
         this.dataFetched = true;
@@ -54,7 +59,7 @@ export default{
     <CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool>
     <TraitsPool v-if="dataFetched" v-show="selectedPool == 2" v-bind:propsJSON="traitsProps"></TraitsPool>
     <OriginsPool v-if="dataFetched" v-show="selectedPool == 3" v-bind:propsJSON="originsProps"></OriginsPool>
-    <Board v-bind:champDragged="selectedChamp"></Board> 
+    <Board v-bind:champDragged="selectedChamp" v-bind:propsJSON="boardProps"></Board> 
 </div>
 </template>
 
