@@ -1,6 +1,6 @@
 <script>
 export default{
-    props:["champions","champDragged"],
+    props:["champDragged"],
     data(){
         return{
             selectedChamp : {},

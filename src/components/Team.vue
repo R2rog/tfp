@@ -1,32 +1,61 @@
 <script>
 import ChampTooltip from './ChampTooltip.vue';
-import ChampCost from './CostPool.vue';
+import CostPool from './CostPool.vue';
 import TraitsPool from './TraitsPool.vue';
 import OriginsPool from './OriginsPool.vue';
 import Board from './Board.vue';
 export default{
-    components: { ChampTooltip, ChampCost,TraitsPool, OriginsPool,Board },
+    components: { ChampTooltip, CostPool,TraitsPool, OriginsPool,Board },
     data(){
         return{
             selectedPool:1,
+            fetchedChampArr: [],
+            fetchedTraitsArr: [],
+            fetchedOriginsArr: [],
+            selectedChamp: {},
+            originsProps: {},
+            traitsProps: {},
+            dataFetched: false
+        };
+    },
+    async beforeMount(){
+        const champJSON = await fetch(`./src/assets/data/champions.json`);
+        const traitsJSON = await fetch(`./src/assets/data/classes.json`);
+        const originsJSON = await fetch(`./src/assets/data/origins.json`);
+        this.fetchedChampArr = await champJSON.json();
+        this.fetchedTraitsArr = await traitsJSON.json();
+        this.fetchedOriginsArr = await originsJSON.json();
+        this.originsProps = {
+            champArr: this.fetchedChampArr,
+            originsArr: this.fetchedOriginsArr
+        };
+        this.traitsProps = {
+            champArr: this.fetchedChampArr,
+            traitsArr: this.fetchedTraitsArr
+        };
+        this.dataFetched = true;
+    },
+    methods: {
+        refreshChamp: function (champSelected){
+            this.selectedChamp = champSelected;
         }
-    }
+    },
+
 }
 </script>
 
 <template>
-    
-    <div id="champ-pool">
-        <div id="pool-selector">
-            <button v-on:click="selectedPool=1">Cost</button>
-            <button v-on:click="selectedPool=2">Traits</button>
-            <button v-on:click="selectedPool=3">Origins</button>
-        </div>
-        <ChampCost v-show="selectedPool == 1" ></ChampCost>
-        <TraitsPool v-show="selectedPool == 2" ></TraitsPool>
-        <OriginsPool v-show="selectedPool == 3" ></OriginsPool>
+<div id="team-comp" >
+    <div id="pool-selector">
+        <button v-on:click="selectedPool=1">Cost</button>
+        <button v-on:click="selectedPool=2">Traits</button>
+        <button v-on:click="selectedPool=3">Origins</button>
     </div>
-    <!--Board></Board-->
+    <CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool>
+    <TraitsPool v-if="dataFetched" v-show="selectedPool == 2" v-bind:propsJSON="traitsProps"></TraitsPool>
+    <OriginsPool v-if="dataFetched" v-show="selectedPool == 3" v-bind:propsJSON="originsProps"></OriginsPool>
+    <Board v-bind:champDragged="selectedChamp"></Board> 
+</div>
 </template>
 
 <style>

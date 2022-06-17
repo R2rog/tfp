@@ -2,26 +2,28 @@
 import ChampTooltip from './ChampTooltip.vue';
 export default{
     components: { ChampTooltip },
+    props: ["propsJSON"],
     data() {
         return {
-            originsArr: [],
-            fetchedChampArr: [],
+            //originsArr: [],
+            //hampsArr: [],
         };
     },
     async mounted() {
-        const originsJSON = await fetch(`./src/assets/data/origins.json`);
-        const champsArr = await fetch(`./src/assets/data/champions.json`);
+        console.log('propsJSON', this.propsJSON.originsArr);
+        /*const originsJSON = await fetch(`./src/assets/data/origins.json`);
+        const champsJSON = await fetch(`./src/assets/data/champions.json`);
         this.originsArr = await originsJSON.json();
-        this.fetchedChampArr = await champsArr.json();
+        this.champsArr = await champsArr.json();*/
     },
 }
 </script>
 
 <template>
     <div id="origins">
-        <div class="pool-row" v-for="origin in originsArr" :key="origin">
+        <div class="pool-row" v-for="origin in this.propsJSON.originsArr" :key="origin">
         <h3 class="origin-name">{{origin.name}}</h3>
-        <ChampTooltip v-bind:elArr="origin.champions" v-bind:champArr="fetchedChampArr"></ChampTooltip>
+        <ChampTooltip v-bind:elArr="origin.champions" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
         </div>
     </div>
 </template>

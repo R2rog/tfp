@@ -2,11 +2,11 @@
 import ChampTooltip from './ChampTooltip.vue';
 import Board from './Board.vue';
 export default{
+    props:["champArr"],
     components: {ChampTooltip, Board},
     data(){
         return{
             champCost: [],
-            champArr: [],
             champ: {},
             champCounter: 0,
             champOrigins: '',
@@ -49,16 +49,16 @@ export default{
                 };
             };
             this.localChampDragged = selectedChamp;
+            this.$emit('champSelected', selectedChamp);
         },
     },
-    async mounted(){
+    beforeMount(){
         let cost1 = [];
         let cost2 = [];
         let cost3 = [];
         let cost4 = [];
         let cost5 = [];
-        const champJSON = await fetch(`./src/assets/data/champions.json`);
-        this.champArr = await champJSON.json();
+        console.log('Champion array: ', this.champArr);
         this.champArr.forEach(champ => {
             if(champ.cost==1) cost1.push(champ.name);
             else if(champ.cost==2)cost2.push(champ.name);
@@ -82,7 +82,7 @@ export default{
     <div id="cost">
         <div class="pool-row" v-for="(costRow,index) in champCost"
         :key="costRow">
-            <h1>{{index+1}}</h1>
+            <h1> {{index+1}} </h1>
             <div class="champ" v-for="champ in costRow"
                 :key="champ">
                 <a href="#">
@@ -102,7 +102,7 @@ export default{
             </div>
         </div>
     </div>
-    <Board v-bind:champions="champArr" v-bind:champDragged="localChampDragged"></Board>
+    <!--Board v-bind:champDragged="localChampDragged"></Board-->
 </div>
       
 </template>
