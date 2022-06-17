@@ -8,13 +8,13 @@ import TraitsPool from "../components/TraitsPool.vue";
 </script>
 
 <template>
-  <!--div class="about">
+  <div class="about">
     <h1>This is an about page</h1>
-  </div-->
+  </div>
   <!--Champions></Champions-->
   <!--Items></Items-->
   <!--Traits></Traits-->
-  <Team></Team>
+  <!--Team></Tea,-->
   <!--Origins></Origins-->
 </template>
 

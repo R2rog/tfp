@@ -12,12 +12,7 @@ export default {
     methods: {
         champInfo: function(champ){
             console.log('Champ recieved: ', champ);
-            for (let i = 0; i < this.champArr.length; i++) {
-            if(this.champArr[i].name == champ){
-                    this.champ = this.champArr[i];
-                    break;
-                };
-            };
+ 
             console.log('This champ: ', this.champ.name);
             if(this.champ.origins.length==1) this.champOrigins = this.champ.origins[0];
             else{

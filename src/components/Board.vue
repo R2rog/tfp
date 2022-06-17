@@ -7,6 +7,7 @@ export default{
         return{
             selectedChamp : {},
             selectedClass: {},
+            innerDragEvent: false,
             selectedOrigin: {},
             champCounter: 0,
             boardValues: [
@@ -170,112 +171,96 @@ export default{
                 this.boardOrigins[lowCaseOg].value = this.boardOrigins[lowCaseOg].value - 1;
             });
             this.boardValues[i][j]= {};
+            this.innerDragEvent = true;
         },
         champDrop: function(e){
+            if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
+            console.log('Selected champ: ',this.selectedChamp );
             let i = e.target.id[4]-1;
             let j = e.target.id[11]-1;
             let target = document.getElementById(e.target.id);
-            this.champDragged.classes.forEach(element => {
+            this.selectedChamp.classes.forEach(element => {
                 let lowCaseEl = element.toLowerCase();
                 this.boardClasses[lowCaseEl].value = this.boardClasses[lowCaseEl].value + 1;
             });
-            this.champDragged.origins.forEach(origin => {
+            this.selectedChamp.origins.forEach(origin => {
                 let lowCaseOg = origin.toLowerCase();
                 this.boardOrigins[lowCaseOg].value = this.boardOrigins[lowCaseOg].value + 1;
             });
-            if(target.hasChildNodes()) target.children[0].src = this.champDragged.icon;
-            else target.src = this.champDragged.icon;
+            if(target.hasChildNodes()) target.children[0].src = this.selectedChamp.icon;
+            else target.src = this.selectedChamp.icon;
             this.champCounter += 1; 
-            this.boardValues[i][j] = this.champDragged;
+            this.boardValues[i][j] = this.selectedChamp;
+            this.innerDragEvent == false;
         }
     },
 }
 </script>
 
 <template>
-   <div id="board" >
-        <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
-            <div class="champ-slot" v-for="champ in 7" :key="'champ'+champ"
-                v-bind:id="'row-'+row+'-slot-'+champ"
-                @drop="champDrop"
-                @dragover.prevent
-                @dragenter.prevent>
-                <img v-bind:id="row+''+champ" draggable src="" alt=""
-                    @dragleave="innerDrag">
-            </div>
-        </div>
+   <div id="board">
         <div id="synergies">
             <div v-for="element in boardClasses" v-show="element.value > 0"  :key="element">
-                <h1 v-on:mouseover="classInfo(element.name)"
+                <h2 v-on:mouseover="classInfo(element.name)"
                     v-on:mouseleave="hideInfo">
                     {{element.name}}: {{element.value}}
-                </h1>
+                </h2>
                 <span class="synergies-tooltip" v-show="this.selectedClass.name == element.name">
                     <h2>{{this.selectedClass.bonus}}</h2>
                     <h2 v-for="buff in this.selectedClass.set" :key="buff.count">{{buff.count}}: {{buff.bonus}}</h2>
                 </span>
             </div>
             <div v-for="origin in boardOrigins" v-show="origin.value > 0" :key="origin">
-                <h1 v-on:mouseover="originInfo(origin.name)"
+                <h2 v-on:mouseover="originInfo(origin.name)"
                     v-on:mouseleave="hideInfo">
                     {{origin.name}}: {{origin.value}}
-                </h1>
+                </h2>
                 <span class="synergies-tooltip" v-show="this.selectedOrigin.name == origin.name">
                     <h2>{{this.selectedOrigin.bonus}}</h2>
                     <h2 v-for="buff in this.selectedOrigin.set" :key="buff.count">{{buff.count}}: {{buff.bonus}}</h2>
                 </span>
             </div>
-            <!--div v-for="origin in this.propsJSON.originsArr" :key="origin"   v-bind:id="origin.name.toLowerCase()" >
-                <div>
-                    <h1 v-on:mouseover="traitInfo(origin.name)"
-                        v-on:mouseleave="hideInfo">
-                    {{origin.name.toLowerCase()}} : {{origin.value}}
-                    </h1>
-                    <span class="synergies-tooltip" v-show="this.selectedTrait == origin.name">
-                        <h2>{{origin.bonus}}</h2>
-                        <h2 v-for="buff in origin.set" :key="buff.count">{{buff.count}}: {{buff.bonus}}</h2>
-                    </span>
-                </div>
-
-            </div>
-            <div v-for="element in this.propsJSON.traitsArr" :key="element"  v-bind:id="element.name.toLowerCase()" >
-                <h1 v-on:mouseover="traitInfo(element.name)"
-                    v-on:mouseleave="hideInfo">
-                   {{element.name.toLowerCase()}} : {{element.value}}
-                </h1>
-                <span class="synergies-tooltip" v-show="this.selectedTrait == element.name">
-                    <h2>{{element.bonus}}</h2>
-                    <h2 v-for="buff in element.set" :key="buff.count">{{buff.count}}: {{buff.bonus}}</h2>
-                </span>
-            </div-->
         </div>
+        <div id="positions">
+            <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
+                <div class="champ-slot" v-for="champ in 7" :key="'champ'+champ"
+                    v-bind:id="'row-'+row+'-slot-'+champ"
+                    @drop="champDrop"
+                    @dragover.prevent
+                    @dragenter.prevent>
+                    <img v-bind:id="row+''+champ" draggable src="" alt=""
+                        @dragleave="innerDrag">
+                </div>
+            </div>           
+       </div>
     </div>
 </template>
 
 <style>
 #board{
     background-color: gray;
-    height:100%;
-    width:100%;
+    height:50%;
+    width:120%;
+    display:flex;
 }
 #synergies{
     background-color: grey;
-    width: 25%;
+    width: 20%;
     border-style: solid;
-    border-color: #000
+    border-color: #000;
+    font-size: 0.8rem;
 }
 .synergies-tooltip{
     background-color: grey;
     font-size: 0.80rem;
     position:absolute;
     z-index: 2;
-    height: 600%;
     width: 350%;
 }
 .board-row{
     background-color: cornflowerblue;
     height: 4rem;
-    width:100%;
+    width:95%;
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
 }
