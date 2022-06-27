@@ -584,7 +584,7 @@
   },
   {
     "key": "Set7_SpellThief",
-    "name": "Spell-Thief",
+    "name": "SpellThief",
     "description": "Nab a new ability after each cast and at the start of every round.",
     "icon":"./traits/Spell-Thief.svg",
     "type": "class",

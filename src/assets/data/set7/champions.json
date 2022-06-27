@@ -2,7 +2,7 @@
   {
     "name": "Aatrox",
     "id": "TFT7_Aatrox",
-    "icon":"./src/assets/icons/champions/Atrox.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Atrox.png",
     "border": "gray",
     "cost": 1,
     "traits": [
@@ -15,7 +15,7 @@
   {
     "name": "Anivia",
     "id": "TFT7_Anivia",
-    "icon":"./src/assets/icons/champions/Anivia.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Anivia.png",
     "border": "blue",
     "cost": 3,
     "traits": [
@@ -27,9 +27,9 @@
     "origins": ["Jade"]
   }, 
   {
-    "name": "Ao Shin",
+    "name": "AoShin",
     "id": "TFT7_AoShin",
-    "icon":"./src/assets/icons/champions/AoShin.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_AoShin.png",
     "border": "gold",
     "cost": 10,
     "traits": [
@@ -42,7 +42,7 @@
   {
     "name": "Ashe",
     "id": "TFT7_Ashe",
-    "icon":"./src/assets/icons/champions/Ashe.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Ashe.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -54,9 +54,9 @@
     "origins": ["Swiftshot"]
   },
   {
-    "name": "Aurelion Sol",
+    "name": "AurelionSol",
     "id": "TFT7_AurelionSol",
-    "icon":"./src/assets/icons/champions/AurelionSol.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_AurelionSol.png",
     "cost": 10,
     "border":"gold",
     "traits": [
@@ -70,7 +70,7 @@
   {
     "name": "Bard",
     "id": "TFT7_Bard",
-    "icon":"./src/assets/icons/champions/Bard.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Bard.png",
     "cost": 5,
     "border": "gold",
     "traits": [
@@ -84,7 +84,7 @@
   {
     "name": "Braum",
     "id": "TFT7_Braum",
-    "icon":"./src/assets/icons/champions/Braum.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Braum.png",
     "cost": 2,
     "border": "green",
     "traits": [
@@ -97,7 +97,7 @@
   {
     "name": "Corki",
     "id": "TFT7_Corki",
-    "icon":"./src/assets/icons/champions/Corki.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Corki.png",
     "cost": 4,
     "border": "violet",
     "traits": [
@@ -110,7 +110,7 @@
   {
     "name": "Daeja",
     "id": "TFT7_Daeja",
-    "icon":"./src/assets/icons/champions/Daeja.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Daeja.png",
     "cost": 8,
     "border": "violet",
     "traits": [
@@ -123,7 +123,7 @@
   {
     "name": "Diana",
     "id": "TFT7_Diana",
-    "icon":"./src/assets/icons/champions/Diana.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Diana.png",
     "cost": 3,
     "border": "blue",
     "traits": [
@@ -136,7 +136,7 @@
   {
     "name": "Elise",
     "id": "TFT7_Elise",
-    "icon":"./src/assets/icons/champions/Elise.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Elise.png",
     "cost": 3,
     "border": "blue",
     "traits": [
@@ -149,7 +149,7 @@
   {
     "name": "Ezreal",
     "id": "TFT7_Ezreal",
-    "icon":"./src/assets/icons/champions/Ezreal.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Ezreal.png",
     "cost": 1,
     "border": "gray",
     "traits": [
@@ -162,7 +162,7 @@
   {
     "name": "Gnar",
     "id": "TFT7_Gnar",
-    "icon":"./src/assets/icons/champions/Gnar.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Gnar.png",
     "border":"green",
     "cost": 2,
     "traits": [
@@ -175,7 +175,7 @@
   {
     "name": "Hecarim",
     "id": "TFT7_Hecarim",
-    "icon":"./src/assets/icons/champions/Hecarim.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Hecarim.png",
     "cost": 4,
     "border":"violet",
     "traits": [
@@ -188,7 +188,7 @@
   {
     "name": "Heimerdinger",
     "id": "TFT7_Heimerdinger",
-    "icon":"./src/assets/icons/champions/Heimerdinger.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Heimerdinger.png",
     "cost": 1,
     "border": "grey",
     "traits": [
@@ -201,7 +201,7 @@
   {
     "name": "Idas",
     "id": "TFT7_Idas",
-    "icon":"./src/assets/icons/champions/Idas.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Idas.png",
     "cost": 8,
     "border":"gold",
     "traits": [
@@ -215,7 +215,7 @@
   {
     "name": "Illaoi",
     "id": "TFT7_Illaoi",
-    "icon":"./src/assets/icons/champions/Illaoi.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Illaoi.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -228,7 +228,7 @@
   {
     "name": "Jinx",
     "id": "TFT7_Jinx",
-    "icon":"./src/assets/icons/champions/Jinx.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Jinx.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -241,7 +241,7 @@
   {
     "name": "Karma",
     "id": "TFT7_Karma",
-    "icon":"./src/assets/icons/champions/Karma.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Karma.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -254,7 +254,7 @@
   {
     "name": "Kayn",
     "id": "TFT7_Kayn",
-    "icon":"./src/assets/icons/champions/Kayn.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Kayn.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -266,9 +266,9 @@
     "origins": ["Ragewing","Shimmerscale"]
   },
   {
-    "name": "Lee Sin",
+    "name": "LeeSin",
     "id": "TFT7_LeeSin",
-    "icon":"./src/assets/icons/champions/LeeSin.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_LeeSin.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -281,7 +281,7 @@
   {
     "name": "Leona",
     "id": "TFT7_Leona",
-    "icon":"./src/assets/icons/champions/Leona.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Leona.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -294,7 +294,7 @@
   {
     "name": "Lillia",
     "id": "TFT7_Lillia",
-    "icon":"./src/assets/icons/champions/Lillia.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Lillia.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -308,7 +308,7 @@
   {
     "name": "Lulu",
     "id": "TFT7_Lulu",
-    "icon":"./src/assets/icons/champions/Lulu.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Lulu.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -322,7 +322,7 @@
   {
     "name": "Nami",
     "id": "TFT7_Nami",
-    "icon":"./src/assets/icons/champions/Nami.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Nami.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -336,7 +336,7 @@
   {
     "name": "Neeko",
     "id": "TFT7_Neeko",
-    "icon":"./src/assets/icons/champions/Neeko.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Neeko.png",
     "cost": 4,
     "border":"green",
     "traits": [
@@ -349,7 +349,7 @@
   {
     "name": "Nidalee",
     "id": "TFT7_Nidalee",
-    "icon":"./src/assets/icons/champions/Nidalee.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Nidalee.png",
     "cost": 1,
     "border":"grey",
     "traits": [
@@ -362,7 +362,7 @@
   {
     "name": "Nunu",
     "id": "TFT7_Nunu",
-    "icon":"./src/assets/icons/champions/Nunu.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Nunu.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -375,7 +375,7 @@
   {
     "name": "Olaf",
     "id": "TFT7_Olaf",
-    "icon":"./src/assets/icons/champions/Olaf.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Olaf.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -389,7 +389,7 @@
   {
     "name": "Ornn",
     "id": "TFT7_Ornn",
-    "icon":"./src/assets/icons/champions/Ornn.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Ornn.png",
     "cost": 4,
     "border":"violet",
     "traits": [
@@ -403,7 +403,7 @@
   {
     "name": "Pyke",
     "id": "TFT7_Pyke",
-    "icon":"./src/assets/icons/champions/Pyke.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Pyke.png",
     "cost": 5,
     "border":"violet",
     "traits": [
@@ -416,7 +416,7 @@
   {
     "name": "Qiyana",
     "id": "TFT7_Qiyana",
-    "icon":"./src/assets/icons/champions/Qiyana.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Qiyana.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -429,7 +429,7 @@
   {
     "name": "Ryze",
     "id": "TFT7_Ryze",
-    "icon":"./src/assets/icons/champions/Ryze.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Ryze.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -442,7 +442,7 @@
   {
     "name": "Sejuani",
     "id": "TFT7_Sejuani",
-    "icon":"./src/assets/icons/champions/Sejuani.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Sejuani.png",
     "cost": 1,
     "border":"grey",
     "traits": [
@@ -455,7 +455,7 @@
   {
     "name": "Senna",
     "id": "TFT7_Senna",
-    "icon":"./src/assets/icons/champions/Senna.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Senna.png",
     "cost": 1,
     "border":"grey",
     "traits": [
@@ -468,7 +468,7 @@
   {
     "name": "Sett",
     "id": "TFT7_Sett",
-    "icon":"./src/assets/icons/champions/Sett.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Sett.png",
     "cost": 1,
     "border":"grey",
     "traits": [
@@ -481,7 +481,7 @@
   {
     "name": "Shen",
     "id": "TFT7_Shen",
-    "icon":"./src/assets/icons/champions/Shen.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Shen.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -493,9 +493,9 @@
     "origins": ["Ragewing"]
   },
   {
-    "name": "Shi Oh Yu",
+    "name": "ShiOhYu",
     "id": "TFT7_ShiOhYu",
-    "icon":"./src/assets/icons/champions/ShiOhYu.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_ShiOhYu.png",
     "cost": 8,
     "border":"gold",
     "traits": [
@@ -509,7 +509,7 @@
   {
     "name": "Shyvana",
     "id": "TFT7_Shyvana",
-    "icon":"./src/assets/icons/champions/Shyvana.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Shyvana.png",
     "cost": 10,
     "border":"gold",
     "traits": [
@@ -523,7 +523,7 @@
   {
     "name": "Skarner",
     "id": "TFT7_Astral",
-    "icon":"./src/assets/icons/champions/Skarner.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Skarner.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -536,7 +536,7 @@
   {
     "name": "Sona",
     "id": "TFT7_Sona",
-    "icon":"./src/assets/icons/champions/Sona.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Sona.png",
     "cost": 4,
     "border":"violet",
     "traits": [
@@ -549,7 +549,7 @@
   {
     "name": "Soraka",
     "id": "TFT7_Soraka",
-    "icon":"./src/assets/icons/champions/Soraka.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Soraka.png",
     "cost": 5,
     "border":"gold",
     "traits": [
@@ -562,7 +562,7 @@
   {
     "name": "Swain",
     "id": "TFT7_Swain",
-    "icon":"./src/assets/icons/champions/Swain.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Swain.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -574,9 +574,9 @@
     "origins": ["Ragewing"]
   },
   {
-    "name": "Sy'fen",
+    "name": "Syfen",
     "id": "TFT7_Syfen",
-    "icon":"./src/assets/icons/champions/Syfen.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Syfen.png",
     "cost": 8,
     "border":"gold",
     "traits": [
@@ -590,7 +590,7 @@
   {
     "name": "Sylas",
     "id": "TFT7_Sylas",
-    "icon":"./src/assets/icons/champions/Sylas.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Sylas.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -602,9 +602,9 @@
     "origins": ["Whispers"]
   },
   {
-    "name": "Tahm Kench",
+    "name": "TahmKench",
     "id": "TFT7_TahmKench",
-    "icon":"./src/assets/icons/champions/TahmKench.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_TahmKench.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -617,7 +617,7 @@
   {
     "name": "Talon",
     "id": "TFT7_Talon",
-    "icon":"./src/assets/icons/champions/Talon.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Talon.png",
     "cost": 4,
     "border":"violet",
     "traits": [
@@ -630,7 +630,7 @@
   {
     "name": "Taric",
     "id": "TFT7_Taric",
-    "icon":"./src/assets/icons/champions/Taric.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Taric.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -643,7 +643,7 @@
   {
     "name": "Thresh",
     "id": "TFT7_Thresh",
-    "icon":"./src/assets/icons/champions/Thresh.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Thresh.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -656,7 +656,7 @@
   {
     "name": "Tristana",
     "id": "TFT7_Tristana",
-    "icon":"./src/assets/icons/champions/Tristana.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Tristana.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -669,7 +669,7 @@
   {
     "name": "Twitch",
     "id": "TFT7_Twitch",
-    "icon":"./src/assets/icons/champions/Twitch.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Twitch.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -682,7 +682,7 @@
   {
     "name": "Varus",
     "id": "TFT7_Varus",
-    "icon":"./src/assets/icons/champions/Varus.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Varus.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -695,7 +695,7 @@
   {
     "name": "Vladimir",
     "id": "TFT7_Vladimir",
-    "icon":"./src/assets/icons/champions/Vladimir.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Vladimir.png",
     "cost": 1,
     "border":"gray",
     "traits": [
@@ -708,7 +708,7 @@
   {
     "name": "Volibear",
     "id": "TFT7_Volibear",
-    "icon":"./src/assets/icons/champions/Volibear.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Volibear.png",
     "cost": 3,
     "border":"blue",
     "traits": [
@@ -722,7 +722,7 @@
   {
     "name": "Xayah",
     "id": "TFT7_Xayah",
-    "icon":"./src/assets/icons/champions/Xayah.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Xayah.png",
     "cost": 4,
     "border":"violet",
     "traits": [
@@ -735,7 +735,7 @@
   {
     "name": "Yasuo",
     "id": "TFT7_Yasuo",
-    "icon":"./src/assets/icons/champions/Yasuo.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Yasuo.png",
     "cost": 5,
     "border":"gold",
     "traits": [
@@ -749,7 +749,7 @@
   {
     "name": "Yone",
     "id": "TFT7_Yone",
-    "icon":"./src/assets/icons/champions/Yone.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Yone.png",
     "cost": 2,
     "border":"green",
     "traits": [
@@ -762,7 +762,7 @@
   {
     "name": "Zoe",
     "id": "TFT7_Zoe",
-    "icon":"./src/assets/icons/champions/Zoe.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Zoe.png",
     "cost": 5,
     "border":"gold",
     "traits": [

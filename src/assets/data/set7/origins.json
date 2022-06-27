@@ -2,7 +2,7 @@
     {
         "key": "Set7_Astral",
         "name": "Astral",
-        "championS": [],
+        "champions": ["AurelionSol", "Illaoi", "Nidalee", "Vladimir", "Nami", "Varus", "Skarner"],
         "description": "Every 5th Shop has increased odds to show Astral champions, and also grants an Astral orb. Your team gains bonus Ability Power. Ability Power and Orb value increases at trait breakpoints.",
         "icon":"./traits/Astral.svg",
         "type": "origin",
@@ -29,7 +29,7 @@
       {
         "key": "Set7_Guild",
         "name": "Guild",
-        "champions": "",
+        "champions": ["Sejuani", "Twitch", "Ryze", "Talon", "Bard"],
         "description": "Grant a unique bonus to your team; Guild allies gain double the amount. Bonuses increases at trait breakpoints. Sejuani: Health Twitch: Attack Speed Ryze: Ability Power Talon: Attack Damage Bard: Mana per attack Emblem: Omnivamp (healing for a percentage of damage dealt)",
         "icon":"./traits/Guild.svg",
         "type": "origin",
@@ -74,7 +74,7 @@
       {
         "key": "Set7_Jade",
         "name": "Jade",
-        "champions":[],
+        "champions":["Karma", "Taric", "Ashe", "Gnar", "Anivia", "Neeko", "Soraka", "ShiOhYu"],
         "description": "Summon movable Jade Statues that grow in power. The number of statues increases at trait breakpoints. Each combat, allies adjacent to a statue gain Attack Speed and maximum Health healing increasing at trait breakpoints. When a statue is destroyed, it deals 50% of its Health as magic damage to nearby enemies.",
         "icon":"./traits/Jade.svg",
         "type": "origin",
@@ -107,7 +107,7 @@
       {
         "key": "Set7_Mirage",
         "name": "Mirage",
-        "champions": "",
+        "champions": ["Leona", "Yone", "Nunu", "Yasuo", "Daeja"],
         "description": "Mirage units gain a different Trait bonus from game to game. Variations: Electric Overload, Warlord, Pirate, Dawnbringer, Executioner, Spellsword, Duelist",
         "icon":"./traits/Mirage.svg",
         "type": "origin",
@@ -140,7 +140,7 @@
       {
         "key": "Set7_Ragewing",
         "name": "Ragewing",
-        "champions": [],
+        "champions": ["Senna", "Sett", "Kayn", "Shen", "Swain", "Hecarim", "Xayah", "Shyvana"],
         "description": "Converts Mana to Rage; attacks generate 15 Rage. After casting an Ability, enrage for 4 seconds, gaining Attack Speed and Omnivamp increasing at trait breakpoints. Rage cannot be gained during the enrage buff",
         "icon":"./traits/Ragewing.svg",
         "type": "origin",
@@ -167,7 +167,7 @@
       {
         "key": "Set7_Revel",
         "name": "Revel",
-        "champions": [],
+        "champions": ["TahmKench", "Jinx", "Corki", "Sona"],
         "description": "After dealing damage with an Ability, launch a firecracker that deals magic damage increasing at trait breakpoints to a random enemy.",
         "icon":"./traits/Revel.svg",
         "type": "origin",
@@ -200,7 +200,7 @@
       {
         "key": "Set7_Scalescorn",
         "name": "Scalescorn",
-        "champions": [],
+        "champions": ["Braum", "Lillia", "Diana", "Olaf"],
         "description": "If you don't have a Dragon on your team, Scalescorn champions deal bonus magic damage increasing at trait breakpoints and take 30% reduced damage from enemies with more than 2500 Health.",
         "icon":"./traits/Scalescorn.svg",
         "type": "origin",
@@ -227,7 +227,7 @@
       {
         "key": "Set7_Shimmerscale",
         "name": "Shimmerscale",
-        "champions": [],
+        "champions": ["Aatrox","Kayn", "Volibear", "Zoe", "Idas"],
         "description": "Grant exclusive random Shimmerscale items that scale with gold. Number of unique items increases at trait breakpoints.",
         "icon":"./traits/Shimmerscale.svg",
         "type": "origin",
@@ -260,7 +260,7 @@
       {
         "key": "Set7_Tempest",
         "name": "Tempest",
-        "champions": [],
+        "champions": ["Ezreal", "Qiyana", "LeeSin", "Ornn", "AoShin"],
         "description": "After 9 seconds, lightning strikes the battlefield. Enemies are stunned for 1 second and take a percent of their maximum Health as true damage increasing at trait breakpoints. Tempest champions gain Attack Speed increasing at trait breakpoints.",
         "icon":"./traits/Tempest.svg",
         "type": "origin",
@@ -289,7 +289,7 @@
       {
         "key": "Set7_Trainer",
         "name": "Trainer",
-        "champions": [],
+        "champions": ["Heimerdinger", "Tristana", "Lulu"],
         "description": "Every round, each Trainer feeds 1 Snax to Nomsy, adding Health and Ability Power. Nomsy's star level increases every 25 Snax! At Trainer (3) Nomsy's ability deals double the damage!",
         "icon":"./traits/Trainer.svg",
         "type": "origin",
@@ -310,7 +310,7 @@
       {
         "key": "Set7_Whispers",
         "name": "Whispers",
-        "champions": [],
+        "champions": ["Thresh", "Elise", "Sylas", "Pyke", "Syfen"],
         "description": "Whispers damage shrinks enemies, reducing their Armor and Magic Resist by 40% for 6 seconds. When they damage a shrunken enemy, Whispers gain stacking Attack Damage and Ability Power increasing at trait breakpoints.",
         "icon":"./traits/.svg",
         "type": "origin",

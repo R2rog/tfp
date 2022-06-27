@@ -20,9 +20,9 @@ export default{
         };
     },
     async beforeMount(){
-        const champJSON = await fetch(`./src/assets/data/champions.json`);
-        const traitsJSON = await fetch(`./src/assets/data/classes.json`);
-        const originsJSON = await fetch(`./src/assets/data/origins.json`);
+        const champJSON = await fetch(`./src/assets/data/set7/champions.json`);
+        const traitsJSON = await fetch(`./src/assets/data/set7/classes.json`);
+        const originsJSON = await fetch(`./src/assets/data/set7/origins.json`);
         this.fetchedChampArr = await champJSON.json();
         this.fetchedTraitsArr = await traitsJSON.json();
         this.fetchedOriginsArr = await originsJSON.json();

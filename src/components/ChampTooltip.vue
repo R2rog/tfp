@@ -11,6 +11,12 @@ export default {
     },
     methods: {
         champInfo: function(champ){
+            for (let i = 0; i < this.champArr.length; i++) {
+                if(this.champArr[i].name == champ){
+                    this.champ = this.champArr[i];
+                    break;
+                };
+            };
             console.log('Champ recieved: ', champ);
  
             console.log('This champ: ', this.champ.name);
@@ -49,7 +55,7 @@ export default {
 <template>
     <div v-for="element in elArr" :key="element">
         <a href="#">
-            <img class="champ-img" v-bind:src="'./src/assets/icons/champions/'+element+'.jpg'" alt="{{element}} image"
+            <img class="champ-img" v-bind:src="'./src/assets/icons/set7/champions/TFT7_'+element+'.png'" alt="{{element}} image"
                 v-on:mouseover="champInfo(element)"
                 v-on:mouseleave="hideInfo"
                 draggable

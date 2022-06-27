@@ -86,7 +86,7 @@ export default{
             <div class="champ" v-for="champ in costRow"
                 :key="champ">
                 <a href="#">
-                    <img v-bind:src="'./src/assets/icons/champions/'+champ+'.jpg'" alt="{{champ}} image"
+                    <img v-bind:src="'./src/assets/icons/set7/champions/'+'TFT7_'+champ+'.png'" alt="{{champ}} image"
                     v-bind:class="'cost'+(index+1)"
                     v-on:mouseover="champInfo(champ)"
                     v-on:mouseleave="hideInfo"

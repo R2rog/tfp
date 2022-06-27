@@ -17,118 +17,118 @@ export default{
                 [{},{},{},{},{},{},{}]
             ],
             boardClasses:{
-                arcanist: {
-                    name: 'Arcanist',
+                assassin: {
+                    name: 'Assassin',
                     value: 0
                 },
-                assassin:{
-                    name: 'Assasin',
-                    value: 0
-                },
-                bodyguard: {
-                    name: 'Bodyguard',
+                bard:{
+                    name: 'Bard',
                     value: 0
                 },
                 bruiser: {
                     name: 'Bruiser',
                     value: 0
                 },
-                challenger: {
-                    name: 'Challenger',
+                cannoneer: {
+                    name: 'Cannoneer',
                     value: 0
                 },
-                colossus: {
-                    name: 'Colossus',
+                cavalier: {
+                    name: 'Cavalier',
                     value: 0
                 },
-                enchanter: {
-                    name: 'Enchanter',
+                dragon: {
+                    name: 'Dragon',
                     value: 0
                 },
-                innovator: {
-                    name: 'Innovator',
+                dragonmancer: {
+                    name: 'Dragonmancer',
                     value: 0
                 },
-                scholar: {
-                    name: 'Scholar',
+                evoker: {
+                    name: 'Evoker',
                     value: 0
                 },
-                sniper: {
-                    name: 'Sniper',
+                guardian: {
+                    name: 'Guardian',
                     value: 0
                 },
-                striker: {
-                    name: 'Striker',
+                legend: {
+                    name: 'Legend',
                     value: 0
                 },
-                transformer: {
-                    name: 'Transformer',
+                mage: {
+                    name: 'Mage',
                     value: 0
                 },
-                twinshot:{
-                    name: 'Twinshot',
+                mystic: {
+                    name: 'Mystic',
+                    value: 0
+                },
+                shapeshifter:{
+                    name: 'Shapeshifter',
+                    value: 0
+                },
+                spellthief:{
+                    name: 'Spellthief',
+                    value: 0
+                },
+                starcaller:{
+                    name: 'Starcaller',
+                    value: 0
+                },
+                swiftshot: {
+                    name: 'Swiftshot',
+                    value: 0
+                },
+                warrior:{
+                    name: 'Warrior',
                     value: 0
                 }
             },
             boardOrigins:{
-                chemtech: {
-                    name: 'Chemtech',
+                astral: {
+                    name: 'Astral',
                     value: 0
                 },
-                clockwork: {
-                    name: 'Clockwork',
+                guild: {
+                    name: 'Guild',
                     value: 0
                 },
-                debonair: {
-                    name: 'Debonair',
+                jade: {
+                    name: 'Jade',
                     value: 0
                 },
-                enforcerer: {
-                    name: 'Enforcerer',
+                mirage: {
+                    name: 'Mirage',
                     value: 0
                 },
-                glutton: {
-                    name: 'Glutton',
+                ragewing: {
+                    name: 'Ragewing',
                     value: 0
                 },
-                hextech: {
-                    name: 'Hextech',
+                revel: {
+                    name: 'Revel',
                     value: 0
                 },
-                mastermind: {
-                    name: 'Mastermind',
+                scalescorn: {
+                    name: 'Scalescorn',
                     value: 0
                 },
-                mercenary: {
-                    name: 'Mercenary',
+                shimmerscale: {
+                    name: 'Shimerscale',
                     value: 0
                 },
-                mutant: {
-                    name: 'Mutant',
+                tempest: {
+                    name: 'Tempest',
                     value:0
                 },
-                rival: {
-                    name: 'Rival',
+                trainer: {
+                    name: 'Trainer',
                     value: 0
                 },
-                scrap: {
-                    name: 'Scrap',
-                    value: 0
-                },
-                socialite: {
-                    name: 'Socialite',
-                    value: 0
-                },
-                syndicate: {
-                    name: 'Syndicate',
-                    value: 0
-                },
-                yordle: {
-                    name: 'Yordle',
-                    value: 0
-                },
-                yordleLord: {
-                    name: 'Yordle Lord',
+                whispers: {
+                    name: 'Whispers',
                     value: 0
                 }
             }

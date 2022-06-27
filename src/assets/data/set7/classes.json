@@ -2,7 +2,7 @@
     {
         "key": "Set7_Assassin",
         "name": "Assassin",
-        "champions": [],
+        "champions": ["Kayn", "Qiyana", "Diana", "Talon", "Pyke"],
         "description": "Innate: Leap to the enemy backline when combat starts. Assassins' Abilities can critically strike and they gain bonus Critical Strike Chance and bonus Critical Strike Damage increasing at trait breakpoints.",
         "icon":"./traits/Assasin.svg",
         "type": "class",
@@ -29,7 +29,7 @@
       {
         "key": "Set7_Bard",
         "name": "Bard",
-        "champions":[],
+        "champions":["Bard"],
         "description": "Allies that survive player combat have a 20% chance to create a Doot. Bard always creates a Doot when dancing. Each Doot you collect increases your Shop odds by 1% for tiers 3, 4, and 5.",
         "icon":"./traits/Bard.svg",
         "type": "class",
@@ -45,7 +45,7 @@
       {
         "key": "Set7_Bruiser",
         "name": "Bruiser",
-        "champions":[],
+        "champions":["Skarner", "TahmKench", "Shen", "Illaoi", "Olaf", "Sylas", "Ornn", "Syfen"],
         "description": "Your team gains bonus maximum Health increasing at trait breakpoints. Bruisers gain double this bonus. (2) 125 Health (4) 225 Health (6) 450 Health (8) 800 Health",
         "icon":"./traits/Bruiser.svg",
         "type": "class",
@@ -78,7 +78,7 @@
       {
         "key": "Set7_Cannoneer",
         "name": "Cannoneer",
-        "champions":[],
+        "champions":["Senna", "Tristana", "Jinx", "Corki"],
         "description": "Every 5th attack fires a cannon shot that explodes for physical damage increasing at trait breakpoints around the target.",
         "icon":"./traits/Cannoneer.svg",
         "type": "class",
@@ -111,7 +111,7 @@
       {
         "key": "Set7_Cavalier",
         "name": "Cavalier",
-        "champions":[],
+        "champions":["Sejuani", "Lillia", "Nunu", "Hecarim"],
         "description": "Innate: Charge quickly towards their target whenever they move. Cavaliers gain Armor and Magic Resist that increases at trait breakpoints. At the start of combat and after each charge, gain double the amount for 4 seconds.",
         "icon":"./traits/Cavalier.svg",
         "type": "class",
@@ -141,7 +141,7 @@
       {
         "key": "Set7_Dragon",
         "name": "Dragon",
-        "champions":[],
+        "champions":["Daeja", "Syfen", "Idas", "ShiOhYu", "AoShin", "Shyvana", "AurelionSol"],
         "description": "Dragons provide +3 to the marked trait, but require 2 team slots. They also gain bonus Health. This trait is active with exactly 1 Dragon champion.",
         "icon":"./traits/Dragon.svg",
         "type": "origin",
@@ -157,7 +157,7 @@
       {
         "key": "Set7_Dragonmancer",
         "name": "Dragonmancer",
-        "champions":[],
+        "champions":["Karma", "Sett", "Ashe", "Swain", "Volibear", "LeeSin", "Yasuo"],
         "description": "Use the Dragonmancer Blessing to choose a Hero. The Hero gains massively increased Health and Ability Power, which increases at trait breakpoints and additionally by 5% per star level of your Dragonmancers.",
         "icon":"./traits/Dragonmancer.svg",
         "type": "class",
@@ -184,7 +184,7 @@
       {
         "key": "Set7_Evoker",
         "name": "Evoker",
-        "champions":[],
+        "champions":["Lulu", "Anivia", "Sona", "AurelionSol"],
         "description": "Gain Mana that increases at trait breakpoints whenever an ally or enemy casts an Ability.",
         "icon":"./traits/Evoker.svg",
         "type": "class",
@@ -211,7 +211,7 @@
       {
         "key": "Set7_Guardian",
         "name": "Guardian",
-        "champions":[],
+        "champions":["Leona", "Taric", "Braum", "Thresh", "Idas"],
         "description": "Once per combat at 50% Health, Guardians shield themselves and their closest ally. Shields stack and increase at trait breakpoints.",
         "icon":"./traits/Guradian.svg",
         "type": "class",
@@ -238,7 +238,7 @@
       {
         "key": "Set7_Legend",
         "name": "Legend",
-        "champions":[],
+        "champions":["Anivia", "Volibear", "Ornn"],
         "description": "Each combat: An adjacent ally bestows their spirit to the Legend, which gains 100% of their Health, Armor, and Magic Resistance, plus 40% of their Ability Power.",
         "icon":"./traits/Legend.svg",
         "type": "class",
@@ -253,7 +253,7 @@
       {
         "key": "Set7_Mage",
         "name": "Mage",
-        "champions":[],
+        "champions":["Vladimir", "Heimerdinger", "Nami", "Lillia", "Sylas", "Ryze", "Zoe"],
         "description": "Mages cast twice and have modified total Ability Power that increases at trait breakpoints.",
         "icon":"./traits/Mage.svg",
         "type": "class",
@@ -286,7 +286,7 @@
       {
         "key": "Set7_Mystic",
         "name": "Mystic",
-        "champions":[],
+        "champions":["Nami", "Lulu", "Bard", "ShiOhYu"],
         "description": "Your team gains Magic Resist that increases at trait breakpoints.",
         "icon":"./traits/Mystic.svg",
         "type": "class",
@@ -319,7 +319,7 @@
       {
         "key": "Set7_Shapeshifter",
         "name": "Shapeshifter",
-        "champions":[],
+        "champions":["Nidalee", "Gnar", "Swain", "Neeko"],
         "description": "Transforming grants bonus maximum Health increasing at trait breakpoints, and heals for that amount.",
         "icon":"./traits/Shapeshifter.svg",
         "type": "class",
@@ -346,7 +346,7 @@
       {
         "key": "Set7_SpellThief",
         "name": "Spell-Thief",
-        "champions":[],
+        "champions":["Zoe"],
         "description": "Nab a new ability after each cast and at the start of every round.",
         "icon":"./traits/Spell-Thief.svg",
         "type": "class",
@@ -361,7 +361,7 @@
       {
         "key": "Set7_Starcaller",
         "name": "Starcaller",
-        "champions":[],
+        "champions":["Soraka"],
         "description": "The first Starcaller to cast their ability each combat heals you for (2/4/75), depending on their star level. Excess healing disintegrates an enemy champion.",
         "icon":"./traits/Starcaller.svg",
         "type": "class",
@@ -376,7 +376,7 @@
       {
         "key": "Set7_Swiftshot",
         "name": "Swiftshot",
-        "champions":[],
+        "champions":["Ezreal", "Ashe", "Twitch", "Varus", "Xayah"],
         "description": "Innate: gain 2 hex Attack Range. Swiftshots gain Attack Speed increasing at trait breakpoints for each hex between themselves and their target.",
         "icon":"./traits/Swiftshot.svg",
         "type": "class",
@@ -403,7 +403,7 @@
       {
         "key": "Set7_Warrior",
         "name": "Warrior",
-        "champions":[],
+        "champions":["Shen", "Aatrox", "Yone", "Olaf", "Yasuo"],
         "description": "Warrior attacks have 25% chance to increase the damage of their next attack. The extra damage increases at trait breakpoints.",
         "icon":"./traits/Warrior.svg",
         "type": "class",
