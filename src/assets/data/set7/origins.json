@@ -1,5 +1,5 @@
-[
-    {
+{
+    "astral": {
         "key": "Set7_Astral",
         "name": "Astral",
         "champions": ["AurelionSol", "Illaoi", "Nidalee", "Vladimir", "Nami", "Varus", "Skarner"],
@@ -26,7 +26,7 @@
           }
         ]
       },
-      {
+      "guild":{
         "key": "Set7_Guild",
         "name": "Guild",
         "champions": ["Sejuani", "Twitch", "Ryze", "Talon", "Bard"],
@@ -71,7 +71,7 @@
           }
         ]
       },
-      {
+      "jade": {
         "key": "Set7_Jade",
         "name": "Jade",
         "champions":["Karma", "Taric", "Ashe", "Gnar", "Anivia", "Neeko", "Soraka", "ShiOhYu"],
@@ -104,7 +104,7 @@
           }
         ]
       },
-      {
+      "mirage": {
         "key": "Set7_Mirage",
         "name": "Mirage",
         "champions": ["Leona", "Yone", "Nunu", "Yasuo", "Daeja"],
@@ -137,7 +137,7 @@
           }
         ]
       },
-      {
+      "ragewing": {
         "key": "Set7_Ragewing",
         "name": "Ragewing",
         "champions": ["Senna", "Sett", "Kayn", "Shen", "Swain", "Hecarim", "Xayah", "Shyvana"],
@@ -164,7 +164,7 @@
           }
         ]
       },
-      {
+      "revel":{
         "key": "Set7_Revel",
         "name": "Revel",
         "champions": ["TahmKench", "Jinx", "Corki", "Sona"],
@@ -197,7 +197,7 @@
           }
         ]
       },
-      {
+      "scalescorn": {
         "key": "Set7_Scalescorn",
         "name": "Scalescorn",
         "champions": ["Braum", "Lillia", "Diana", "Olaf"],
@@ -224,7 +224,7 @@
           }
         ]
       },
-      {
+      "shimmerscale": {
         "key": "Set7_Shimmerscale",
         "name": "Shimmerscale",
         "champions": ["Aatrox","Kayn", "Volibear", "Zoe", "Idas"],
@@ -257,7 +257,7 @@
           }
         ]
       },
-      {
+      "tempest": {
         "key": "Set7_Tempest",
         "name": "Tempest",
         "champions": ["Ezreal", "Qiyana", "LeeSin", "Ornn", "AoShin"],
@@ -286,7 +286,7 @@
           }
         ]
       },
-      {
+      "trainer": {
         "key": "Set7_Trainer",
         "name": "Trainer",
         "champions": ["Heimerdinger", "Tristana", "Lulu"],
@@ -307,7 +307,7 @@
           }
         ]
       },
-      {
+      "whispers":{
         "key": "Set7_Whispers",
         "name": "Whispers",
         "champions": ["Thresh", "Elise", "Sylas", "Pyke", "Syfen"],
@@ -340,4 +340,4 @@
           }
         ]
       }                                
-]
+}

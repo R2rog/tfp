@@ -1,5 +1,5 @@
-[
-    {
+{
+    "asssassin":{
         "key": "Set7_Assassin",
         "name": "Assassin",
         "champions": ["Kayn", "Qiyana", "Diana", "Talon", "Pyke"],
@@ -26,7 +26,7 @@
           }
         ]
       },
-      {
+      "bard":{
         "key": "Set7_Bard",
         "name": "Bard",
         "champions":["Bard"],
@@ -42,7 +42,7 @@
           }
         ]
       },
-      {
+      "bruiser":{
         "key": "Set7_Bruiser",
         "name": "Bruiser",
         "champions":["Skarner", "TahmKench", "Shen", "Illaoi", "Olaf", "Sylas", "Ornn", "Syfen"],
@@ -75,7 +75,7 @@
           }
         ]
       },
-      {
+      "cannoneer":{
         "key": "Set7_Cannoneer",
         "name": "Cannoneer",
         "champions":["Senna", "Tristana", "Jinx", "Corki"],
@@ -108,7 +108,7 @@
           }
         ]
       },
-      {
+      "cavalier":{
         "key": "Set7_Cavalier",
         "name": "Cavalier",
         "champions":["Sejuani", "Lillia", "Nunu", "Hecarim"],
@@ -138,7 +138,7 @@
           }
         ]
       },
-      {
+      "dragon":{
         "key": "Set7_Dragon",
         "name": "Dragon",
         "champions":["Daeja", "Syfen", "Idas", "ShiOhYu", "AoShin", "Shyvana", "AurelionSol"],
@@ -154,7 +154,7 @@
           }
         ]
       },
-      {
+      "dragonmancer":{
         "key": "Set7_Dragonmancer",
         "name": "Dragonmancer",
         "champions":["Karma", "Sett", "Ashe", "Swain", "Volibear", "LeeSin", "Yasuo"],
@@ -181,7 +181,7 @@
           }
         ]
       },
-      {
+      "evoker":{
         "key": "Set7_Evoker",
         "name": "Evoker",
         "champions":["Lulu", "Anivia", "Sona", "AurelionSol"],
@@ -208,7 +208,7 @@
           }
         ]
       },
-      {
+      "guardian":{
         "key": "Set7_Guardian",
         "name": "Guardian",
         "champions":["Leona", "Taric", "Braum", "Thresh", "Idas"],
@@ -235,7 +235,7 @@
           }
         ]
       },
-      {
+      "legend":{
         "key": "Set7_Legend",
         "name": "Legend",
         "champions":["Anivia", "Volibear", "Ornn"],
@@ -250,7 +250,7 @@
           }
         ]
       },
-      {
+      "mage":{
         "key": "Set7_Mage",
         "name": "Mage",
         "champions":["Vladimir", "Heimerdinger", "Nami", "Lillia", "Sylas", "Ryze", "Zoe"],
@@ -283,7 +283,7 @@
           }
         ]
       },
-      {
+      "mystic":{
         "key": "Set7_Mystic",
         "name": "Mystic",
         "champions":["Nami", "Lulu", "Bard", "ShiOhYu"],
@@ -316,7 +316,7 @@
           }
         ]
       },
-      {
+      "shapeshifter":{
         "key": "Set7_Shapeshifter",
         "name": "Shapeshifter",
         "champions":["Nidalee", "Gnar", "Swain", "Neeko"],
@@ -343,7 +343,7 @@
           }
         ]
       },
-      {
+      "spellthief":{
         "key": "Set7_SpellThief",
         "name": "Spell-Thief",
         "champions":["Zoe"],
@@ -358,7 +358,7 @@
           }
         ]
       },
-      {
+      "starcaller":{
         "key": "Set7_Starcaller",
         "name": "Starcaller",
         "champions":["Soraka"],
@@ -373,7 +373,7 @@
           }
         ]
       },
-      {
+      "swiftshot":{
         "key": "Set7_Swiftshot",
         "name": "Swiftshot",
         "champions":["Ezreal", "Ashe", "Twitch", "Varus", "Xayah"],
@@ -400,7 +400,7 @@
           }
         ]
       },
-      {
+      "warrior":{
         "key": "Set7_Warrior",
         "name": "Warrior",
         "champions":["Shen", "Aatrox", "Yone", "Olaf", "Yasuo"],
@@ -427,4 +427,4 @@
           }
         ]
       }                                    
-]
+}
