@@ -134,24 +134,13 @@ export default{
     },
     methods:{
         traitInfo: function(selectedTrait){
-            console.log('Selected trait param', selectedTrait)
             let traitsArr= [];
             if(this.propsJSON.traitsArr.hasOwnProperty(selectedTrait.toLowerCase())) traitsArr = this.propsJSON.traitsArr;
             else traitsArr = this.propsJSON.originsArr; 
             this.selectedTrait = traitsArr[selectedTrait.toLowerCase()];
         },
-        originInfo: function(selectedTrait){
-            let originArr = this.propsJSON.originsArr;
-            for (let i = 0; i < originArr.length; i++) {
-                if(originArr[i].name == selectedTrait){
-                    this.selectedOrigin = originArr[i];
-                    break;
-                };
-            }; 
-        },
         hideInfo: function(){
-            this.selectedTrait = '';
-            this.selectedOrigin = '';   
+            this.selectedTrait = ''; 
         },
         innerDrag: function(e){
             e.target.src = '';
@@ -167,13 +156,12 @@ export default{
                 else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
                 let classIcon=document.getElementById(trait+'-img'); 
                 for (let i = 0; i < setArr.length; i++) {
-                    if(value>=setArr[i].min && value<setArr[i+1].min){
+                    if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
                         let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
                         classIcon.style.backgroundImage = borderURL;
-                    };
+                    }else if(value<setArr[i].min)classIcon.style.backgroundImage = '';
                 };
             });
-            this.seleted
             this.boardValues[i][j]= {};
             this.innerDragEvent = true;
         },
@@ -200,8 +188,9 @@ export default{
             if(target.hasChildNodes()) target.children[0].src = this.selectedChamp.icon;
             else target.src = this.selectedChamp.icon;
             this.champCounter += 1; 
+            this.selctedChamp = {};
             this.boardValues[i][j] = this.selectedChamp;
-            this.innerDragEvent == false;
+            this.innerDragEvent = false;
         }
     },
 }
