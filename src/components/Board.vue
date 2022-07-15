@@ -5,7 +5,7 @@ export default{
     components:{SynergiesTooltip},
     data(){
         return{
-            selectedChamp : {},
+            selectedChamp : '',
             selectedTrait: {},
             innerDragEvent: false,
             selectedOrigin: {},
@@ -142,28 +142,51 @@ export default{
         hideInfo: function(){
             this.selectedTrait = ''; 
         },
+        selectChamp: function(row, champ){
+            this.selectedChamp = this.boardValues[row-1][champ-1];
+            console.log('CLICKING...', this.boardValues[row-1][champ-1])
+        },
+        hovering: function(row, column){
+            let id = row+''+column;
+            console.log('Hovering element: ', document.getElementById(id), 'selectedChamp: ', this.selectedChamp);
+            if(this.selectedChamp != '' && this.innerDrag == true)document.getElementById(id).draggable = false;
+            else{
+                this.selectedChamp = this.boardValues[row-1][column-1];
+            } 
+        },
         innerDrag: function(e){
             e.target.src = '';
             let i = e.target.id[0]-1;
             let j = e.target.id[1]-1;
-            this.selectedChamp = this.boardValues[i][j];
-            this.selectedChamp.traits.forEach(trait=>{
-                let lowCaseTrait = trait.toLowerCase();
-                this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value - 1;
-                let value = this.boardTraits[lowCaseTrait].value;
-                let setArr = [];
-                if(this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait)) setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
-                else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
-                let classIcon=document.getElementById(trait+'-img'); 
-                for (let i = 0; i < setArr.length; i++) {
-                    if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
-                        let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
-                        classIcon.style.backgroundImage = borderURL;
-                    }else if(value<setArr[i].min)classIcon.style.backgroundImage = '';
-                };
-            });
-            this.boardValues[i][j]= {};
-            this.innerDragEvent = true;
+            let currentChamp = this.boardValues[i][j];
+            console.log('Inner Drag leaving selected champ', this.selectedChamp, 'champ on the board at current position',currentChamp);
+            if(this.innerDragEvent==false){
+                this.selectedChamp = currentChamp;
+                this.selectedChamp.traits.forEach(trait=>{
+                    let lowCaseTrait = trait.toLowerCase();
+                    this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value - 1;
+                    let value = this.boardTraits[lowCaseTrait].value;
+                    let setArr = [];
+                    if(this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait)) setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
+                    else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
+                    let classIcon=document.getElementById(trait+'-img'); 
+                    for (let i = 0; i < setArr.length; i++) {
+                        if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
+                            let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
+                            classIcon.style.backgroundImage = borderURL;
+                        }else if(value<setArr[i].min)classIcon.style.backgroundImage = '';
+                    };
+                });
+                this.boardValues[i][j]= {};
+                console.log('Board values inner drag...', this.boardValues);
+                this.innerDragEvent = true;
+            }else{
+                console.log('Drag already in progress with this champ', this.selectedChamp);
+                let id = (i+1)+''+(j+1);
+                console.log('id', id);
+                this.boardValues[i][j]= currentChamp;
+                document.getElementById(id).src = currentChamp.icon;
+            }
         },
         champDrop: function(e){
             if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
@@ -179,7 +202,7 @@ export default{
                 else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
                 let classIcon=document.getElementById(trait+'-img'); 
                 for (let i = 0; i < setArr.length; i++) {
-                    if(value>=setArr[i].min && value<setArr[i+1].min){
+                    if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
                         let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
                         classIcon.style.backgroundImage = borderURL;
                     };
@@ -188,9 +211,10 @@ export default{
             if(target.hasChildNodes()) target.children[0].src = this.selectedChamp.icon;
             else target.src = this.selectedChamp.icon;
             this.champCounter += 1; 
-            this.selctedChamp = {};
             this.boardValues[i][j] = this.selectedChamp;
+            this.selectedChamp = '';
             this.innerDragEvent = false;
+            console.log('Board values on drop ...', this.boardValues);
         }
     },
 }
@@ -218,12 +242,12 @@ export default{
         </div>
         <div id="positions">
             <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
-                <div class="champ-slot" v-for="champ in 7" :key="'champ'+champ"
-                    v-bind:id="'row-'+row+'-slot-'+champ"
+                <div class="champ-slot" v-for="column in 7" :key="'champ'+column"
+                    v-bind:id="'row-'+row+'-slot-'+column"
                     @drop="champDrop"
                     @dragover.prevent
                     @dragenter.prevent>
-                    <img v-bind:id="row+''+champ" draggable src="" alt=""
+                    <img v-bind:id="row+''+column" draggable src="" alt=""
                         @dragleave="innerDrag">
                 </div>
             </div>           

@@ -52,7 +52,7 @@ export default{
 
 <template>
 <div id="team-comp" >
-    <Board v-bind:champDragged="selectedChamp" v-bind:propsJSON="boardProps" @inner="inner"></Board> 
+    <Board v-bind:champDragged="selectedChamp" v-bind:propsJSON="boardProps"></Board> 
     <div id="pool-selector">
         <button v-on:click="selectedPool=1">Cost</button>
         <button v-on:click="selectedPool=2">Traits</button>
