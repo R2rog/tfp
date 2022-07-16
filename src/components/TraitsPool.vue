@@ -9,12 +9,11 @@ export default{
             fetchedChampArr: [],
         }
     },
-    /*async mounted(){
-        const traitsJSON = await fetch(`./src/assets/data/classes.json`);
-        const champsArr = await  fetch(`./src/assets/data/champions.json`)
-        this.traitsArr = await traitsJSON.json();
-        this.fetchedChampArr = await champsArr.json();
-    }*/
+    methods: {
+        sendChamp: function(champSelected){
+            this.$emit('champSelected', champSelected);
+        }
+    }
 }
 </script>
 
@@ -22,7 +21,7 @@ export default{
     <div id="traits">
         <div class="pool-row" v-for="trait in this.propsJSON.traitsArr" :key="trait">
             <h3 class="trait-name">{{trait.name}}</h3>
-            <ChampTooltip v-bind:elArr="trait.champions" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
+            <ChampTooltip v-bind:elArr="trait.champions" @sendChamp="sendChamp" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
         </div>
     </div>
 </template>

@@ -120,7 +120,6 @@ export default{
     position:absolute;
     font-size: 0.75rem;
     z-index: 2;
-    height: 600%;
     width: 350%;
 }
 .cost1{

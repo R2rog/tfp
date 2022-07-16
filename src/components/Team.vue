@@ -16,7 +16,9 @@ export default{
             originsProps: {},
             traitsProps: {},
             boardProps: {},
-            dataFetched: false
+            dataFetched: false,
+            poolSelection: false,
+            champLeave: false
         };
     },
     async beforeMount(){
@@ -43,8 +45,14 @@ export default{
     methods: {
         refreshChamp: function (champSelected){
             this.selectedChamp = champSelected;
+            this.poolSelection = true;
             console.log('Selected champ from the board', this.selectedChamp);
         },
+        refreshPoolSelection: function(){
+            console.log('Refreshing parent values ...');
+            this.poolSelection = false;
+            this.champLeave = false;
+        }
     },
 
 }
@@ -52,15 +60,18 @@ export default{
 
 <template>
 <div id="team-comp" >
-    <Board v-bind:champDragged="selectedChamp" v-bind:propsJSON="boardProps"></Board> 
+    <Board v-bind:champDragged="selectedChamp" 
+    v-bind:poolSelection="poolSelection"
+    v-bind:propsJSON="boardProps"
+    @refresh="refreshPoolSelection"></Board> 
     <div id="pool-selector">
         <button v-on:click="selectedPool=1">Cost</button>
         <button v-on:click="selectedPool=2">Traits</button>
         <button v-on:click="selectedPool=3">Origins</button>
     </div>
     <CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool>
-    <TraitsPool v-if="dataFetched" v-show="selectedPool == 2" v-bind:propsJSON="traitsProps"></TraitsPool>
-    <OriginsPool v-if="dataFetched" v-show="selectedPool == 3" v-bind:propsJSON="originsProps"></OriginsPool>
+    <TraitsPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 2" v-bind:propsJSON="traitsProps"></TraitsPool>
+    <OriginsPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 3" v-bind:propsJSON="originsProps"></OriginsPool>
 </div>
 </template>
 

@@ -47,6 +47,7 @@ export default {
                 };
             };
             this.localChampDragged = selectedChamp;
+            this.$emit('sendChamp', selectedChamp);
         },
     },
 };

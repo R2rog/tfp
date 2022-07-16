@@ -1,7 +1,7 @@
 <script>
 import SynergiesTooltip from "./SynergiesTooltip.vue";
 export default{
-    props:["champDragged", "propsJSON"],
+    props:["champDragged", "propsJSON", "poolSelection"],
     components:{SynergiesTooltip},
     data(){
         return{
@@ -159,9 +159,12 @@ export default{
             let i = e.target.id[0]-1;
             let j = e.target.id[1]-1;
             let currentChamp = this.boardValues[i][j];
+            if(this.poolSelection == true) this.selectedChamp = this.champDragged;
+            else this.selectedChamp = currentChamp;
+            console.log('Pool selection: ', this.poolSelection, 'champ dragged: ', this.champDragged, 'champ selected', this.champSelected);
             console.log('Inner Drag leaving selected champ', this.selectedChamp, 'champ on the board at current position',currentChamp);
-            if(this.innerDragEvent==false){
-                this.selectedChamp = currentChamp;
+            if(this.innerDragEvent==false && this.poolSelection == false){
+                console.log('No inner drag detected')
                 this.selectedChamp.traits.forEach(trait=>{
                     let lowCaseTrait = trait.toLowerCase();
                     this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value - 1;
@@ -190,6 +193,7 @@ export default{
         },
         champDrop: function(e){
             if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
+            console.log('Champ getting droped: ', this.selectedChamp);
             let i = e.target.id[4]-1;
             let j = e.target.id[11]-1;
             let target = document.getElementById(e.target.id);
@@ -214,14 +218,23 @@ export default{
             this.boardValues[i][j] = this.selectedChamp;
             this.selectedChamp = '';
             this.innerDragEvent = false;
+            this.$emit('refresh');
             console.log('Board values on drop ...', this.boardValues);
+        },
+        champLeave: function(){
+            console.log('The champ has left the board');
+            if(this.innerDraggEvent == true){
+                this.selectedChamp = '';
+                this.innerDragEvent = false;
+                this.$emit('refresh');
+            }
         }
     },
 }
 </script>
 
 <template>
-   <div id="board">
+   <div id="board" v-on:mouseleave="champLeave">
         <div id="synergies">
             <div v-for="trait in boardTraits" v-show="trait.value > 0"  :key="trait">
                 <div class="class-tag">
@@ -258,8 +271,6 @@ export default{
 <style>
 #board{
     background-color: gray;
-    height:50%;
-    width:120%;
     display:flex;
 }
 #synergies{

@@ -9,13 +9,11 @@ export default{
             //hampsArr: [],
         };
     },
-    async mounted() {
-        console.log('propsJSON', this.propsJSON.originsArr);
-        /*const originsJSON = await fetch(`./src/assets/data/origins.json`);
-        const champsJSON = await fetch(`./src/assets/data/champions.json`);
-        this.originsArr = await originsJSON.json();
-        this.champsArr = await champsArr.json();*/
-    },
+    methods:{
+        sendChamp: function(champSelected){
+            this.$emit('champSelected', champSelected);
+        }
+    }
 }
 </script>
 
@@ -23,7 +21,7 @@ export default{
     <div id="origins">
         <div class="pool-row" v-for="origin in this.propsJSON.originsArr" :key="origin">
         <h3 class="origin-name">{{origin.name}}</h3>
-        <ChampTooltip v-bind:elArr="origin.champions" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
+        <ChampTooltip v-bind:elArr="origin.champions" @sendChamp="sendChamp" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
         </div>
     </div>
 </template>
