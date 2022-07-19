@@ -122,6 +122,9 @@ export default{
     z-index: 2;
     width: 350%;
 }
+#cost{
+    margin-bottom: 20px;
+}
 .cost1{
     height: 4rem;
     border-style: solid;

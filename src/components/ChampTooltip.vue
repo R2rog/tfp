@@ -2,6 +2,7 @@
 export default {
     //props: ["champion", "champArr","elArr"], TODO: uncomment all this if it fails
     props: ["elArr", "champArr"],
+    emits: ['sendChampChild'],
     data(){
         return {
             champ: {},
@@ -39,15 +40,18 @@ export default {
             this.champTraits = '';
         },
         startDrag: function(champ){
+            console.log('Champ: ', champ);
             let selectedChamp = {};
             for (let i = 0; i < this.champArr.length; i++) {
-            if(this.champArr[i].name == champ){
+                console.log('Champion equals champ', this.champArr[i].name == champ);
+                if(this.champArr[i].name == champ){
                     selectedChamp = this.champArr[i];
                     break;
                 };
             };
+            console.log('Champ getting dragged', selectedChamp);
             this.localChampDragged = selectedChamp;
-            this.$emit('sendChamp', selectedChamp);
+            this.$emit('sendChampChild', selectedChamp);
         },
     },
 };
@@ -60,7 +64,7 @@ export default {
                 v-on:mouseover="champInfo(element)"
                 v-on:mouseleave="hideInfo"
                 draggable
-                @dragstart="startDrag(champ)">
+                @dragstart="startDrag(element)">
             <span v-show="this.champ.name == element" class="champ-tooltip">
                 <h2>Champion: {{this.champ.name}}</h2>
                 <h2>Cost: {{this.champ.cost}}</h2>

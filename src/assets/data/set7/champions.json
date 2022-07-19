@@ -2,7 +2,7 @@
   {
     "name": "Aatrox",
     "id": "TFT7_Aatrox",
-    "icon":"./src/assets/icons/set7/champions/TFT7_Atrox.png",
+    "icon":"./src/assets/icons/set7/champions/TFT7_Aatrox.png",
     "border": "gray",
     "cost": 1,
     "traits": [

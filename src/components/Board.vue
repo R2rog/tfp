@@ -206,9 +206,11 @@ export default{
                 else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
                 let classIcon=document.getElementById(trait+'-img'); 
                 for (let i = 0; i < setArr.length; i++) {
-                    if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
+                    console.log('Set: ',setArr[i].min);
+                    if(setArr[i].min!=undefined && value>=setArr[i].min && value<setArr[i+1].min ){
                         let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
                         classIcon.style.backgroundImage = borderURL;
+                        break;
                     };
                 };
             });
@@ -272,13 +274,14 @@ export default{
 #board{
     background-color: gray;
     display:flex;
+    width: 875px;
 }
 #synergies{
     background-color: grey;
     width: 20%;
     border-style: solid;
     border-color: #000;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 .synergies-tooltip{
     background-color: aquamarine;

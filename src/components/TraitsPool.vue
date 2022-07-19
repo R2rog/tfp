@@ -11,7 +11,8 @@ export default{
     },
     methods: {
         sendChamp: function(champSelected){
-            this.$emit('champSelected', champSelected);
+            console.log('Trait champ selected', champSelected);
+            this.$emit('traitChampSelected', champSelected);
         }
     }
 }
@@ -21,7 +22,7 @@ export default{
     <div id="traits">
         <div class="pool-row" v-for="trait in this.propsJSON.traitsArr" :key="trait">
             <h3 class="trait-name">{{trait.name}}</h3>
-            <ChampTooltip v-bind:elArr="trait.champions" @sendChamp="sendChamp" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
+            <ChampTooltip v-bind:elArr="trait.champions" @sendChampChild="sendChamp" v-bind:champArr="this.propsJSON.champArr"></ChampTooltip>
         </div>
     </div>
 </template>
