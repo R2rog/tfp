@@ -123,7 +123,7 @@ export default{
     width: 350%;
 }
 #cost{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .cost1{
     height: 4rem;

@@ -16,6 +16,7 @@ export default{
                 [{},{},{},{},{},{},{}],
                 [{},{},{},{},{},{},{}]
             ],
+            boardChamps: {},
             boardTraits:{
                 assassin: {
                     name: 'Assassin',
@@ -142,18 +143,6 @@ export default{
         hideInfo: function(){
             this.selectedTrait = ''; 
         },
-        selectChamp: function(row, champ){
-            this.selectedChamp = this.boardValues[row-1][champ-1];
-            console.log('CLICKING...', this.boardValues[row-1][champ-1])
-        },
-        hovering: function(row, column){
-            let id = row+''+column;
-            console.log('Hovering element: ', document.getElementById(id), 'selectedChamp: ', this.selectedChamp);
-            if(this.selectedChamp != '' && this.innerDrag == true)document.getElementById(id).draggable = false;
-            else{
-                this.selectedChamp = this.boardValues[row-1][column-1];
-            } 
-        },
         innerDrag: function(e){
             e.target.src = '';
             let i = e.target.id[0]-1;
@@ -167,21 +156,28 @@ export default{
                 console.log('No inner drag detected')
                 this.selectedChamp.traits.forEach(trait=>{
                     let lowCaseTrait = trait.toLowerCase();
-                    this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value - 1;
                     let value = this.boardTraits[lowCaseTrait].value;
                     let setArr = [];
+                    let classIcon=document.getElementById(trait+'-img'); 
+                    if(this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && this.boardChamps[this.selectedChamp.name].ocurrences == 1){
+                        this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value - 3;
+                    }else if(this.boardChamps[this.selectedChamp.name].ocurrences == 1) this.boardTraits[lowCaseTrait].value -= 1;
+                    else this.boardTraits[lowCaseTrait].value -= 0;
                     if(this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait)) setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
                     else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
-                    let classIcon=document.getElementById(trait+'-img'); 
                     for (let i = 0; i < setArr.length; i++) {
                         if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
                             let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
+                            console.log('Border color for inner drag', borderURL);
                             classIcon.style.backgroundImage = borderURL;
                         }else if(value<setArr[i].min)classIcon.style.backgroundImage = '';
                     };
                 });
                 this.boardValues[i][j]= {};
+                if(this.boardChamps[this.selectedChamp.name].ocurrences >= 1) this.boardChamps[this.selectedChamp.name].ocurrences -=1;
+                this.boardChamps[this.selectedChamp.name]
                 console.log('Board values inner drag...', this.boardValues);
+                console.log('Champ values: ', this.boardChamps);
                 this.innerDragEvent = true;
             }else{
                 console.log('Drag already in progress with this champ', this.selectedChamp);
@@ -197,38 +193,48 @@ export default{
             let i = e.target.id[4]-1;
             let j = e.target.id[11]-1;
             let target = document.getElementById(e.target.id);
+            this.champCounter += 1; 
+            if(!this.boardChamps.hasOwnProperty(this.selectedChamp.name)){
+                console.log('CHamp not in board');
+                this.boardChamps[this.selectedChamp.name] = {'ocurrences': 1}; 
+            }else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
+            this.boardValues[i][j] = this.selectedChamp;
             this.selectedChamp.traits.forEach(trait=>{
                 let lowCaseTrait = trait.toLowerCase();
-                this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value + 1;
+                if(this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && !this.boardChamps.hasOwnProperty(this.selectedChamp.name)){
+                    this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value + 3;
+                }else if(this.boardChamps[this.selectedChamp.name].ocurrences<=1) this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value + 1;
+                else this.boardTraits[lowCaseTrait].value += 0;
                 let value = this.boardTraits[lowCaseTrait].value;
                 let setArr = [];
                 if(this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait)) setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
                 else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
                 let classIcon=document.getElementById(trait+'-img'); 
                 for (let i = 0; i < setArr.length; i++) {
-                    console.log('Set: ',setArr[i].min);
                     if(setArr[i].min!=undefined && value>=setArr[i].min && value<setArr[i+1].min ){
                         let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
                         classIcon.style.backgroundImage = borderURL;
+                        console.log('Border color change ', borderURL);
                         break;
                     };
                 };
             });
             if(target.hasChildNodes()) target.children[0].src = this.selectedChamp.icon;
             else target.src = this.selectedChamp.icon;
-            this.champCounter += 1; 
-            this.boardValues[i][j] = this.selectedChamp;
             this.selectedChamp = '';
             this.innerDragEvent = false;
             this.$emit('refresh');
             console.log('Board values on drop ...', this.boardValues);
+            console.log('Champs on the board', this.boardChamps);
         },
         champLeave: function(){
-            console.log('The champ has left the board');
-            if(this.innerDraggEvent == true){
+            if(this.innerDragEvent == true){
+                if(this.boardChamps[this.selectedChamp.name].ocurrences==0) delete this.boardChamps[this.selectedChamp.name];
                 this.selectedChamp = '';
+                this.champCounter -= 1;
                 this.innerDragEvent = false;
                 this.$emit('refresh');
+                console.log('The champ has left the board', this.boardChamps);
             }
         }
     },

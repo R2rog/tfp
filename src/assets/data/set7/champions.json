@@ -36,6 +36,7 @@
       "Tempest",
       "Dragon"
     ],
+    "traitBuff": "Tempest",
     "classes": ["Tempest"],
     "origins": ["Dragon"]
   },
@@ -64,6 +65,7 @@
       "Evoker",
       "Dragon"
     ],
+    "traitBuff": "Astral",
     "classes": ["Evoker","Dragon"],
     "origins": ["Astral"]
   },
@@ -117,6 +119,7 @@
       "Mirage",
       "Dragon"
     ],
+    "traitBuff": "Mirage",
     "classes": ["Dragon"],
     "origins": ["Mirage"]
   },
@@ -209,6 +212,7 @@
       "Guardian",
       "Dragon"
     ],
+    "traitBuff": "Shimmerscale",
     "classes": ["Guardian","Dragon"],
     "origins": ["Shimmerscale"]
   },
@@ -503,6 +507,7 @@
       "Mystic",
       "Dragon"
     ],
+    "traitBuff": "Jade",
     "classes": ["Mystic","Dragon"],
     "origins": ["Jade"]
   },
@@ -517,6 +522,7 @@
       "Shapeshifter",
       "Dragon"
     ],
+    "traitBuff": "Ragewing",
     "classes": ["Shapeshifter","Dragon"],
     "origins": ["Ragewing"]
   },
@@ -584,6 +590,7 @@
       "Bruiser",
       "Dragon"
     ],
+    "traitBuff": "Whispers",
     "classes": ["Bruiser"],
     "origins": ["Whispers", "Dragon"]
   },
