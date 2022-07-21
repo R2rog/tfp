@@ -81,14 +81,24 @@ export default{
 </template>
 
 <style>
+#team-comp{
+    background-color: #2C394B;
+    margin-left: 15%;
+    margin-top: 15%;
+    width: 100%;
+}
 #pool-selector{
-    width:100%;
     display:flex;
     align-content: flex-end;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-left: 50%;
 }
 #pool-selector button{
     height: 3rem;
     font-size: 1rem;
+    margin-right: 1rem;
+    border-style:none;
+    color: white;
+    background-color: #000;
 }
 </style>

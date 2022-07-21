@@ -150,10 +150,7 @@ export default{
             let currentChamp = this.boardValues[i][j];
             if(this.poolSelection == true) this.selectedChamp = this.champDragged;
             else this.selectedChamp = currentChamp;
-            console.log('Pool selection: ', this.poolSelection, 'champ dragged: ', this.champDragged, 'champ selected', this.champSelected);
-            console.log('Inner Drag leaving selected champ', this.selectedChamp, 'champ on the board at current position',currentChamp);
             if(this.innerDragEvent==false && this.poolSelection == false){
-                console.log('No inner drag detected')
                 this.selectedChamp.traits.forEach(trait=>{
                     let lowCaseTrait = trait.toLowerCase();
                     let value = this.boardTraits[lowCaseTrait].value;
@@ -168,7 +165,6 @@ export default{
                     for (let i = 0; i < setArr.length; i++) {
                         if(value>=setArr[i].min && value<setArr[i+1].min && setArr[i+1].min!=undefined){
                             let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
-                            console.log('Border color for inner drag', borderURL);
                             classIcon.style.backgroundImage = borderURL;
                         }else if(value<setArr[i].min)classIcon.style.backgroundImage = '';
                     };
@@ -176,26 +172,20 @@ export default{
                 this.boardValues[i][j]= {};
                 if(this.boardChamps[this.selectedChamp.name].ocurrences >= 1) this.boardChamps[this.selectedChamp.name].ocurrences -=1;
                 this.boardChamps[this.selectedChamp.name]
-                console.log('Board values inner drag...', this.boardValues);
-                console.log('Champ values: ', this.boardChamps);
                 this.innerDragEvent = true;
             }else{
-                console.log('Drag already in progress with this champ', this.selectedChamp);
                 let id = (i+1)+''+(j+1);
-                console.log('id', id);
                 this.boardValues[i][j]= currentChamp;
                 document.getElementById(id).src = currentChamp.icon;
             }
         },
         champDrop: function(e){
             if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
-            console.log('Champ getting droped: ', this.selectedChamp);
             let i = e.target.id[4]-1;
             let j = e.target.id[11]-1;
             let target = document.getElementById(e.target.id);
             this.champCounter += 1; 
             if(!this.boardChamps.hasOwnProperty(this.selectedChamp.name)){
-                console.log('CHamp not in board');
                 this.boardChamps[this.selectedChamp.name] = {'ocurrences': 1}; 
             }else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
             this.boardValues[i][j] = this.selectedChamp;
@@ -214,7 +204,6 @@ export default{
                     if(setArr[i].min!=undefined && value>=setArr[i].min && value<setArr[i+1].min ){
                         let borderURL = 'url(./src/assets/icons/set7/traits/'+setArr[i].style+'.svg)';
                         classIcon.style.backgroundImage = borderURL;
-                        console.log('Border color change ', borderURL);
                         break;
                     };
                 };
@@ -224,8 +213,6 @@ export default{
             this.selectedChamp = '';
             this.innerDragEvent = false;
             this.$emit('refresh');
-            console.log('Board values on drop ...', this.boardValues);
-            console.log('Champs on the board', this.boardChamps);
         },
         champLeave: function(){
             if(this.innerDragEvent == true){
@@ -234,7 +221,6 @@ export default{
                 this.champCounter -= 1;
                 this.innerDragEvent = false;
                 this.$emit('refresh');
-                console.log('The champ has left the board', this.boardChamps);
             }
         }
     },
@@ -244,20 +230,25 @@ export default{
 <template>
    <div id="board" v-on:mouseleave="champLeave">
         <div id="synergies">
-            <div v-for="trait in boardTraits" v-show="trait.value > 0"  :key="trait">
-                <div class="class-tag">
+            <div v-bind:class="'synergy-slot'" v-for="trait in boardTraits" v-show="trait.value > 0"  :key="trait">
                     <img v-bind:src="'./src/assets/icons/set7/traits/'+trait.name+'.svg'" 
                         v-bind:id="trait.name + '-img'"
                         v-bind:class="'trait-logo'"
                         v-on:mouseover="traitInfo(trait.name)"
                         v-on:mouseleave="hideInfo"/>
-                    <h2>
-                        {{trait.name}}: {{trait.value}}
-                    </h2>
-                </div>
+                    <div v-bind:class="'synergy-value'">
+                        {{trait.value}}
+                       
+                    </div>
+                    <div v-bind:class="'synergy-name'">
+                          {{trait.name}}
+                    </div>
                 <span class="synergies-tooltip" v-show="this.selectedTrait.name == trait.name">   
-                    <h2>{{this.selectedTrait.description}}</h2>
-                    <h2 v-for="buff in this.selectedTrait.sets" :key="buff.count">{{buff.min}}: {{buff.buff}}</h2>
+                    <div v-bind:class="'tooltip-content'">
+                        <h2>Description</h2>
+                        <p>{{this.selectedTrait.description}}</p>
+                        <h3 v-for="buff in this.selectedTrait.sets" :key="buff.count">{{buff.min}}: {{buff.buff}}</h3>
+                    </div>
                 </span>
             </div>
         </div>
@@ -277,28 +268,36 @@ export default{
 </template>
 
 <style>
+
 #board{
-    background-color: gray;
+    background-color: #2C394B;
     display:flex;
     width: 875px;
 }
 #synergies{
-    background-color: grey;
+    background-color: #2C394B;
     width: 20%;
-    border-style: solid;
-    border-color: #000;
-    font-size: 0.7rem;
+    height: 100%;
 }
 .synergies-tooltip{
-    background-color: aquamarine;
-    color: black;
+    background-color: black;
+    color: white;
     font-size: 0.80rem;
     position:absolute;
     z-index: 2;
+    margin-top:32px;
     width: 350%;
 }
+.tooltip-content{
+    margin: 20px;   
+}
+.tooltip-content h2{
+    color: #FF4949;
+}
 .trait-logo{
-    height: 1.5rem;
+    height: 1.75rem;
+    margin: 3px;
+    background-image: url('./src/assets/icons/set7/traits/default.svg');
 }
 .class-tag{
     display: flex;
@@ -307,19 +306,45 @@ export default{
     display: flex;
 }
 .board-row{
-    background-color: cornflowerblue;
+    background-color: #2C394B;
     height: 4rem;
     width:95%;
     margin: 1rem 1rem 1rem 1rem;
     display: flex;
 }
 .champ-slot{
-    background-color: aquamarine;
+    background-color: black;
     height: 4rem;
     width: 4rem;
     margin: 0rem 1rem 1rem 1rem;
 }
+.champ-slot:hover{
+    background-color: #FF4949;
+    cursor: copy;
+}
 .champ-slot img{
     height: 4rem;
+}
+.synergy-slot{
+    display: flex;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    align-content: space-around;
+    border-radius: 4px;
+}
+.synergy-value{
+    background-color: #FF4949;
+    border-radius: 4px;
+    margin: 3px;
+    font-size: 1rem;
+    height: 30px;
+    width: 25px;
+    text-align:center;
+}
+.synergy-name{
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
 }
 </style>

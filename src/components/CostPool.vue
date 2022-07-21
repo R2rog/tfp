@@ -93,10 +93,12 @@ export default{
                     draggable
                     @dragstart="startDrag(champ)">
                     <span v-show="this.champ.name == champ" class="pool-champ-tooltip">
-                        <h2>Champion: {{this.champ.name}}</h2>
-                        <h2>Cost: {{this.champ.cost}}</h2>
-                        <h2>Origins: {{this.champOrigins}}</h2>
-                        <h2>Traits: {{this.champTraits}}</h2>
+                        <div v-bind:class="'pool-champ-tooltip-content'">
+                            <h2><span>Champion:</span> {{this.champ.name}}</h2>
+                            <h2><span>Cost:</span>  {{this.champ.cost}}</h2>
+                            <h2><span>Origins:</span>  {{this.champOrigins}}</h2>
+                            <h2><span>Traits:</span>  {{this.champTraits}}</h2>
+                        </div>
                     </span>
                 </a>
             </div>
@@ -115,38 +117,47 @@ export default{
     flex: auto;
 }
 .pool-champ-tooltip{
-    background-color: #00bd7e;
-    color: #111;
+    background-color: #000;
+    color: white;
     position:absolute;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     z-index: 2;
-    width: 350%;
+    width: 500%;
+}
+.pool-champ-tooltip-content{
+    margin: 10px;
+}
+.pool-champ-tooltip-content span{
+    color: #FF4949;
 }
 #cost{
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    width: 80%;
+    margin-left: 20%;
+    background-color: #2C394B;
 }
 .cost1{
-    height: 4rem;
+    height: 3rem;
     border-style: solid;
     border-color: rgba(187, 187, 187, 0.933)
 }
 .cost2{
-    height: 4rem;
+    height: 3rem;
     border-style: solid;
     border-color: rgba(20, 204, 115, 0.933)
 }
 .cost3{
-    height: 4rem;
+    height: 3rem;
     border-style: solid;
     border-color: rgba(84, 195, 255, 0.933)
 }
 .cost4{
-    height: 4rem;
+    height: 3rem;
     border-style: solid;
     border-color: rgba(222, 14, 189, 0.933)
 }
 .cost5{
-    height: 4rem;
+    height: 3rem;
     border-style: solid;
     border-color: rgba(255, 196, 48, 0.933)
 }

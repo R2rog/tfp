@@ -15,7 +15,9 @@ import Team from "./components/Team.vue";
 
 <style>
 @import "@/assets/base.css";
-
+body{
+    background-color: #082032;
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
