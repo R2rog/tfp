@@ -1,9 +1,8 @@
 <script>
 import ChampTooltip from './ChampTooltip.vue';
-import Board from './Board.vue';
 export default{
+    components: {ChampTooltip},
     props:["champArr"],
-    components: {ChampTooltip, Board},
     data(){
         return{
             champCost: [],
@@ -53,12 +52,12 @@ export default{
         },
     },
     beforeMount(){
+        console.log('Champ arr for cost pool', this.champArr);
         let cost1 = [];
         let cost2 = [];
         let cost3 = [];
         let cost4 = [];
         let cost5 = [];
-        console.log('Champion array: ', this.champArr);
         this.champArr.forEach(champ => {
             if(champ.cost==1) cost1.push(champ.name);
             else if(champ.cost==2)cost2.push(champ.name);
@@ -78,7 +77,6 @@ export default{
 </script>
 
 <template>
-<div>
     <div id="cost">
         <div class="pool-row" v-for="(costRow,index) in champCost"
         :key="costRow">
@@ -104,9 +102,6 @@ export default{
             </div>
         </div>
     </div>
-    <!--Board v-bind:champDragged="localChampDragged"></Board-->
-</div>
-      
 </template>
 
 <style>
@@ -131,9 +126,9 @@ export default{
     color: #FF4949;
 }
 #cost{
-    margin-bottom: 60px;
-    width: 80%;
-    margin-left: 20%;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 6%;
     background-color: #2C394B;
 }
 .cost1{

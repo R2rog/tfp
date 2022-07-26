@@ -1,13 +1,15 @@
 <script>
 import SynergiesTooltip from "./SynergiesTooltip.vue";
+import CostPool from "./CostPool.vue"
 export default{
-    props:["champDragged", "propsJSON", "poolSelection"],
-    components:{SynergiesTooltip},
+    components:{CostPool,SynergiesTooltip},
+    props:["champDragged", "propsJSON","champArr"],
     data(){
         return{
             selectedChamp : '',
             selectedTrait: {},
             innerDragEvent: false,
+            poolSelection: false,
             selectedOrigin: {},
             champCounter: 0,
             boardValues: [
@@ -148,8 +150,10 @@ export default{
             let i = e.target.id[0]-1;
             let j = e.target.id[1]-1;
             let currentChamp = this.boardValues[i][j];
-            if(this.poolSelection == true) this.selectedChamp = this.champDragged;
-            else this.selectedChamp = currentChamp;
+            //TODO: Check how this affects the drag and dropo situations 
+            /*if(this.poolSelection == true) this.selectedChamp = this.champDragged;
+            else this.selectedChamp = currentChamp;*/
+            if(this.poolSelection!=true) this.selctedChamp == currentChamp;
             if(this.innerDragEvent==false && this.poolSelection == false){
                 this.selectedChamp.traits.forEach(trait=>{
                     let lowCaseTrait = trait.toLowerCase();
@@ -180,7 +184,7 @@ export default{
             }
         },
         champDrop: function(e){
-            if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
+            //if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
             let i = e.target.id[4]-1;
             let j = e.target.id[11]-1;
             let target = document.getElementById(e.target.id);
@@ -220,15 +224,19 @@ export default{
                 this.selectedChamp = '';
                 this.champCounter -= 1;
                 this.innerDragEvent = false;
-                this.$emit('refresh');
+                //this.$emit('refresh');
             }
+        },
+        refreshChamp: function (champSelected){
+            this.selectedChamp = champSelected;
+            this.poolSelection = true;
+            console.log('Selected champ from the board', this.selectedChamp);
         }
     },
 }
 </script>
 
 <template>
-   <div id="board" v-on:mouseleave="champLeave">
         <div id="synergies">
             <div v-bind:class="'synergy-slot'" v-for="trait in boardTraits" v-show="trait.value > 0"  :key="trait">
                     <img v-bind:src="'./src/assets/icons/set7/traits/'+trait.name+'.svg'" 
@@ -252,19 +260,44 @@ export default{
                 </span>
             </div>
         </div>
-        <div id="positions">
-            <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
-                <div class="champ-slot" v-for="column in 7" :key="'champ'+column"
-                    v-bind:id="'row-'+row+'-slot-'+column"
-                    @drop="champDrop"
-                    @dragover.prevent
-                    @dragenter.prevent>
-                    <img v-bind:id="row+''+column" draggable src="" alt=""
-                        @dragleave="innerDrag">
+        <div>
+            <div id="positions">
+                <div class="board-row" v-for="row in 4" :key="row" v-bind:id="'row'+row">
+                    <div class="champ-slot" v-for="column in 7" :key="'champ'+column"
+                        v-bind:id="'row-'+row+'-slot-'+column"
+                        @drop="champDrop"
+                        @dragover.prevent
+                        @dragenter.prevent>
+                        <img v-bind:id="row+''+column" draggable src="" alt=""
+                            @dragleave="innerDrag">
+                    </div>
+                </div>           
+            </div>
+            <div id="pool-selector">
+                <button v-on:click="selectedPool=1">Cost</button>
+                <button v-on:click="selectedPool=2">Traits</button>
+                <button v-on:click="selectedPool=3">Origins</button>
+            </div>
+            <CostPool @champSelected="refreshChamp" v-bind:champArr="champArr"></CostPool>
+            <!--div id="pool-selector">
+                <button v-on:click="selectedPool=1">Cost</button>
+                <button v-on:click="selectedPool=2">Traits</button>
+                <button v-on:click="selectedPool=3">Origins</button>
+            </div>
+            <div id="cost">
+                <div class="pool-row" v-for="(costRow,index) in champCost"
+                :key="costRow">
+                    <h1> {{index+1}} </h1>
+                    <div class="champ" v-for="champ in costRow"
+                        :key="champ">
+                        <a href="#">
+                            <img v-bind:src="'./src/assets/icons/set7/champions/'+'TFT7_'+champ+'.png'" alt="{{champ}} image"
+                            v-bind:class="'cost'+(index+1)">
+                        </a>
+                    </div>
                 </div>
-            </div>           
-       </div>
-    </div>
+            </div-->
+        </div>
 </template>
 
 <style>
@@ -272,7 +305,11 @@ export default{
 #board{
     background-color: #2C394B;
     display:flex;
-    width: 875px;
+    width: 900px;
+    height: 42%;
+}
+#positions{
+    flex: 3;
 }
 #synergies{
     background-color: #2C394B;

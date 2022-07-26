@@ -65,16 +65,22 @@ export default{
 
 <template>
 <div id="team-comp" >
-    <Board v-bind:champDragged="selectedChamp" 
+    <!--Board v-bind:champDragged="selectedChamp" 
     v-bind:poolSelection="poolSelection"
     v-bind:propsJSON="boardProps"
-    @refresh="refreshPoolSelection"></Board> 
-    <div id="pool-selector">
+    v-bind:champArr="fetchedChampArr"
+    v-if="dataFetched"
+    @refresh="refreshPoolSelection"></Board-->
+    <Board
+        v-bind:propsJSON="boardProps"
+        v-bind:champArr="fetchedChampArr"
+        v-if="dataFetched"></Board> 
+    <!--div id="pool-selector">
         <button v-on:click="selectedPool=1">Cost</button>
         <button v-on:click="selectedPool=2">Traits</button>
         <button v-on:click="selectedPool=3">Origins</button>
-    </div>
-    <CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool>
+    </div-->
+    <!--CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool-->
     <TraitsPool @traitChampSelected="refreshChampTrait" v-if="dataFetched" v-show="selectedPool == 2" v-bind:propsJSON="traitsProps"></TraitsPool>
     <OriginsPool @originChampSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 3" v-bind:propsJSON="originsProps"></OriginsPool>
 </div>
@@ -85,20 +91,23 @@ export default{
     background-color: #2C394B;
     margin-left: 15%;
     margin-top: 15%;
-    width: 100%;
+    width: 130%;
+    display:flex;
+    flex-wrap: wrap
 }
 #pool-selector{
     display:flex;
     align-content: flex-end;
-    margin-top: 1rem;
     margin-left: 50%;
+    margin-top:5%;
 }
 #pool-selector button{
     height: 3rem;
     font-size: 1rem;
     margin-right: 1rem;
     border-style:none;
-    color: white;
+    color: #FF4949;
+    cursor:pointer;
     background-color: #000;
 }
 </style>
