@@ -2,16 +2,15 @@
 import ChampTooltip from "./ChampTooltip.vue";
 export default {
   components: { ChampTooltip },
-  props: ["champArr", "originsArr"],
+  props: ["champArr", "classesArr"],
   data() {
     return {
-      //originsArr: [],
-      //hampsArr: [],
+      fetchedChampArr: [],
     };
   },
   methods: {
     sendChamp: function (champSelected) {
-      console.log("Champ selected", champSelected);
+      console.log("Trait champ selected", champSelected);
       this.$emit("champSelected", champSelected);
     },
   },
@@ -19,11 +18,15 @@ export default {
 </script>
 
 <template>
-  <div id="origins">
-    <div class="pool-row" v-for="origin in this.originsArr" :key="origin">
-      <h3 class="origin-name">{{ origin.name }}</h3>
+  <div id="classes">
+    <div
+      class="pool-row"
+      v-for="champClass in this.classesArr"
+      :key="champClass"
+    >
+      <h3 class="class-name">{{ champClass.name }}</h3>
       <ChampTooltip
-        v-bind:elArr="origin.champions"
+        v-bind:elArr="champClass.champions"
         @sendChampChild="sendChamp"
         v-bind:champArr="this.champArr"
       ></ChampTooltip>
@@ -32,21 +35,19 @@ export default {
 </template>
 
 <style>
-.origin-name {
+.trait-name {
   font-size: 1rem;
 }
 .pool-row {
   border: solid black 2px;
-  background-color: black;
-  margin-bottom: 2%;
 }
 .pool-row h3 {
-  color: #ff4949;
+  color: white;
   font-size: 1.5rem;
   width: 25%;
   text-align: center;
 }
-#origins {
+#classes {
   margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 8%;
