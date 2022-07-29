@@ -3,11 +3,16 @@ import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Team from "./components/Team.vue";
 import Champions from "./components/Champions.vue";
+import Traits from "./components/Traits.vue";
+import OriginsPool from "./components/OriginsPool.vue";
+import Origins from "./components/Origins.vue";
 </script>
 
 <template>
   <!--Team></Team-->
-  <Champions></Champions>
+  <!--Champions></Champions-->
+  <!--Traits></Traits-->
+  <Origins></Origins>
   <!--nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>

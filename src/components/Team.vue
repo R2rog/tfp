@@ -64,12 +64,6 @@ export default {
 
 <template>
   <div id="team-comp">
-    <!--Board v-bind:champDragged="selectedChamp" 
-    v-bind:poolSelection="poolSelection"
-    v-bind:propsJSON="boardProps"
-    v-bind:champArr="fetchedChampArr"
-    v-if="dataFetched"
-    @refresh="refreshPoolSelection"></Board-->
     <Board
       v-bind:propsJSON="boardProps"
       v-bind:champArr="fetchedChampArr"
@@ -77,12 +71,6 @@ export default {
       v-bind:originsArr="fetchedOriginsArr"
       v-if="dataFetched"
     ></Board>
-    <!--div id="pool-selector">
-        <button v-on:click="selectedPool=1">Cost</button>
-        <button v-on:click="selectedPool=2">Traits</button>
-        <button v-on:click="selectedPool=3">Origins</button>
-    </div-->
-    <!--CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool-->
   </div>
 </template>
 

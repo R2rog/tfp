@@ -1,80 +1,69 @@
 <script>
-import ChampTooltip from './ChampTooltip.vue';
+import ChampTooltip from "./ChampTooltip.vue";
 
 export default {
-    components: { ChampTooltip },
-    data() {
-        return {
-            originsJSON: {},
-            fetchedChampArr:[],
-            champName: '',
-        };
-    },
-    async mounted() {
-        const originsArr = await fetch(`./src/assets/data/origins.json`);
-        const champsArr = await fetch(`./src/assets/data/champions.json`);
-        this.originsJSON = await originsArr.json();
-        this.fetchedChampArr = await champsArr.json();
-    },
+  components: { ChampTooltip },
+  data() {
+    return {
+      originsJSON: {},
+      fetchedChampArr: [],
+      champName: "",
+    };
+  },
+  async mounted() {
+    const originsArr = await fetch(`./src/assets/data/set7/origins.json`);
+    const champsArr = await fetch(`./src/assets/data/set7/champions.json`);
+    this.originsJSON = await originsArr.json();
+    this.fetchedChampArr = await champsArr.json();
+  },
 };
 </script>
 
 <template>
-    <div id="origins">
-        <h1>Set 6.5 origins</h1>
-        <div v-for=" origin in originsJSON"
-        :key="origin"
-        class="class-info">
-            <h1>{{origin.name}}</h1>
-            <div id="origin-champs">
-               <ChampTooltip v-bind:elArr="origin.champions" v-bind:champArr="fetchedChampArr"></ChampTooltip>
-            </div>
-            <p>{{origin.bonus}}</p>
-            <div id="bonus">
-                <tr>
-                    <th>Count</th>
-                    <th>Bonus</th>
-                </tr>
-                <tr  v-for="(entry,index) in origin.set"
-                    :key="index">
-                    <th>{{entry.count}}</th>
-                    <th>{{entry.bonus}}</th>
-                </tr>
-            </div>
-        </div>  
+  <div id="origins">
+    <h1>Traits in set 6.5</h1>
+    <div v-for="element in originsJSON" :key="element" class="trait-info">
+      <div class="trait-header">
+        <img
+          v-bind:src="'./src/assets/icons/set7/traits/' + element.name + '.svg'"
+          alt="class logo"
+        />
+        <h1>{{ element.name }}</h1>
+      </div>
+      <div class="trait-champs">
+        <ChampTooltip
+          v-bind:elArr="element.champions"
+          v-bind:champArr="fetchedChampArr"
+        ></ChampTooltip>
+      </div>
+      <p>{{ element.description }}</p>
+      <p>{{ element.bonus }}</p>
+      <div class="trait-buffs">
+        <h2>Buffs</h2>
+        <tr v-for="(entry, index) in element.sets" :key="index">
+          <th class="min">{{ entry.min }}</th>
+          <th>{{ entry.buff }}</th>
+        </tr>
+      </div>
     </div>
+  </div>
 </template>
 
 <style>
-.class-info{
-    width: 80%;
-    align-content:center;
+.class-info {
+  width: 80%;
+  align-content: center;
 }
-#origins{
-    color:white;
-    width: 100%;
-    font-size: 1rem;
-} 
-#origins h1{
-    color: #00bd7e;
-}
-#origin-champs{
-    display: flex;
-    flex-wrap: wrap;
-}
-#champion{
-    /*color:white;
-    border-style: solid;
-    width:20%;*/
-    flex: 0 0 21%;
-    font-size: 0.75rem;
-    display: flex;
-}
-#champion h1{
-    color: #00bd7e;
-}
-#bonus{
-    text-align: center;
-    width:100%;
+#origins {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: grey;
+  width: 150%;
+  font-size: 1rem;
+  margin: 25%;
 }
 </style>
