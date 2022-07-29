@@ -345,7 +345,7 @@
       },
       "spellthief":{
         "key": "Set7_SpellThief",
-        "name": "Spell-Thief",
+        "name": "SpellThief",
         "champions":["Zoe"],
         "description": "Nab a new ability after each cast and at the start of every round.",
         "icon":"./traits/Spell-Thief.svg",

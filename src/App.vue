@@ -2,11 +2,13 @@
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Team from "./components/Team.vue";
+import Champions from "./components/Champions.vue";
 </script>
 
 <template>
-    <Team></Team>
-   <!--nav>
+  <!--Team></Team-->
+  <Champions></Champions>
+  <!--nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
@@ -15,8 +17,8 @@ import Team from "./components/Team.vue";
 
 <style>
 @import "@/assets/base.css";
-body{
-    background-color: #082032;
+body {
+  background-color: #082032;
 }
 #app {
   max-width: 1280px;

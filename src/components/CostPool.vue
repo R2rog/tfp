@@ -107,6 +107,14 @@ export default {
 .pool-row {
   display: flex;
 }
+.pool-row h1 {
+  font-size: 2rem;
+  background-color: #000;
+  color: #ff4949;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+}
 .champ {
   flex: auto;
 }

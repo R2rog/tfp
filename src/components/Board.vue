@@ -210,21 +210,18 @@ export default {
       this.champCounter += 1;
       if (!this.boardChamps.hasOwnProperty(this.selectedChamp.name)) {
         this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
-      } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
+      }
       this.boardValues[i][j] = this.selectedChamp;
       this.selectedChamp.traits.forEach((trait) => {
+        console.log("Selected trait", !this.boardChamps.hasOwnProperty(this.selectedChamp.name), " traits:", trait);
         let lowCaseTrait = trait.toLowerCase();
-        if (
-          this.selectedChamp.traits.includes("Dragon") &&
-          this.selectedChamp.traitBuff == trait &&
-          !this.boardChamps.hasOwnProperty(this.selectedChamp.name)
-        ) {
-          this.boardTraits[lowCaseTrait].value =
-            this.boardTraits[lowCaseTrait].value + 3;
-        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1)
+        if ( this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && this.boardChamps[this.selectedChamp.name].ocurrences <= 1){
+          this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value + 3;
+        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
+          console.log('addition inside the loop');
           this.boardTraits[lowCaseTrait].value =
             this.boardTraits[lowCaseTrait].value + 1;
-        else this.boardTraits[lowCaseTrait].value += 0;
+        } else this.boardTraits[lowCaseTrait].value += 0;
         let value = this.boardTraits[lowCaseTrait].value;
         let setArr = [];
         if (this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait))
@@ -232,11 +229,13 @@ export default {
         else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
         let classIcon = document.getElementById(trait + "-img");
         for (let i = 0; i < setArr.length; i++) {
-          if (
-            setArr[i].min != undefined &&
-            value >= setArr[i].min &&
-            value < setArr[i + 1].min
+          if ( setArr[i].min != undefined && setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min
           ) {
+            let borderURL =
+              "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
+            classIcon.style.backgroundImage = borderURL;
+            break;
+          } else if (setArr[i].min == 1) {
             let borderURL =
               "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
             classIcon.style.backgroundImage = borderURL;
@@ -347,7 +346,6 @@ export default {
       v-show="selectedPool == 2"
       v-bind:champArr="champArr"
       v-bind:classesArr="classesArr"
-      v-bind:propsJSON="traitsProps"
     ></ClassesPool>
     <OriginsPool
       @champSelected="refreshChamp"
@@ -427,6 +425,7 @@ export default {
   align-content: space-around;
   border-radius: 4px;
 }
+
 .synergy-value {
   background-color: #ff4949;
   border-radius: 4px;

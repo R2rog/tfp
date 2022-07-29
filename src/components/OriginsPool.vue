@@ -21,6 +21,10 @@ export default {
 <template>
   <div id="origins">
     <div class="pool-row" v-for="origin in this.originsArr" :key="origin">
+      <img
+        v-bind:src="'./src/assets/icons/set7/traits/' + origin.name + '.svg'"
+        alt="origin logo"
+      />
       <h3 class="origin-name">{{ origin.name }}</h3>
       <ChampTooltip
         v-bind:elArr="origin.champions"
@@ -38,13 +42,16 @@ export default {
 .pool-row {
   border: solid black 2px;
   background-color: black;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 .pool-row h3 {
   color: #ff4949;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 25%;
   text-align: center;
+}
+.pool-row img {
+  background-color: white;
 }
 #origins {
   margin-left: 15%;

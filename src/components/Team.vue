@@ -83,18 +83,6 @@ export default {
         <button v-on:click="selectedPool=3">Origins</button>
     </div-->
     <!--CostPool @champSelected="refreshChamp" v-if="dataFetched" v-show="selectedPool == 1" v-bind:champArr="fetchedChampArr"></CostPool-->
-    <TraitsPool
-      @traitChampSelected="refreshChampTrait"
-      v-if="dataFetched"
-      v-show="selectedPool == 2"
-      v-bind:propsJSON="traitsProps"
-    ></TraitsPool>
-    <OriginsPool
-      @originChampSelected="refreshChamp"
-      v-if="dataFetched"
-      v-show="selectedPool == 3"
-      v-bind:propsJSON="originsProps"
-    ></OriginsPool>
   </div>
 </template>
 

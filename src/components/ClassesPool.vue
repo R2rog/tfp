@@ -24,6 +24,12 @@ export default {
       v-for="champClass in this.classesArr"
       :key="champClass"
     >
+      <img
+        v-bind:src="
+          './src/assets/icons/set7/traits/' + champClass.name + '.svg'
+        "
+        alt="origin logo"
+      />
       <h3 class="class-name">{{ champClass.name }}</h3>
       <ChampTooltip
         v-bind:elArr="champClass.champions"

@@ -60,7 +60,7 @@ export default {
 </script>
 
 <template>
-  <div v-for="element in elArr" :key="element">
+  <div v-for="element in elArr" :key="element" class="champ-row">
     <a href="#">
       <img
         class="champ-img"
@@ -87,7 +87,6 @@ export default {
 .champ-tooltip {
   background-color: #000;
   color: white;
-  border: solid white 1px;
   position: absolute;
   font-size: 0.7rem;
   z-index: 2;
