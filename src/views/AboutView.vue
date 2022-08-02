@@ -1,12 +1,3 @@
-<script setup>
-import Champions from "@/components/Champions.vue";
-import Items from "@/components/Items.vue";
-import Traits from "../components/Traits.vue";
-import Origins from "@/components/Origins.vue"
-import Team from "@/components/Team.vue";
-import ClassesPool from "../components/ClassesPool.vue";
-</script>
-
 <template>
   <div class="about">
     <h1>This is an about page</h1>

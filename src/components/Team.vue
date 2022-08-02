@@ -23,6 +23,7 @@ export default {
   },
   async beforeMount() {
     const champJSON = await fetch(`./src/assets/data/set7/champions.json`);
+    console.log('champ json', champJSON);
     const traitsJSON = await fetch(`./src/assets/data/set7/classes.json`);
     const originsJSON = await fetch(`./src/assets/data/set7/origins.json`);
     this.fetchedChampArr = await champJSON.json();

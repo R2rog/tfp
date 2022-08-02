@@ -1,23 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
-import Team from "./components/Team.vue";
-import Champions from "./components/Champions.vue";
-import Traits from "./components/Traits.vue";
-import OriginsPool from "./components/OriginsPool.vue";
-import Origins from "./components/Origins.vue";
 </script>
 
 <template>
-  <!--Team></Team-->
-  <!--Champions></Champions-->
-  <!--Traits></Traits-->
-  <Origins></Origins>
-  <!--nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-    </nav>
-  <RouterView /-->
+  <nav>
+    <RouterLink to="/">Team</RouterLink>
+    <RouterLink to="/champions">Champions</RouterLink>
+    <RouterLink to="/classes">Classes</RouterLink>
+    <RouterLink to="/origins">Origins</RouterLink>
+  </nav>
+  <RouterView />
 </template>
 
 <style>
@@ -27,7 +19,7 @@ body {
 }
 #app {
   max-width: 1280px;
-  margin: 0 auto;
+  margin-left: 7%;
   padding: 2rem;
 
   font-weight: normal;
@@ -46,7 +38,7 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: #00bd7e;
+  color: #ff4949;
   transition: 0.4s;
 }
 
@@ -83,8 +75,6 @@ nav a:first-of-type {
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 
   header {

@@ -358,7 +358,8 @@ export default {
 
 <style>
 #board {
-  background-color: #2c394b;
+  /*background-color: #2c394b;*/
+  background-color: #082032;
   display: flex;
   width: 900px;
   height: 42%;
@@ -372,7 +373,7 @@ export default {
   height: 100%;
 }
 .synergies-tooltip {
-  background-color: black;
+  background-color: #17141d;
   color: white;
   font-size: 0.8rem;
   position: absolute;

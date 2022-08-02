@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div id="origins">
+  <div id="origins-pool">
     <div class="pool-row" v-for="origin in this.originsArr" :key="origin">
       <img
         v-bind:src="'./src/assets/icons/set7/traits/' + origin.name + '.svg'"
@@ -36,6 +36,10 @@ export default {
 </template>
 
 <style>
+#origins-pool{
+  margin-top: 5%;
+  margin-bottom: 6%;
+}
 .origin-name {
   font-size: 1rem;
 }

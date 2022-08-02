@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <div id="classes">
+  <div id="classes-pool">
     <div
       class="pool-row"
       v-for="champClass in this.classesArr"
@@ -41,6 +41,10 @@ export default {
 </template>
 
 <style>
+#classes-pool {
+  margin-top: 5%;
+  margin-bottom: 6%;
+}
 .trait-name {
   font-size: 1rem;
 }
