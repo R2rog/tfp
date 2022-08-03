@@ -54,7 +54,6 @@ export default {
     },
   },
   beforeMount() {
-    console.log("Champ arr for cost pool", this.champArr);
     let cost1 = [];
     let cost2 = [];
     let cost3 = [];

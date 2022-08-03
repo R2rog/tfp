@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div id="origins">
+  <div id="origins" v-cloak>
     <h1>Traits in set 6.5</h1>
     <div v-for="element in originsJSON" :key="element" class="trait-info">
       <div class="trait-header">
@@ -61,7 +61,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: grey;
+  background-color: #2c394b;
   width: 150%;
   font-size: 1rem;
   margin: 25%;

@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <div id="champions">
+  <div id="champions" v-cloak>
     <div v-for="champion in champJSON" :key="champion" class="champ-info">
       <div class="champ-name">
         <h1>{{ champion.name }}</h1>
@@ -32,7 +32,7 @@ export default {
         <span>Cost:</span>
         <h2>{{ champion.cost }}</h2>
         <span>Origins:</span>
-        <h2>{{ champion.name }}</h2>
+        <h2>{{ champion.traits }}</h2>
         <span>Classes:</span>
         <h2>{{ champion.classes }}</h2>
       </div>
@@ -44,13 +44,12 @@ export default {
 #champions {
   color: white;
   background-color: #2c394b;
-  width: 200%;
   font-size: 0.75rem;
   display: flex;
   flex-direction: row;
   align-content: space-between;
   flex-wrap: wrap;
-  margin-top: 25%;
+  margin-top: 5%;
   margin-bottom: 25%;
 }
 .champ-info {

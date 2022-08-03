@@ -268,21 +268,25 @@
           {
             "style": "bronze",
             "min": 2,
+            "buff": "5% damage, 20% Attack Speed",
             "max": 3
           },
           {
             "style": "silver",
             "min": 4,
+            "buff": "20% damage, 50% Attack Speed",
             "max": 5
           },
           {
             "style": "gold",
             "min": 6,
+            "buff": "35% damage, 100% Attack Speed",
             "max": 7
           },
           {
             "style": "chromatic",
-            "min": 8
+            "min": 8,
+            "buff": "50% damage, 200% Attack Speed"
           }
         ]
       },

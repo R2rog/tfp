@@ -1,10 +1,11 @@
+<!-- eslint-disable no-prototype-builtins -->
 <script>
 import CostPool from "./CostPool.vue";
 import ClassesPool from "./ClassesPool.vue";
 import OriginsPool from "./OriginsPool.vue";
 export default {
   components: { CostPool, ClassesPool, OriginsPool },
-  props: ["champDragged", "propsJSON", "champArr", "classesArr", "originsArr"],
+  props: ["champDragged", "propsJSON", "champArr", "classesArr", "originsArr", "traitsArr"],
   data() {
     return {
       selectedChamp: "",
@@ -153,93 +154,69 @@ export default {
       let i = e.target.id[0] - 1;
       let j = e.target.id[1] - 1;
       let currentChamp = this.boardValues[i][j];
-      //TODO: Check how this affects the drag and dropo situations
-      /*if(this.poolSelection == true) this.selectedChamp = this.champDragged;
-            else this.selectedChamp = currentChamp;*/
-      if (this.poolSelection != true) this.selctedChamp == currentChamp;
       if (this.innerDragEvent == false && this.poolSelection == false) {
-        this.selectedChamp.traits.forEach((trait) => {
-          let lowCaseTrait = trait.toLowerCase();
-          let value = this.boardTraits[lowCaseTrait].value;
-          let setArr = [];
-          let classIcon = document.getElementById(trait + "-img");
-          if (
-            this.selectedChamp.traits.includes("Dragon") &&
-            this.selectedChamp.traitBuff == trait &&
-            this.boardChamps[this.selectedChamp.name].ocurrences == 1
-          ) {
-            this.boardTraits[lowCaseTrait].value =
-              this.boardTraits[lowCaseTrait].value - 3;
-          } else if (this.boardChamps[this.selectedChamp.name].ocurrences == 1)
-            this.boardTraits[lowCaseTrait].value -= 1;
-          else this.boardTraits[lowCaseTrait].value -= 0;
-          if (this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait))
-            setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
-          else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
-          for (let i = 0; i < setArr.length; i++) {
-            if (
-              value >= setArr[i].min &&
-              value < setArr[i + 1].min &&
-              setArr[i + 1].min != undefined
-            ) {
-              let borderURL =
-                "url(./src/assets/icons/set7/traits/" +
-                setArr[i].style +
-                ".svg)";
-              classIcon.style.backgroundImage = borderURL;
-            } else if (value < setArr[i].min)
-              classIcon.style.backgroundImage = "";
-          }
-        });
+        if(this.boardChamps[currentChamp.name].ocurrences == 1){
+          currentChamp.traits.forEach((trait) => {
+            let lowCaseTrait = trait.toLowerCase();
+            let value = this.boardTraits[lowCaseTrait].value;
+            let setArr = this.traitsArr[lowCaseTrait].sets;
+            let classIcon = document.getElementById(trait + "-img");
+            for (let i = 0; i < setArr.length; i++) {
+              let nextIndex = i + 1;
+              if (setArr[nextIndex] != undefined && value >= setArr[i].min && value < setArr[nextIndex].min) {
+                let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
+                classIcon.style.backgroundImage = borderURL;
+              } else if (value < setArr[i].min) classIcon.style.backgroundImage = "";
+            }
+            console.log("");
+            if (currentChamp.traits.includes("Dragon") && currentChamp.traitBuff == trait){
+              console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
+              this.boardTraits[lowCaseTrait].value -= 3;
+            } else this.boardTraits[lowCaseTrait].value -= 1;
+            delete this.boardChamps[currentChamp.name];
+          });
+        } else this.boardChamps[currentChamp.name].ocurrences -= 1;
         this.boardValues[i][j] = {};
-        if (this.boardChamps[this.selectedChamp.name].ocurrences >= 1)
-          this.boardChamps[this.selectedChamp.name].ocurrences -= 1;
-        this.boardChamps[this.selectedChamp.name];
+        this.selectedChamp = currentChamp;
         this.innerDragEvent = true;
       } else {
-        let id = i + 1 + "" + (j + 1);
         this.boardValues[i][j] = currentChamp;
-        document.getElementById(id).src = currentChamp.icon;
+        e.target.src = currentChamp.icon;
       }
     },
     champDrop: function (e) {
-      //if(this.innerDragEvent == false)this.selectedChamp = this.champDragged;
+      console.log("Selected champ getting droped: ", this.selectedChamp);
       let i = e.target.id[4] - 1;
       let j = e.target.id[11] - 1;
       let target = document.getElementById(e.target.id);
       this.champCounter += 1;
+      this.boardValues[i][j] = this.selectedChamp;
       if (!this.boardChamps.hasOwnProperty(this.selectedChamp.name)) {
         this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
-      }
-      this.boardValues[i][j] = this.selectedChamp;
+      } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
       this.selectedChamp.traits.forEach((trait) => {
-        console.log("Selected trait", !this.boardChamps.hasOwnProperty(this.selectedChamp.name), " traits:", trait);
         let lowCaseTrait = trait.toLowerCase();
-        if ( this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && this.boardChamps[this.selectedChamp.name].ocurrences <= 1){
-          this.boardTraits[lowCaseTrait].value = this.boardTraits[lowCaseTrait].value + 3;
-        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
-          console.log('addition inside the loop');
-          this.boardTraits[lowCaseTrait].value =
-            this.boardTraits[lowCaseTrait].value + 1;
-        } else this.boardTraits[lowCaseTrait].value += 0;
-        let value = this.boardTraits[lowCaseTrait].value;
-        let setArr = [];
-        if (this.propsJSON.traitsArr.hasOwnProperty(lowCaseTrait))
-          setArr = this.propsJSON.traitsArr[lowCaseTrait].sets;
-        else setArr = this.propsJSON.originsArr[lowCaseTrait].sets;
+        let setArr = this.traitsArr[lowCaseTrait].sets;
+        let value = 0;
         let classIcon = document.getElementById(trait + "-img");
+        if ( this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && this.boardChamps[this.selectedChamp.name].ocurrences <= 1){
+          this.boardTraits[lowCaseTrait].value += 3;
+        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
+          this.boardTraits[lowCaseTrait].value += 1;
+        }
+        value = this.boardTraits[lowCaseTrait].value;
         for (let i = 0; i < setArr.length; i++) {
-          if ( setArr[i].min != undefined && setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min
-          ) {
-            let borderURL =
-              "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
+          if ( setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min) {
+            let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
             classIcon.style.backgroundImage = borderURL;
+            console.log("Border color: ", setArr[i].style);
             break;
           } else if (setArr[i].min == 1) {
-            let borderURL =
-              "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
+            let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
             classIcon.style.backgroundImage = borderURL;
             break;
+          } else {
+            console.log("Trait: ", trait, "not active with value: ", value);
           }
         }
       });
@@ -248,17 +225,15 @@ export default {
       else target.src = this.selectedChamp.icon;
       this.selectedChamp = "";
       this.innerDragEvent = false;
+      this.poolSelection = false;
       this.$emit("refresh");
+      console.log("Board values at drop: ", this.boardValues);
     },
     champLeave: function () {
-      if (this.innerDragEvent == true) {
-        if (this.boardChamps[this.selectedChamp.name].ocurrences == 0)
-          delete this.boardChamps[this.selectedChamp.name];
-        this.selectedChamp = "";
-        this.champCounter -= 1;
-        this.innerDragEvent = false;
-        //this.$emit('refresh');
-      }
+      this.selectedChamp = "";
+      this.innerDragEvent = false;
+      this.champCounter -= 1;
+      console.log("champLeave");
     },
     refreshChamp: function (champSelected) {
       this.selectedChamp = champSelected;
@@ -305,7 +280,7 @@ export default {
     </div>
   </div>
   <div>
-    <div id="positions">
+    <div id="positions" v-on:mouseleave="champLeave">
       <div
         class="board-row"
         v-for="row in 4"
@@ -363,9 +338,6 @@ export default {
   display: flex;
   width: 900px;
   height: 42%;
-}
-#positions {
-  flex: 3;
 }
 #synergies {
   background-color: #2c394b;

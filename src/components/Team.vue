@@ -23,10 +23,11 @@ export default {
   },
   async beforeMount() {
     const champJSON = await fetch(`./src/assets/data/set7/champions.json`);
-    console.log('champ json', champJSON);
-    const traitsJSON = await fetch(`./src/assets/data/set7/classes.json`);
+    const traitsJSON = await fetch(`./src/assets/data/set7/traits.json`)
+    const classesJSON = await fetch(`./src/assets/data/set7/classes.json`);
     const originsJSON = await fetch(`./src/assets/data/set7/origins.json`);
     this.fetchedChampArr = await champJSON.json();
+    this.fetchedClassesArr = await classesJSON.json();
     this.fetchedTraitsArr = await traitsJSON.json();
     this.fetchedOriginsArr = await originsJSON.json();
     this.originsProps = {
@@ -64,11 +65,12 @@ export default {
 </script>
 
 <template>
-  <div id="team-comp">
+  <div id="team-comp" v-cloak>
     <Board
       v-bind:propsJSON="boardProps"
       v-bind:champArr="fetchedChampArr"
-      v-bind:classesArr="fetchedTraitsArr"
+      v-bind:classesArr="fetchedClassesArr"
+      v-bind:traitsArr="fetchedTraitsArr"
       v-bind:originsArr="fetchedOriginsArr"
       v-if="dataFetched"
     ></Board>
@@ -78,9 +80,9 @@ export default {
 <style>
 #team-comp {
   background-color: #2c394b;
-  margin-left: 15%;
-  margin-top: 15%;
-  width: 130%;
+  margin-left: 10%;
+  margin-top: 5%;
+  width: 950px;
   display: flex;
   flex-wrap: wrap;
 }

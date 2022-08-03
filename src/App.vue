@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import Team from "./components/Team.vue";
 </script>
 
 <template>

@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div id="classes">
+  <div id="classes" v-cloak>
     <h1>Traits in set 6.5</h1>
     <div v-for="element in classesJSON" :key="element" class="trait-info">
       <div class="trait-header">
