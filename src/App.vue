@@ -1,16 +1,27 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import Team from "./components/Team.vue";
 </script>
 
 <template>
   <nav>
+    <img src="./assets/group1.png" alt="furyhorn" />
     <RouterLink to="/">Team</RouterLink>
     <RouterLink to="/champions">Champions</RouterLink>
     <RouterLink to="/classes">Classes</RouterLink>
     <RouterLink to="/origins">Origins</RouterLink>
   </nav>
   <RouterView />
+  <footer>
+    <RouterLink to="/tos">Terms of service</RouterLink>
+    <RouterLink to="/policy">Privacy Policy</RouterLink>
+    <p>
+      tfp.com isn’t endorsed by Riot Games Games and doesn’t reflect the views
+      or opinions of Riot Games or anyone officially involved in producing or
+      managing League of Legends. League of Legends and Riot Games are
+      trademarks or registered trademarks of Riot Games, Inc. League of Legends
+      © Riot Games, Inc.
+    </p>
+  </footer>
 </template>
 
 <style>
@@ -44,6 +55,8 @@ a,
 }
 
 nav {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   font-size: 12px;
   text-align: center;
@@ -61,11 +74,16 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
+  height: 2rem;
   border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
   border: 0;
+}
+
+nav img {
+  height: 5rem;
 }
 
 @media (min-width: 1024px) {
@@ -95,12 +113,15 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    text-align: right;
     margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+footer {
+  color: white;
 }
 </style>

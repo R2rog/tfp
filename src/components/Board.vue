@@ -11,6 +11,7 @@ export default {
       selectedChamp: "",
       selectedTrait: {},
       selectedPool: 1,
+      active: false,
       innerDragEvent: false,
       poolSelection: false,
       selectedOrigin: {},
@@ -168,7 +169,6 @@ export default {
                 classIcon.style.backgroundImage = borderURL;
               } else if (value < setArr[i].min) classIcon.style.backgroundImage = "";
             }
-            console.log("");
             if (currentChamp.traits.includes("Dragon") && currentChamp.traitBuff == trait){
               console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
               this.boardTraits[lowCaseTrait].value -= 3;
@@ -289,6 +289,7 @@ export default {
       >
         <div
           class="champ-slot"
+          :class="{ active }"
           v-for="column in 7"
           :key="'champ' + column"
           v-bind:id="'row-' + row + '-slot-' + column"
@@ -345,7 +346,7 @@ export default {
   height: 100%;
 }
 .synergies-tooltip {
-  background-color: #17141d;
+  background-color: #000;
   color: white;
   font-size: 0.8rem;
   position: absolute;
@@ -366,6 +367,10 @@ export default {
 }
 .class-tag {
   display: flex;
+}
+.active {
+  background-color: #ff4949;
+  border: 1px solid #ff4949;
 }
 .origin-tag {
   display: flex;

@@ -23,6 +23,16 @@ const router = createRouter({
       name: "classes",
       component: () => import("../views/ClassesView.vue"),
     },
+    {
+      path: "/tos",
+      name: "tos",
+      component: () => import("../views/Tos.vue"),
+    },
+    {
+      path: "/policy",
+      name: "policy",
+      component: () => import("../views/PolicyView.vue"),
+    },
   ],
 });
 

@@ -58,9 +58,7 @@ export default {
   align-items: center;
   color: white;
   background-color: #2c394b;
-  width: 150%;
   font-size: 1rem;
-  margin: 25%;
 }
 .trait-info {
   background-color: #17141d;
