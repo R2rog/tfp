@@ -3,25 +3,32 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <nav>
-    <img src="./assets/group1.png" alt="furyhorn" />
-    <RouterLink to="/">Team</RouterLink>
-    <RouterLink to="/champions">Champions</RouterLink>
-    <RouterLink to="/classes">Classes</RouterLink>
-    <RouterLink to="/origins">Origins</RouterLink>
-  </nav>
-  <RouterView />
-  <footer>
-    <RouterLink to="/tos">Terms of service</RouterLink>
-    <RouterLink to="/policy">Privacy Policy</RouterLink>
-    <p>
-      tfp.com isn’t endorsed by Riot Games Games and doesn’t reflect the views
-      or opinions of Riot Games or anyone officially involved in producing or
-      managing League of Legends. League of Legends and Riot Games are
-      trademarks or registered trademarks of Riot Games, Inc. League of Legends
-      © Riot Games, Inc.
-    </p>
-  </footer>
+  <main>
+    <nav>
+      <img src="./assets/group1.png" alt="furyhorn" />
+      <RouterLink to="/">Team</RouterLink>
+      <RouterLink to="/champions">Champions</RouterLink>
+      <RouterLink to="/classes">Classes</RouterLink>
+      <RouterLink to="/origins">Origins</RouterLink>
+    </nav>
+    <RouterView />
+    <!--router-view v-slot="{ Component }">
+      <Transition name="slide">
+        <component :is="Component"></component>
+      </Transition>
+    </router-view-->
+    <footer>
+      <RouterLink to="/tos">Terms of service</RouterLink>
+      <RouterLink to="/policy">Privacy Policy</RouterLink>
+      <p>
+        tfp.com isn’t endorsed by Riot Games Games and doesn’t reflect the views
+        or opinions of Riot Games or anyone officially involved in producing or
+        managing League of Legends. League of Legends and Riot Games are
+        trademarks or registered trademarks of Riot Games, Inc. League of
+        Legends © Riot Games, Inc.
+      </p>
+    </footer>
+  </main>
 </template>
 
 <style>
@@ -123,5 +130,32 @@ nav img {
 }
 footer {
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3%;
+}
+/*.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.75s ease-out;
+}
+.slide-enter-to {
+  position: absolute;
+  right: 0;
+}
+.slide-enter-from {
+  position: absolute;
+  right: -100%;
+}
+.slide-leave-to {
+  position: absolute;
+  left: -100%;
+}
+.slide-leave-from {
+  position: absolute;
+  left: 0;
+}*/
+[v-cloak] {
+  display: none;
 }
 </style>

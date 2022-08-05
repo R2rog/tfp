@@ -101,4 +101,7 @@ export default {
   cursor: pointer;
   background-color: #000;
 }
+[v-cloak] {
+  display: none;
+}
 </style>
