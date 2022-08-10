@@ -57,9 +57,4 @@ export default {
 .pool-row img {
   background-color: white;
 }
-#origins {
-  margin-left: 15%;
-  margin-top: 2%;
-  margin-bottom: 8%;
-}
 </style>

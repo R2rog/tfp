@@ -38,9 +38,6 @@ body {
 }
 #app {
   max-width: 1280px;
-  margin-left: 7%;
-  padding: 2rem;
-
   font-weight: normal;
 }
 

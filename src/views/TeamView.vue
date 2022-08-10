@@ -1,9 +1,9 @@
 <script>
-import ChampTooltip from "./ChampTooltip.vue";
-import CostPool from "./CostPool.vue";
-import ClassesPool from "./ClassesPool.vue";
-import OriginsPool from "./OriginsPool.vue";
-import Board from "./Board.vue";
+import ChampTooltip from "../components/ChampTooltip.vue";
+import CostPool from "../components/CostPool.vue";
+import ClassesPool from "../components/ClassesPool.vue";
+import OriginsPool from "../components/OriginsPool.vue";
+import Board from "../components/Board.vue";
 export default {
   components: { ChampTooltip, CostPool, ClassesPool, OriginsPool, Board },
   data() {
