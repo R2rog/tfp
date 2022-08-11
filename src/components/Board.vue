@@ -165,9 +165,12 @@ export default {
             for (let i = 0; i < setArr.length; i++) {
               let nextIndex = i + 1;
               if (setArr[nextIndex] != undefined && value >= setArr[i].min && value < setArr[nextIndex].min) {
-                let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
-                classIcon.style.backgroundImage = borderURL;
-              } else if (value < setArr[i].min) classIcon.style.backgroundImage = "";
+                /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+                classIcon.style.backgroundImage = borderURL;*/
+                if (setArr[i].style == "bronze")
+                  classIcon.style.backgroundColor = "#CD7F32";
+                else classIcon[i].style == setArr[i].style;
+              } else if (value < setArr[i].min) classIcon.style.backgroundColor = "";
             }
             if (currentChamp.traits.includes("Dragon") && currentChamp.traitBuff == trait){
               console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
@@ -206,15 +209,24 @@ export default {
         }
         value = this.boardTraits[lowCaseTrait].value;
         for (let i = 0; i < setArr.length; i++) {
-          if ( setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min) {
-            let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
-            classIcon.style.backgroundImage = borderURL;
-            console.log("Border color: ", setArr[i].style);
+          if (setArr[i].min == 1){
+            classIcon.style.backgroundColor = setArr[i].style;
             break;
-          } else if (setArr[i].min == 1) {
-            let borderURL = "url(./src/assets/icons/set7/traits/" + setArr[i].style + ".svg)";
+            /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
             classIcon.style.backgroundImage = borderURL;
+            console.log("Border color: ", setArr[i].style);*/
+          } else if ( setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min) {
+            if (setArr[i].style == "bronze")
+              classIcon.style.backgroundColor = "#CD7F32";
+            else if (setArr[i].style == "chromatic") {
+              let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+              classIcon.style.backgroundColor = "";
+              classIcon.style.backgroundImage = borderURL;
+            } else classIcon[i].style == setArr[i].style;
             break;
+            /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+            classIcon.style.backgroundImage = borderURL;*/
+
           } else {
             console.log("Trait: ", trait, "not active with value: ", value);
           }
@@ -253,7 +265,7 @@ export default {
       :key="trait"
     >
       <img
-        v-bind:src="'./src/assets/icons/set7/traits/' + trait.name + '.svg'"
+        v-bind:src="'./set7/traits/' + trait.name + '.svg'"
         v-bind:id="trait.name + '-img'"
         v-bind:class="'trait-logo'"
         v-on:mouseover="traitInfo(trait.name)"
@@ -363,7 +375,8 @@ export default {
 .trait-logo {
   height: 1.75rem;
   margin: 3px;
-  background-image: url("./src/assets/icons/set7/traits/default.svg");
+  background-color: white;
+  /*background-image: url("./set7/traits/default.svg");*/
 }
 .class-tag {
   display: flex;

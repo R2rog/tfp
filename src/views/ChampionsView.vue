@@ -7,7 +7,7 @@ export default {
     };
   },
   async beforeMount() {
-    const champArr = await fetch(`./src/assets/data/set7/champions.json`);
+    const champArr = await fetch(`./data/champions.json`);
     console.log("Champ arr: ", champArr);
     this.champJSON = await champArr.json();
     console.log("Champion JSON file: ", this.champJSON);
@@ -50,7 +50,8 @@ export default {
   align-content: space-between;
   flex-wrap: wrap;
   margin-top: 5%;
-  margin-bottom: 25%;
+  margin-bottom: 5%;
+  margin-left: 8%;
 }
 .champ-info {
   background-color: black;

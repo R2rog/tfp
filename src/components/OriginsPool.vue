@@ -22,7 +22,7 @@ export default {
   <div id="origins-pool">
     <div class="pool-row" v-for="origin in this.originsArr" :key="origin">
       <img
-        v-bind:src="'./src/assets/icons/set7/traits/' + origin.name + '.svg'"
+        v-bind:src="'./set7/traits/' + origin.name + '.svg'"
         alt="origin logo"
       />
       <h3 class="origin-name">{{ origin.name }}</h3>

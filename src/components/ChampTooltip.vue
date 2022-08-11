@@ -64,9 +64,7 @@ export default {
     <a href="#">
       <img
         class="champ-img"
-        v-bind:src="
-          './src/assets/icons/set7/champions/TFT7_' + element + '.png'
-        "
+        v-bind:src="'./set7/champions/TFT7_' + element + '.png'"
         alt="{{element}} image"
         v-on:mouseover="champInfo(element)"
         v-on:mouseleave="hideInfo"

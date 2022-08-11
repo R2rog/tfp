@@ -11,8 +11,8 @@ export default {
     };
   },
   async mounted() {
-    const classesArr = await fetch(`./src/assets/data/set7/classes.json`);
-    const champsArr = await fetch(`./src/assets/data/set7/champions.json`);
+    const classesArr = await fetch(`./data/classes.json`);
+    const champsArr = await fetch(`./data/champions.json`);
     this.classesJSON = await classesArr.json();
     this.fetchedChampArr = await champsArr.json();
   },
@@ -25,7 +25,7 @@ export default {
     <div v-for="element in classesJSON" :key="element" class="trait-info">
       <div class="trait-header">
         <img
-          v-bind:src="'./src/assets/icons/set7/traits/' + element.name + '.svg'"
+          v-bind:src="'./set7/traits/' + element.name + '.svg'"
           alt="class logo"
         />
         <h1>{{ element.name }}</h1>
