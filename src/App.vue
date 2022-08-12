@@ -4,19 +4,22 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <main>
-    <nav>
-      <img src="./assets/group1.png" alt="furyhorn" />
-      <RouterLink to="/">Team</RouterLink>
-      <RouterLink to="/champions">Champions</RouterLink>
-      <RouterLink to="/classes">Classes</RouterLink>
-      <RouterLink to="/origins">Origins</RouterLink>
-    </nav>
-    <RouterView />
-    <!--router-view v-slot="{ Component }">
-      <Transition name="slide">
-        <component :is="Component"></component>
-      </Transition>
-    </router-view-->
+    <div class="wrapper">
+      <nav>
+        <img src="./assets/group1.png" alt="furyhorn" />
+        <RouterLink to="/">Team</RouterLink>
+        <RouterLink to="/champions">Champions</RouterLink>
+        <RouterLink to="/classes">Classes</RouterLink>
+        <RouterLink to="/origins">Origins</RouterLink>
+      </nav>
+      <div id="content">
+        <router-view v-slot="{ Component }">
+          <Transition name="slide">
+            <component :is="Component"></component>
+          </Transition>
+        </router-view>
+      </div>
+    </div>
     <footer>
       <RouterLink to="/tos">Terms of service</RouterLink>
       <RouterLink to="/policy">Privacy Policy</RouterLink>
@@ -39,6 +42,11 @@ body {
 #app {
   max-width: 1280px;
   font-weight: normal;
+}
+
+#content {
+  height: 100%;
+  position: relative;
 }
 
 header {
@@ -132,7 +140,11 @@ footer {
   justify-content: space-around;
   margin: 3%;
 }
-/*.slide-enter-active,
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+.slide-enter-active,
 .slide-leave-active {
   transition: all 0.75s ease-out;
 }
@@ -151,7 +163,7 @@ footer {
 .slide-leave-from {
   position: absolute;
   left: 0;
-}*/
+}
 [v-cloak] {
   display: none;
 }

@@ -59,8 +59,8 @@ export default {
   color: white;
   background-color: #2c394b;
   font-size: 1rem;
-  width: 90%;
-  margin-left: 5%;
+  width: 75%;
+  margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 8%;
 }
