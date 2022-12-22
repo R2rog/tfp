@@ -1,0 +1,645 @@
+{
+    "ace":{
+        "i": 12,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Ace_normal_1668171455-Ace.svg",
+        "name": "Ace",
+        "description": "This trait is active only when you have exactly 1 or 4 unique Aces.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(1) Execute enemies under 12% Health",
+                "min": 1,
+                "max": 3
+            },
+            {
+                "style": "gold",
+                "buff": "(4) Execute enemies under 30% Health",
+                "min": 4
+            }
+        ],
+        "champions":[
+            {
+                "name": "Draven",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
+            },
+            {
+                "name": "MissFortune",
+                "url":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
+            },
+            {
+                "name": "Samira",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+            },
+            {
+                "name": "Mordekaiser",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
+            }
+        ]
+    },
+    "aegis":{
+        "i": 13,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Aegis_normal_1668171474-Aegis.svg",
+        "name": "Aegis",
+        "description": "Your team gains bonus Magic Resist, and Aegis units gain more.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buffs": "(2) +20 Magic Resist, +40 for Aegis",
+                "min": 2
+            },
+            {
+                "style": "chromatic",
+                "buff": "(3) +35 Magic Resist, +70 for Aegis",
+                "min": 3
+            },
+            {
+                "style": "gold",
+                "buff": "(4) +50 Magic Resist, +100 for Aegis",
+                "min": 4
+            },
+            {
+                "style": "chromatic",
+                "buff": "(5) +75 Magic Resist, +150 for Aegis",
+                "min": 5
+            }
+        ],
+        "champions": [
+            {
+                "name":"Vi",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+            },
+            {
+                "name":"Alistar",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+            },
+            {
+                "name":"Ekko",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+            },
+            {
+                "name":"Leona",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+            }
+        ] 
+    },
+    "brawler":{
+        "i": 14,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Brawler_normal_1668171507-Brawler.svg",
+        "name": "Brawler",
+        "description": "Brawlers gain additional maximum Health.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buffs": "(2) +20% maximum Health",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buffs": "(4) +40% maximum Health",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) +70% maximum Health",
+                "min": 6,
+                "max": 7
+            },
+            {
+                "style": "chromatic",
+                "buff": "(8) +111% maximum Health",
+                "min": 8
+            }
+        ],
+        "champions":[
+            {
+                "name": "Blitzcrank",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
+            },
+            {
+                "name": "Renekton",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
+            },
+            {
+                "name": "LeeSin",
+                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+            },
+            {
+                "name": "Vi",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+            },
+            {
+                "name": "Jax",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
+            },
+            {
+                "name": "Riven",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+            },
+            {
+                "name": "Sejuani",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
+            }
+        ]
+    },
+    "corrupted":{
+        "i": 15,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Corrupted_normal_1668171552-Corrupted.svg",
+        "name": "Corrupted",
+        "description": "description needed",
+        "stats": [
+            {
+                "style": "gold",
+                "buff": "(1) Combat starts: Lie dormant while absorbing the souls of allies that die. Gain 40 Ability Power for each soul.Once per combat at 60% Health (or when your team has died), come alive and fight.",
+                "min": 1
+            }
+        ],
+        "champions": [
+            {
+                "name": "Fiddlesticks",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
+            }
+        ] 
+    },
+    "defender":{
+        "i": 16,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Defender_normal_1668171540-Defender.svg",
+        "name": "Defender",
+        "description": "Innate: Taunt nearby enemies after the start of combat.Your team gains bonus Armor, and Defenders gain more.Taunt: enemies that are able and in range must attack the taunter",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(2) +30 Armor, +60 for Defenders",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +80 Armor, +150 for Defenders",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) +200 Armor, +250 for Defenders",
+                "min": 6
+            }
+        ],
+        "champions":[
+            {
+                "name": "Poppy",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
+            },
+            {
+                "name": "Wukong",
+                "url":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
+            },
+            {
+                "name": "Rell",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
+            },
+            {
+                "name": "Riven",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+            },
+            {
+                "name": "Sett",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
+            }
+        ] 
+    },
+    "duelist":{
+        "i": 17,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Duelist_normal_1668171631-Duelist.svg",
+        "name": "Duelist",
+        "description": "Innate: increased movement speed.Duelists' basic attacks grant bonus Attack Speed, up to 10 stacks.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(2) +6% Attack Speed per stack",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +12% Attack Speed per stack",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) +20% Attack Speed per stack",
+                "min": 6,
+                "max": 7
+            },
+            {
+                "style": "chromatic",
+                "buff": "(8) +30% Attack Speed per stack",
+                "min": 9
+            }
+        ],
+        "champions": [      
+            {
+                "name":"Gankplank",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
+            },
+            {
+                "name": "Kyle",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
+            },
+            {
+                "name": "Fiora",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
+            },
+            {
+                "name": "Yasuo",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
+            },
+            {
+                "name": "Nilah",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
+            },
+            {
+                "name": "Vayne",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+            },
+            {
+                "name": "Zed",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+            }
+        ]
+    },
+    "forecaster":{
+        "i": 18,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Forecaster_normal_1668171558-Forecaster.svg",
+        "name": "Forecaster",
+        "description": "At the start of combat, Forecaster champions grant adjacent allies different buffs depending on the current weather, which changes every game.Sunny Weather:Combat start: Grant a 400/600/4000 Health shield to adjacent allies for 10/10/45 seconds.Windy Weather:Combat start: grant bonus Attack Damage and Ability Power to adjacent allies, increasing by 15/25/150% every 5 seconds.Rainy Weather:At the start of combat, Forecaster champions grant adjacent allies 20 / 40 / 100 mana until they have cast 1/1/100 spells.",
+        "stats":[
+            {
+                "style": "gold",
+                "buff": "(1) ??? (Randomly selected per game)",
+                "min": 1
+            }
+        ],
+        "champions":[
+            {
+                "name": "Janna",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+            }
+        ]
+    },
+    "hacker":{
+        "i": 19,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Hacker_normal_1668171706-Hacker.svg",
+        "name": "Hacker",
+        "description": "Hackers gain Omnivamp and summon a H4ckerr!m. Any unit placed in the rider hex will be sent to the enemy backline and is untargetable for the first 2 seconds of combat.Omnivamp: heal for a percentage of damage dealt",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(2) 15% Omnivamp",
+                "min": 2
+            },
+            {
+                "style": "bronce",
+                "buff": "(3) 40% Omnivamp",
+                "min": 3
+            },
+            {
+                "style": "gold",
+                "buff": "(4) 70% Omnivamp",
+                "min": 4
+            }
+        ],
+        "character":[
+            {
+                "name": "Leblanc",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+            },
+            {
+                "name": "Zoe",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+            },
+            {
+                "name": "Zed",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+            }
+        ]
+    },
+    "heart":{
+        "i": 20,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Heart_normal_1668171662-Heart.svg",
+        "name": "Heart",
+        "description": "When Heart units cast their Ability, your team gains stacking Ability Power for the rest of combat.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(2) +4 Ability Power",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +7 Ability Power",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) +10 Ability Power",
+                "min": 6
+            }
+        ],
+        "character": [
+            {
+                "name": "Lulu",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
+            },
+            {
+                "name": "LeeSin",
+                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+            },
+            {
+                "name": "Yuumi",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+            },
+            {
+                "name": "Sona",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+            },
+            {
+                "name": "Soraka",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
+            },
+            {
+                "name": "Syndra",
+                "url":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
+            }
+        ]
+    },
+    "mascot":{
+        "i": 21,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Mascot_normal_1668171647-Mascot.svg",
+        "name": "Mascot",
+        "description":"Your team heals a percentage of their maximum Health every 2 seconds, and Mascots heal double the amount. When Mascots die, they retreat to the sidelines to cheer on your team. Your team's healing increased by 1% for each cheering Mascot.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(2) 1.5% healing",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) 3.25% healing",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) 6.5% healing",
+                "min": 6,
+                "max": 7
+            },
+            {
+                "style": "chromatic",
+                "buff": "(8) 12% healing",
+                "min": 8
+            }
+        ],
+        "champions": [
+            {
+                "name": "Galio",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+            },
+            {
+                "name": "Nasus",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
+            },
+            {
+                "name": "Malphite",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
+            },
+            {
+                "name": "Yuumi",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+            },
+            {
+                "name": "Alistar",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+            },
+            {
+                "name": "Nunu",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
+            }
+        ]
+    },
+    "prankster":{
+        "i": 22,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Prankster_normal_1668171562-Prankster.svg",
+        "name": "Prankster",
+        "description": "description needed",
+        "stats": [
+            {
+                "style":"bronce",
+                "buff": "(2) Once per combat at 50% Health, spawn a target dummy, move to a safe location, and restore 350 Health.",
+                "min": 2
+            },
+            {
+                "style":"bronce",
+                "buff": "(3) And, Prankster dummies stun the enemy that killed them for 1.5 seconds.",
+                "min": 3
+            }
+        ],
+        "champions": [
+            {
+                "name": "Jinx",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
+            },
+            {
+                "name": "Zoe",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+            },
+            {
+                "name": "Ekko",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+            }
+        ]
+    },
+    "recon":{
+        "i": 23,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Recon_normal_1668171579-Recon.svg",
+        "name": "Recon",
+        "description": "Innate: Gain 2 hex Attack Range. If there is an enemy nearby, Recon units will dash to safety before casting their Ability.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(2) +20% Crit Chance",
+                "min": 2
+            },
+            {
+                "style": "silver",
+                "buff": "(3) +75% Crit Chance",
+                "min": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +100% Crit Chance and Recon Abilities can critically strike",
+                "min": 4
+            }
+        ],
+        "champions": [
+            {
+                "name": "Ashe",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
+            },
+            {
+                "name": "Ezreal",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
+            },
+            {
+                "name": "Kaisa",
+                "url":  "//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
+            },
+            {
+                "name": "Vayne",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+            }
+        ]
+    },
+    "renegade":{
+        "i": 24,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Renegade_normal_1668171599-Renegade.svg",
+        "name": "Renegade",
+        "description": "Renegade units deal bonus damage, and the last sone standing deals more.",
+        "stats":[
+            {
+                "style": "bronze",
+                "buff": "(3) 40% bonus damage, 20% for last alive",
+                "min": 3,
+                "max": 5
+            },
+            {
+                "style": "bronze",
+                "buff": "(6) 80% bonus damage, 40% for last alive",
+                "min": 6
+            }
+        ],
+        "character":[
+            {
+                "name": "Sylas",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
+            },
+            {
+                "name": "Talon",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
+            },
+            {
+                "name": "Camille",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
+            },
+            {
+                "name": "Viego",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
+            },
+            {
+                "name": "Leona",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+            }
+        ]       
+    },
+    "spellslinger":{
+        "i": 25,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Spellslinger_normal_1668171686-Spellslinger.svg",
+        "name": "Spellslinger",
+        "description": "Every 5 seconds, the next attack instead fires a magic orb at a random target, which explodes for 50% Ability Power as magic damage.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(2) +25 Ability Power",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +60 Ability Power",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) +100 Ability Power",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "chromatic",
+                "buff": "(8) +150 Ability Power, Orb Damage 200%",
+                "min": 6
+            }
+        ],
+        "champions":[
+            {
+                "name": "Lux",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
+            },
+            {
+                "name": "Annie",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+            },
+            {
+                "name": "Leblanc",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+            },
+            {
+                "name": "Sona",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+            },
+            {
+                "name": "Taliyah",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
+            },
+            {
+                "name": "Janna",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+            }
+        ]
+    },
+    "sureshot":{
+        "i": 26,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Sureshot_normal_1668171615-Sureshot.svg",
+        "name": "Sureshot",
+        "description": "Combat start: gain bonus Attack Damage now, and every 4 seconds.",
+        "stats": [
+            {
+                "style": "bronze",
+                "buff": "(2) +10% Attack Damage",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) +20% Attack Damage",
+                "min": 4
+            }
+        ],
+        "champions": [
+            {
+                "name": "Sivir",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
+            },
+            {
+                "name": "Senna",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
+            },
+            {
+                "name":"Samira",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+            },
+            {
+                "name": "Aphelios",
+                "url": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+            }
+        ]
+    }
+}
