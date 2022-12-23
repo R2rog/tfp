@@ -1,8 +1,5 @@
 <script>
-import ChampTooltip from "../components/ChampTooltip.vue";
-
 export default {
-  components: { ChampTooltip },
   data() {
     return {
       originsJSON: {},

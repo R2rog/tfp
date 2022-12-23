@@ -1,7 +1,5 @@
 <script>
-import ChampTooltip from "./ChampTooltip.vue";
 export default {
-  components: { ChampTooltip },
   props: ["champArr"],
   data() {
     return {
@@ -15,6 +13,7 @@ export default {
   },
   methods: {
     champInfo: function (champ) {
+      console.log("champion being hovered: ", champ);
       for (let i = 0; i < this.champArr.length; i++) {
         if (this.champArr[i].name == champ) {
           this.champ = this.champArr[i];
@@ -60,11 +59,11 @@ export default {
     let cost4 = [];
     let cost5 = [];
     this.champArr.forEach((champ) => {
-      if (champ.cost == 1) cost1.push(champ.name);
-      else if (champ.cost == 2) cost2.push(champ.name);
-      else if (champ.cost == 3) cost3.push(champ.name);
-      else if (champ.cost == 4) cost4.push(champ.name);
-      else cost5.push(champ.name);
+      if (champ.cost == 1) cost1.push(champ);
+      else if (champ.cost == 2) cost2.push(champ);
+      else if (champ.cost == 3) cost3.push(champ);
+      else if (champ.cost == 4) cost4.push(champ);
+      else cost5.push(champ);
     });
     this.champCost = [cost1, cost2, cost3, cost4, cost5];
   },
@@ -78,20 +77,23 @@ export default {
       <div class="champ" v-for="champ in costRow" :key="champ">
         <a href="#">
           <img
-            v-bind:src="'./set7/champions/' + 'TFT7_' + champ + '.png'"
+            v-bind:src="champ.icon"
             alt="{{champ}} image"
-            v-bind:class="'cost' + (index + 1)"
-            v-on:mouseover="champInfo(champ)"
+            v-bind:class="'cost' + champ.cost"
+            v-on:mouseover="champInfo(champ.name)"
             v-on:mouseleave="hideInfo"
             draggable
-            @dragstart="startDrag(champ)"
+            @dragstart="startDrag(champ.name)"
           />
-          <span v-show="this.champ.name == champ" class="pool-champ-tooltip">
+          <span
+            v-show="this.champ.name == champ.name"
+            class="pool-champ-tooltip"
+          >
             <div v-bind:class="'pool-champ-tooltip-content'">
               <h2><span>Champion:</span> {{ this.champ.name }}</h2>
               <h2><span>Cost:</span> {{ this.champ.cost }}</h2>
-              <h2><span>Origins:</span> {{ this.champOrigins }}</h2>
-              <h2><span>Traits:</span> {{ this.champTraits }}</h2>
+              <h2><span>Origins:</span>{{ this.champOrigins }}</h2>
+              <h2><span>Classes:</span>{{ this.champTraits }}</h2>
             </div>
           </span>
         </a>
@@ -138,25 +140,30 @@ export default {
 .cost1 {
   height: 3rem;
   border-style: solid;
+  border-width: 2px;
   border-color: rgba(187, 187, 187, 0.933);
 }
 .cost2 {
   height: 3rem;
   border-style: solid;
+  border-width: 2px;
   border-color: rgba(20, 204, 115, 0.933);
 }
 .cost3 {
   height: 3rem;
+  border-width: 2px;
   border-style: solid;
   border-color: rgba(84, 195, 255, 0.933);
 }
 .cost4 {
   height: 3rem;
+  border-width: 2px;
   border-style: solid;
   border-color: rgba(222, 14, 189, 0.933);
 }
 .cost5 {
   height: 3rem;
+  border-width: 2px;
   border-style: solid;
   border-color: rgba(255, 196, 48, 0.933);
 }

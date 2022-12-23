@@ -26,10 +26,10 @@ export default {
     const traitsJSON = await fetch(`./src/assets/data/set7/traits.json`)
     const classesJSON = await fetch(`./src/assets/data/set7/classes.json`);
     const originsJSON = await fetch(`./src/assets/data/set7/origins.json`);*/
-    const champJSON = await fetch(`./data/champions.json`);
-    const traitsJSON = await fetch(`./data/traits.json`);
-    const classesJSON = await fetch(`./data/classes.json`);
-    const originsJSON = await fetch(`./data/origins.json`);
+    const champJSON = await fetch(`./data/champs-set8.json`);
+    const traitsJSON = await fetch(`./data/traits-set8.json`);
+    const classesJSON = await fetch(`./data/classes-set8.json`);
+    const originsJSON = await fetch(`./data/origins-set8.json`);
     this.fetchedChampArr = await champJSON.json();
     this.fetchedClassesArr = await classesJSON.json();
     this.fetchedTraitsArr = await traitsJSON.json();
