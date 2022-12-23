@@ -67,6 +67,9 @@ export default {
 </template>
 
 <style>
+[v-cloak] {
+  display: none;
+}
 p{
   margin:10px;
 }
@@ -154,27 +157,27 @@ background-image: linear-gradient(to bottom, #7200a4, #7400ae, #7500b8, #7600c2,
 }
 .cost-1 {
   border-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: rgba(187, 187, 187, 0.933);
 }
 .cost-2 {
   border-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: rgba(20, 204, 115, 0.933);
 }
 .cost-3 {
   border-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: rgba(84, 195, 255, 0.933);
 }
 .cost-4 {
   border-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: rgba(222, 14, 189, 0.933);
 }
 .cost-5{
   border-style: solid;
-  border-width: 3px;
+  border-width: 4px;
   border-color: yellow;
 }
 </style>

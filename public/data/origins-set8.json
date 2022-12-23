@@ -1,0 +1,587 @@
+{
+    "admin":{
+        "i": 0,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/ADMIN_normal_1668171639-A.D.M.I.N..svg",
+        "name": "A.D.M.I.N.",
+        "description": "A.D.M.I.N programs a custom configuration per player each game.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(2) [Initialize ADMIN cause and effect]",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) [Add another effect to the program]",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) Boost previous tier by 180%",
+                "min": 6
+            }
+        ],
+        "champions":[
+            {
+                "name":"Blitzcrank",
+                "cost": 1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
+            },
+            {
+                "name":"Camille",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
+            },
+            {
+                "name":"Leblanc",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+            },
+            {
+                "name":"Soraka",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
+            }
+        ]
+    },
+    "animasquad":{
+        "i": 1,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/AnimaSquad_normal_1668171609-Anima Squad.svg",
+        "name": "Anima Squad",
+        "description": "Anima Squad members build fame for scoring champion kills. When they pause to celebrate a kill, they permanently gain 6 maximum Health per point of fame. Fame immediately benefits the whole Anima Squad.Anima Squad also gains:",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(3) 15% Attack Damage and 15 Ability Power",
+                "min": 3,
+                "max": 4
+            },
+            {
+                "style": "silver",
+                "buff": "(5) 35% Attack Damage and 35 Ability Power",
+                "min": 5,
+                "max": 6
+            },
+            {
+                "style": "gold",
+                "buff": "(7) 55% Attack Damage and 55 Ability Power",
+                "min": 7
+            }
+        ],
+        "champions":[
+            {
+                "name": "Nasus",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
+            },
+            {
+                "name": "Sylas",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
+            },
+            {
+                "name": "Jinx",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
+            },
+            {
+                "name": "Riven",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+            },
+            {
+                "name": "Vayne",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+            },
+            {
+                "name": "MissFortune",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
+            }
+        ]
+    },
+    "arsenal":{
+        "i": 2,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Arsenal_normal_1668170415-Arsenal.svg",
+        "name": "Arsenal",
+        "description": "description needed",
+        "stats": [
+            {
+                "style": "gold",
+                "buff": "(1) When deploying the Arsenal champion, players may choose which weapon he will equip.",
+                "min": 1
+            }
+        ],
+        "champions": [
+            {
+                "name": "Aphelios",
+                "cost": 5,
+                "url": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+            }
+        ]
+    },
+    "civilian":{
+        "i": 3,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Civilian_normal_1668171622-Civillan.svg",
+        "name": "Civilian",
+        "description": "If there is a Civilian alive, your team is inspired to protect them by gaining Mana every 2 seconds.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(1) +2 Mana",
+                "min": 1
+            },
+            {
+                "style": "silver",
+                "buff": "(2) +4 Mana",
+                "min": 2
+            },
+            {
+                "style": "gold",
+                "buff": "(3) +10 Mana",
+                "min": 3
+            }
+        ],
+        "champions":[
+            {
+                "name": "Galio",
+                "cost": 1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+            },
+            {
+                "name": "Sivir",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
+            },
+            {
+                "name": "Janna",
+                "cost": 5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+            }
+        ]                    
+    },
+    "gadgeteen":{
+        "i": 4,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Gadgeteen_normal_1668171603-Gadgeteen.svg",
+        "name": "Gadgeteen",
+        "description": "Gadgeteens create random modified weapon which with powerful effects. Any champion can equip the items, but they fall apart after 1 round.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(3) Create 1 item(s) every round",
+                "min": 3,
+                "max": 4
+            },
+            {
+                "style": "gold",
+                "buff": "(5) Create 2 item(s) every round",
+                "min": 5
+            }
+        ],
+        "champions":[
+            {
+                "name": "Lulu",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
+            },
+            {
+                "name": "Poppy",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
+            },
+            {
+                "name": "Annie",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+            },
+            {
+                "name": "Zoe",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+            },
+            {
+                "name": "Nunu",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
+            }
+        ]
+    },
+    "lasercorps":{
+        "i": 5,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/LaserCorps_normal_1668171618-LaserCorps.svg",
+        "name": "LaserCorps",
+        "description": "When a LaserCorp agent attacks or is hit by an attack, their combat drone has a 50% chance to deal magic damage to the agent's target (0.5 second cooldown). When a LaserCorps agent dies, their drone is reassigned to the nearest living agent.Drones lasers deal:",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(3) 60 magic damage.",
+                "min": 3,
+                "max": 5
+            },
+            {
+                "style": "silver",
+                "buff": "(6) 150 magic damage.",
+                "min": 6,
+                "max": 8
+            },
+            {
+                "style": "gold",
+                "buff": "(9) 150 magic damage, and each agent gets a 2nd drone.",
+                "min": 9
+            }
+        ],
+        "champions":[
+            {
+                "name": "Ashe",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
+            },
+            {
+                "name": "Renekton",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
+            },
+            {
+                "name": "Yasuo",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
+            },
+            {
+                "name": "Senna",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
+            },
+            {
+                "name": "Sejuani",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
+            },
+            {
+                "name": "Zed",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+            },
+            {
+                "name": "Mordekaiser",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
+            }
+        ]  
+    },
+    "mechaprime":{
+        "i": 6,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/MechaPRIME_normal_1668171595-Mecha _ PRIME.svg",
+        "name": "Mecha: PRIME",
+        "description": "Use the Mecha selector item to choose a PRIME.Combat start: the PRIME combines with the 2 nearest Mecha, absorbing 100% of their Health.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff": "(3) The PRIME gains 60 Ability Power and 60% Attack Damage",
+                "min": 3,
+                "max":4
+            },
+            {
+                "style": "gold",
+                "buff": "(5) All Mechas gain 45 Ability Power and 45% Attack Damage; The PRIME gains double this amount.",
+                "min":5
+            }
+        ],
+        "champions":[
+            {
+                "name": "Wukong",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
+            },
+            {
+                "name": "Draven",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
+            },
+            {
+                "name": "Jax",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
+            },
+            {
+                "name": "Sett",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
+            },
+            {
+                "name": "Leona",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+            }
+        ] 
+    },
+    "oxforce":{
+        "i": 7,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/OxForce_normal_1668171649-Ox Force.svg",
+        "name": "Ox Force",
+        "description": "Ox Force units gain a range of Attack Speed that ramps as they lose Health. Once per combat, they become invulnerable for 1 seconds as they defend the city with their last breath.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(2) 15% - 30% Attack Speed.",
+                "min": 2,
+                "max": 3
+            },
+            {
+                "style": "silver",
+                "buff": "(4) 35% - 70% Attack Speed.",
+                "min": 4,
+                "max": 5
+            },
+            {
+                "style": "gold",
+                "buff": "(6) 70% - 140% Attack Speed.",
+                "min": 6,
+                "max": 7
+            },
+            {
+                "style": "chromatic",
+                "buff": "(8) 125% - 250% Attack Speed.",
+                "min": 8
+            }
+        ],
+        "champions": [
+            {
+                "name":"Talon",
+                "cost": 1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
+            },
+            {
+                "name":"Annie",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+            },
+            {
+                "name":"Fiora",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
+            },
+            {
+                "name":"Alistar",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+            },
+            {
+                "name":"Viego",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
+            },
+            {
+                "name":"Aphelios",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+            }
+        ]                      
+    },
+    "starguardian":{
+        "i": 8,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/StarGuardian_normal_1668171627-Star Guardian.svg",
+        "name": "Star Guardian",
+        "description": "Gain more Mana from all sources.",
+        "stats":[
+            {
+                "style": "bronce",
+                "buff": "(3) 40% additional mana",
+                "min": 3,
+                "max": 4
+            },
+            {
+                "style": "silver",
+                "buff": "(5) 70% additional mana",
+                "min": 5,
+                "max": 6
+            },
+            {
+                "style": "gold",
+                "buff": "(7) 120% additional mana",
+                "min": "7",
+                "max": "8"
+            },
+            {
+                "style": "chromatic",
+                "buff": "(9) 200% additional mana",
+                "min": 9
+            }
+        ],
+        "champions":[
+            {
+                "name":"Lux",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
+            },
+            {
+                "name":"Rell",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
+            },
+            {
+                "name":"Yuumi",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+            },
+            {
+                "name":"Kaisa",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
+            },
+            {
+                "name":"Nilah",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
+            },
+            {
+                "name":"Ekko",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+            },
+            {
+                "name":"Taliyah",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
+            },
+            {
+                "name":"Syndra",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
+            }
+        ]
+    },
+    "supers":{
+        "i": 9,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Supers_normal_1668171631-Supers.svg",
+        "name": "Supers",
+        "description": "description needed",
+        "stats": [
+            {
+                "style": "gold",
+                "buff": "(3) Combat start: strike a pose that grants your team 20% bonus damage, which increases by 5% for every 3-star champion on your team.",
+                "min": 3
+            }
+        ],
+        "champions":[
+            {
+                "name": "Gankplank",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
+            },
+            {
+                "name": "LeeSin",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+            },
+            {
+                "name": "Malphite",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
+            }
+        ]
+    },
+    "threat":{
+        "i": 10,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Threat_normal_1668171635-Threat.svg",
+        "name": "Threat",
+        "description": "description needed",
+        "stats": [
+            {
+                "style": "gold",
+                "buff": "(1) Threats do not have a Trait bonus, but instead have powerful Abilities and increased base stats.",
+                "min": 1
+            }
+        ],
+        "champions":[
+            {
+                "name": "Chogath",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Chogath_1668168795-Chogath.jpg"
+            },
+            {
+                "name": "Rammus",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Rammus_1668167920-Rammus.jpg"
+            },
+            {
+                "name": "Velkoz",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Velkoz_1668168479-Velkoz.jpg"
+            },
+            {
+                "name": "AurelionSol",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/AurelionSol_1668168606-AurelionSol.jpg"
+            },
+            {
+                "name": "BelVeth",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Belveth_1668168473-BelVeth.jpg"
+            },
+            {
+                "name": "Zac",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Zac_1668168679-Zac.jpg"
+            },
+            {
+                "name": "Fiddlesticks",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
+            },
+            {
+                "name": "Urgot",
+                "cost":5,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Urgot_1668168652-Urgot.jpg"
+            }
+        ]
+    },
+    "underground":{
+        "i": 11,
+        "logo": "//cdn.lolchess.gg/upload/images/traits/Underground_normal_1668171645-Underground.svg",
+        "name": "Underground",
+        "description": "The Underground must sneak through the sewers and crack 10 locks to open a vault. When the vault opens, you may choose to take the loot now, or attempt another heist for even better rewards.",
+        "stats": [
+            {
+                "style": "bronce",
+                "buff":  "(3) Crack 1 vault lock after a player combat win, and 3 after a player combat loss",
+                "min": 3,
+                "max": 4
+            },
+            {
+                "style": "gold",
+                "buff": "(5) Crack 2 vault lock after a player combat win, and 5 after a player combat loss",
+                "min": 5
+            }
+        ],
+        "champions":[
+            {
+                "name":"Kayle",
+                "cost":1,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
+            },
+            {
+                "name":"Ezreal",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
+            },
+            {
+                "name":"Vi",
+                "cost":2,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+            },
+            {
+                "name":"Sona",
+                "cost":3,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+            },
+            {
+                "name":"Samira",
+                "cost":4,
+                "url":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+            }
+        ]      
+    }
+}
