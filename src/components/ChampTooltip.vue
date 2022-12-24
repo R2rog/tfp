@@ -12,15 +12,14 @@ export default {
   },
   methods: {
     champInfo: function (champ) {
+      console.log("Champ recieved: ", champ);
       for (let i = 0; i < this.champArr.length; i++) {
         if (this.champArr[i].name == champ) {
           this.champ = this.champArr[i];
           break;
         }
       }
-      console.log("Champ recieved: ", champ);
-
-      console.log("This champ: ", this.champ.name);
+      console.log("This champ: ", this.champ);
       if (this.champ.origins.length == 1)
         this.champOrigins = this.champ.origins[0];
       else {
@@ -35,13 +34,14 @@ export default {
           this.champTraits += trait + " ";
         });
       }
+      console.log("champTraits: ", this.champTraits, "champOrigins: ", this.champOrigins);
     },
     hideInfo: function () {
       this.champ = {};
       this.champOrigins = "";
       this.champTraits = "";
     },
-    startDrag: function (champ) {
+    startDrag: function (champ){ //TODO: Try this section by sending the object
       console.log("Champ: ", champ);
       let selectedChamp = {};
       for (let i = 0; i < this.champArr.length; i++) {
@@ -60,24 +60,26 @@ export default {
 </script>
 
 <template>
-  <div v-for="element in elArr" :key="element" class="champ-row">
-    <a href="#">
-      <img
-        class="champ-img"
-        v-bind:src="'./set7/champions/TFT7_' + element + '.png'"
-        alt="{{element}} image"
-        v-on:mouseover="champInfo(element)"
-        v-on:mouseleave="hideInfo"
-        draggable
-        @dragstart="startDrag(element)"
-      />
-      <span v-show="this.champ.name == element" class="champ-tooltip">
-        <h2><span>Champion:</span> {{ this.champ.name }}</h2>
-        <h2><span> Cost:</span> {{ this.champ.cost }}</h2>
-        <h2><span>Origins:</span> {{ this.champOrigins }}</h2>
-        <h2><span>Traits:</span> {{ this.champTraits }}</h2>
-      </span>
-    </a>
+  <div v-for="champ in elArr" :key="champ" class="trait-champions">
+    <div>
+      <a href="#">
+        <img
+          v-bind:class="'cost' + champ.cost"
+          v-bind:src="champ.icon"
+          alt="{{element}} image"
+          v-on:mouseover="champInfo(champ.name)"
+          v-on:mouseleave="hideInfo"
+          draggable
+          @dragstart="startDrag(champ.name)"
+        />
+        <span v-show="this.champ.name == champ.name" class="champ-tooltip">
+          <h2><span>Champion:</span> {{ this.champ.name }}</h2>
+          <h2><span> Cost:</span> {{ this.champ.cost }}</h2>
+          <h2><span>Origins:</span> {{ this.champOrigins }}</h2>
+          <h2><span>Traits:</span> {{ this.champTraits }}</h2>
+        </span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -97,5 +99,36 @@ export default {
   height: 3rem;
   margin: 5px;
   border: solid white 3px;
+}
+.cost1 {
+  height: 3rem;
+  margin: 4px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(187, 187, 187, 0.933);
+}
+.cost2 {
+  height: 3rem;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(20, 204, 115, 0.933);
+}
+.cost3 {
+  height: 3rem;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(84, 195, 255, 0.933);
+}
+.cost4 {
+  height: 3rem;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(222, 14, 189, 0.933);
+}
+.cost5{
+  height: 3rem;
+  border-style: solid;
+  border-width: 4px;
+  border-color: yellow;
 }
 </style>

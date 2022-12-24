@@ -24,24 +24,33 @@ export default {
       v-for="champClass in this.classesArr"
       :key="champClass"
     >
-      <img
-        v-bind:src="'./set7/traits/' + champClass.name + '.svg'"
-        alt="origin logo"
-      />
+      <img class="class-logo" v-bind:src="champClass.logo" alt="origin logo" />
       <h3 class="class-name">{{ champClass.name }}</h3>
-      <ChampTooltip
-        v-bind:elArr="champClass.champions"
-        @sendChampChild="sendChamp"
-        v-bind:champArr="this.champArr"
-      ></ChampTooltip>
+      <div class="class-champs-row">
+        <ChampTooltip
+          v-bind:elArr="champClass.champions"
+          @sendChampChild="sendChamp"
+          v-bind:champArr="this.champArr"
+        ></ChampTooltip>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
+.class-champs-row{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+}
 #classes-pool {
   margin-top: 5%;
   margin-bottom: 6%;
+}
+.class-logo{
+  height: 3rem;
+  background-color: black;
 }
 .trait-name {
   font-size: 1rem;
