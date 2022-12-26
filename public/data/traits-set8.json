@@ -1,8 +1,8 @@
 {
-    "admin":{
+    "a.d.m.i.n":{
         "i": 0,
         "logo": "//cdn.lolchess.gg/upload/images/traits/ADMIN_normal_1668171639-A.D.M.I.N..svg",
-        "name": "A.D.M.I.N.",
+        "name": "A.D.M.I.N",
         "description": "A.D.M.I.N programs a custom configuration per player each game.",
         "stats":[
             {
@@ -26,23 +26,23 @@
         "champions":[
             {
                 "name":"Blitzcrank",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
             },
             {
                 "name":"Camille",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
             },
             {
                 "name":"Leblanc",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
             },
             {
                 "name":"Soraka",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
             }
         ]
     },
-    "animasquad":{
+    "anima squad":{
         "i": 1,
         "logo": "//cdn.lolchess.gg/upload/images/traits/AnimaSquad_normal_1668171609-Anima Squad.svg",
         "name": "Anima Squad",
@@ -69,27 +69,27 @@
         "champions":[
             {
                 "name": "Nasus",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
             },
             {
                 "name": "Sylas",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
             },
             {
                 "name": "Jinx",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
             },
             {
                 "name": "Riven",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
             },
             {
                 "name": "Vayne",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
             },
             {
                 "name": "MissFortune",
-                "url":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
             }
         ]
     },
@@ -108,7 +108,7 @@
         "champions": [
             {
                 "name": "Aphelios",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
             }
         ]
     },
@@ -137,15 +137,15 @@
         "champions":[
             {
                 "name": "Galio",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
             },
             {
                 "name": "Sivir",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
             },
             {
                 "name": "Janna",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
             }
         ]                    
     },
@@ -170,27 +170,27 @@
         "champions":[
             {
                 "name": "Lulu",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
             },
             {
                 "name": "Poppy",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
             },
             {
                 "name": "Annie",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
             },
             {
                 "name": "Zoe",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
             },
             {
                 "name": "Nunu",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
             }
         ]
     },
-    "lasercorps":{
+    "laser corps":{
         "i": 5,
         "logo": "//cdn.lolchess.gg/upload/images/traits/LaserCorps_normal_1668171618-LaserCorps.svg",
         "name": "LaserCorps",
@@ -217,35 +217,35 @@
         "champions":[
             {
                 "name": "Ashe",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
             },
             {
                 "name": "Renekton",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
             },
             {
                 "name": "Yasuo",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
             },
             {
                 "name": "Senna",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
             },
             {
                 "name": "Sejuani",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
             },
             {
                 "name": "Zed",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
             },
             {
                 "name": "Mordekaiser",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
             }
         ]  
     },
-    "mechaprime":{
+    "mecha: prime":{
         "i": 6,
         "logo": "//cdn.lolchess.gg/upload/images/traits/MechaPRIME_normal_1668171595-Mecha _ PRIME.svg",
         "name": "Mecha: PRIME",
@@ -266,27 +266,27 @@
         "champions":[
             {
                 "name": "Wukong",
-                "url":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
             },
             {
                 "name": "Draven",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
             },
             {
                 "name": "Jax",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
             },
             {
                 "name": "Sett",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
             },
             {
                 "name": "Leona",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
             }
         ] 
     },
-    "oxforce":{
+    "ox force":{
         "i": 7,
         "logo": "//cdn.lolchess.gg/upload/images/traits/OxForce_normal_1668171649-Ox Force.svg",
         "name": "Ox Force",
@@ -319,31 +319,31 @@
         "champion": [
             {
                 "name":"Talon",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
             },
             {
                 "name":"Annie",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
             },
             {
                 "name":"Fiora",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
             },
             {
                 "name":"Alistar",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
             },
             {
                 "name":"Viego",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
             },
             {
                 "name":"Aphelios",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
             }
         ]                      
     },
-    "starguardian":{
+    "star guardian":{
         "i": 8,
         "logo": "//cdn.lolchess.gg/upload/images/traits/StarGuardian_normal_1668171627-Star Guardian.svg",
         "name": "Star Guardian",
@@ -376,35 +376,35 @@
         "champions":[
             {
                 "name":"Lux",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
             },
             {
                 "name":"Rell",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
             },
             {
                 "name":"Yuumi",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
             },
             {
                 "name":"Kaisa",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
             },
             {
                 "name":"Nilah",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
             },
             {
                 "name":"Ekko",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
             },
             {
                 "name":"Taliyah",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
             },
             {
                 "name":"Syndra",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
             }
         ]
     },
@@ -423,15 +423,15 @@
         "champions":[
             {
                 "name": "Gankplank",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
             },
             {
                 "name": "LeeSin",
-                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
             },
             {
                 "name": "Malphite",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
             }
         ]
     },
@@ -450,35 +450,35 @@
         "champions":[
             {
                 "name": "Chogath",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Chogath_1668168795-Chogath.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Chogath_1668168795-Chogath.jpg"
             },
             {
                 "name": "Rammus",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Rammus_1668167920-Rammus.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Rammus_1668167920-Rammus.jpg"
             },
             {
                 "name": "Velkoz",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Velkoz_1668168479-Velkoz.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Velkoz_1668168479-Velkoz.jpg"
             },
             {
                 "name": "AurelionSol",
-                "url":"//cdn.lolchess.gg/upload/images/champions/AurelionSol_1668168606-AurelionSol.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/AurelionSol_1668168606-AurelionSol.jpg"
             },
             {
                 "name": "BelVeth",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Belveth_1668168473-BelVeth.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Belveth_1668168473-BelVeth.jpg"
             },
             {
                 "name": "Zac",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zac_1668168679-Zac.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zac_1668168679-Zac.jpg"
             },
             {
                 "name": "Fiddlesticks",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
             },
             {
                 "name": "Urgot",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Urgot_1668168652-Urgot.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Urgot_1668168652-Urgot.jpg"
             }
         ]
     },
@@ -503,23 +503,23 @@
         "champions":[
             {
                 "name":"Kayle",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
             },
             {
                 "name":"Ezreal",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
             },
             {
                 "name":"Vi",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
             },
             {
                 "name":"Sona",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
             },
             {
                 "name":"Samira",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
             }
         ]      
     },
@@ -544,19 +544,19 @@
         "champions":[
             {
                 "name": "Draven",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Draven_1668167910-Draven.jpg"
             },
             {
                 "name": "MissFortune",
-                "url":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/MissFortune_1668168442-MissFortune.jpg"
             },
             {
                 "name": "Samira",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
             },
             {
                 "name": "Mordekaiser",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Mordekaiser_1668168435-Mordekaiser.jpg"
             }
         ]
     },
@@ -590,19 +590,19 @@
         "champions": [
             {
                 "name":"Vi",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
             },
             {
                 "name":"Alistar",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
             },
             {
                 "name":"Ekko",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
             },
             {
                 "name":"Leona",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
             }
         ] 
     },
@@ -639,31 +639,31 @@
         "champions":[
             {
                 "name": "Blitzcrank",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg"
             },
             {
                 "name": "Renekton",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Renekton_1668167936-Renekton.jpg"
             },
             {
                 "name": "LeeSin",
-                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
             },
             {
                 "name": "Vi",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Vi_1668168449-Vi.jpg"
             },
             {
                 "name": "Jax",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Jax_1668168698-Jax.jpg"
             },
             {
                 "name": "Riven",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
             },
             {
                 "name": "Sejuani",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sejuani_1668168560-Sejuani.jpg"
             }
         ]
     },
@@ -682,7 +682,7 @@
         "champions": [
             {
                 "name": "Fiddlesticks",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Fiddlesticks_1668168825-Fiddlesticks.jpg"
             }
         ] 
     },
@@ -713,23 +713,23 @@
         "champions":[
             {
                 "name": "Poppy",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Poppy_1668168526-Poppy.jpg"
             },
             {
                 "name": "Wukong",
-                "url":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/MonkeyKing_1668168644-Wukong.jpg"
             },
             {
                 "name": "Rell",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Rell_1668168355-Rell.jpg"
             },
             {
                 "name": "Riven",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Riven_1668168390-Riven.jpg"
             },
             {
                 "name": "Sett",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sett_1668168568-Sett.jpg"
             }
         ] 
     },
@@ -766,31 +766,31 @@
         "champions": [      
             {
                 "name":"Gankplank",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Gangplank_1668167844-Gangplank.jpg"
             },
             {
                 "name": "Kyle",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Kayle_1668168735-Kayle.jpg"
             },
             {
                 "name": "Fiora",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Fiora_1668168836-Fiora.jpg"
             },
             {
                 "name": "Yasuo",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Yasuo_1668168633-Yasuo.jpg"
             },
             {
                 "name": "Nilah",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Nilah_1668167902-Nilah.jpg"
             },
             {
                 "name": "Vayne",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
             },
             {
                 "name": "Zed",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
             }
         ]
     },
@@ -809,7 +809,7 @@
         "champions":[
             {
                 "name": "Janna",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
             }
         ]
     },
@@ -838,15 +838,15 @@
         "character":[
             {
                 "name": "Leblanc",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
             },
             {
                 "name": "Zoe",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
             },
             {
                 "name": "Zed",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Zed_1668168704-Zed.jpg"
             }
         ]
     },
@@ -877,27 +877,27 @@
         "character": [
             {
                 "name": "Lulu",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Lulu_1668168372-Lulu.jpg"
             },
             {
                 "name": "LeeSin",
-                "url":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/LeeSin_1668168399-LeeSin.jpg"
             },
             {
                 "name": "Yuumi",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
             },
             {
                 "name": "Sona",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
             },
             {
                 "name": "Soraka",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg"
             },
             {
                 "name": "Syndra",
-                "url":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
+                "icon":"//cdn.lolchess.gg/upload/images/champions/Syndra_1668168599-Syndra.jpg"
             }
         ]
     },
@@ -934,27 +934,27 @@
         "champions": [
             {
                 "name": "Galio",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
             },
             {
                 "name": "Nasus",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Nasus_1668167855-Nasus.jpg"
             },
             {
                 "name": "Malphite",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Malphite_1668168421-Malphite.jpg"
             },
             {
                 "name": "Yuumi",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Yuumi_1668168657-Yuumi.jpg"
             },
             {
                 "name": "Alistar",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Alistar_1668168617-Alistar.jpg"
             },
             {
                 "name": "Nunu",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Nunu_1668167875-Nunu.jpg"
             }
         ]
     },
@@ -978,15 +978,15 @@
         "champions": [
             {
                 "name": "Jinx",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Jinx_1668168788-Jinx.jpg"
             },
             {
                 "name": "Zoe",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Zoe_1668168742-Zoe.jpg"
             },
             {
                 "name": "Ekko",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Ekko_1668168638-Ekko.jpg"
             }
         ]
     },
@@ -1015,19 +1015,19 @@
         "champions": [
             {
                 "name": "Ashe",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Ashe_1668168626-Ashe.jpg"
             },
             {
                 "name": "Ezreal",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Ezreal_1668168667-Ezreal.jpg"
             },
             {
                 "name": "Kaisa",
-                "url":  "//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
+                "icon":  "//cdn.lolchess.gg/upload/images/champions/Kaisa_1668168711-Kaisa.jpg"
             },
             {
                 "name": "Vayne",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Vayne_1668168465-Vayne.jpg"
             }
         ]
     },
@@ -1052,23 +1052,23 @@
         "character":[
             {
                 "name": "Sylas",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Sylas_1668168543-Sylas.jpg"
             },
             {
                 "name": "Talon",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Talon_1668168811-Talon.jpg"
             },
             {
                 "name": "Camille",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg"
             },
             {
                 "name": "Viego",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Viego_1668168492-Viego.jpg"
             },
             {
                 "name": "Leona",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Leona_1668167945-Leona.jpg"
             }
         ]       
     },
@@ -1105,27 +1105,27 @@
         "champions":[
             {
                 "name": "Lux",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Lux_1668167927-Lux.jpg"
             },
             {
                 "name": "Annie",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Annie_1668168621-Annie.jpg"
             },
             {
                 "name": "Leblanc",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg"
             },
             {
                 "name": "Sona",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Sona_1668168576-Sona.jpg"
             },
             {
                 "name": "Taliyah",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Taliyah_1668168820-Taliyah.jpg"
             },
             {
                 "name": "Janna",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Janna_1668168692-Janna.jpg"
             }
         ]
     },
@@ -1150,19 +1150,19 @@
         "champions": [
             {
                 "name": "Sivir",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Sivir_1668168593-Sivir.jpg"
             },
             {
                 "name": "Senna",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Senna_1668168549-Senna.jpg"
             },
             {
                 "name":"Samira",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Samira_1668168533-Samira.jpg"
             },
             {
                 "name": "Aphelios",
-                "url": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
+                "icon": "//cdn.lolchess.gg/upload/images/champions/Aphelios_1668168612-Aphelios.jpg"
             }
         ]
     }

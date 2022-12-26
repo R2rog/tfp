@@ -24,116 +24,112 @@ export default {
       ],
       boardChamps: {},
       boardTraits: {
-        assassin: {
-          name: "Assassin",
+        admin: {
+          name: "A.D.M.I.N",
           value: 0,
         },
-        bard: {
-          name: "Bard",
+        animasquad: {
+          name: "Anima Squad",
           value: 0,
         },
-        bruiser: {
-          name: "Bruiser",
+        arsenal: {
+          name: "Arsenal",
           value: 0,
         },
-        cannoneer: {
-          name: "Cannoneer",
+        civilian: {
+          name: "Civilian",
           value: 0,
         },
-        cavalier: {
-          name: "Cavalier",
+        gadgeteen: {
+          name: "Gadgeteen",
           value: 0,
         },
-        dragon: {
-          name: "Dragon",
+        lasercorps: {
+          name: "LaserCorps",
           value: 0,
         },
-        dragonmancer: {
-          name: "Dragonmancer",
+        mechaprime: {
+          name: "Mecha: PRIME",
           value: 0,
         },
-        evoker: {
-          name: "Evoker",
+        oxforce: {
+          name: "Ox Force",
           value: 0,
         },
-        guardian: {
-          name: "Guardian",
+        starguardian: {
+          name: "Star Guardian",
           value: 0,
         },
-        legend: {
-          name: "Legend",
+        supers: {
+          name: "Supers",
           value: 0,
         },
-        mage: {
-          name: "Mage",
+        threat: {
+          name: "Threat",
           value: 0,
         },
-        mystic: {
-          name: "Mystic",
+        underground: {
+          name: "Underground",
           value: 0,
         },
-        shapeshifter: {
-          name: "Shapeshifter",
+        ace: {
+          name: "Ace",
           value: 0,
         },
-        spellthief: {
-          name: "Spellthief",
+        aegis: {
+          name: "Aegis",
           value: 0,
         },
-        starcaller: {
-          name: "Starcaller",
+        brawler: {
+          name: "Brawler",
           value: 0,
         },
-        swiftshot: {
-          name: "Swiftshot",
+        corrupted: {
+          name: "Corrupted",
           value: 0,
         },
-        warrior: {
-          name: "Warrior",
+        defender: {
+          name: "Defender",
           value: 0,
         },
-        astral: {
-          name: "Astral",
+        duelist: {
+          name: "Duelist",
           value: 0,
         },
-        guild: {
-          name: "Guild",
+        forecaster: {
+          name: "Forecaster",
           value: 0,
         },
-        jade: {
-          name: "Jade",
+        hacker: {
+          name: "Hacker",
           value: 0,
         },
-        mirage: {
-          name: "Mirage",
+        heart: {
+          name: "Heart",
           value: 0,
         },
-        ragewing: {
-          name: "Ragewing",
+        mascot: {
+          name: "Mascot",
           value: 0,
         },
-        revel: {
-          name: "Revel",
+        prankster: {
+          name: "Prankster",
           value: 0,
         },
-        scalescorn: {
-          name: "Scalescorn",
+        recon: {
+          name: "Recon",
           value: 0,
         },
-        shimmerscale: {
-          name: "Shimmerscale",
+        renegade: {
+          name: "Renegade",
           value: 0,
         },
-        tempest: {
-          name: "Tempest",
+        spellslinger: {
+          name: "Spellslinger",
           value: 0,
         },
-        trainer: {
-          name: "Trainer",
-          value: 0,
-        },
-        whispers: {
-          name: "Whispers",
+        sureshot: {
+          name: "Sureshot",
           value: 0,
         },
       },
@@ -145,6 +141,7 @@ export default {
       if (this.propsJSON.traitsArr.hasOwnProperty(selectedTrait.toLowerCase()))
         traitsArr = this.propsJSON.traitsArr;
       else traitsArr = this.propsJSON.originsArr;
+      console.log("Has own property: ", selectedTrait.toLowerCase());
       this.selectedTrait = traitsArr[selectedTrait.toLowerCase()];
     },
     hideInfo: function () {
@@ -260,19 +257,19 @@ export default {
   <div id="synergies">
     <div
       v-bind:class="'synergy-slot'"
-      v-for="trait in boardTraits"
+      v-for="trait in traitsArr"
       v-show="trait.value > 0"
       :key="trait"
     >
       <img
-        v-bind:src="'./set7/traits/' + trait.name + '.svg'"
+        v-bind:src="trait.logo"
         v-bind:id="trait.name + '-img'"
         v-bind:class="'trait-logo'"
         v-on:mouseover="traitInfo(trait.name)"
         v-on:mouseleave="hideInfo"
       />
       <div v-bind:class="'synergy-value'">
-        {{ trait.value }}
+        {{ trait.min }}
       </div>
       <div v-bind:class="'synergy-name'">
         {{ trait.name }}
@@ -284,9 +281,18 @@ export default {
         <div v-bind:class="'tooltip-content'">
           <h2>Description</h2>
           <p>{{ this.selectedTrait.description }}</p>
-          <h3 v-for="buff in this.selectedTrait.sets" :key="buff.count">
+          <h3 v-for="buff in this.selectedTrait.stats" :key="buff.count">
             {{ buff.min }}: {{ buff.buff }}
           </h3>
+          <div class="trait-tooltip-champ-row">
+            <div v-for="champ in this.selectedTrait.champions" :key="champ">
+              <img
+                v-bind:src="champ.icon"
+                class="trait-tootip-champ"
+                alt="Trait champion pool"
+              />
+            </div>
+          </div>
         </div>
       </span>
     </div>
@@ -364,7 +370,7 @@ export default {
   position: absolute;
   z-index: 2;
   margin-top: 32px;
-  width: 350%;
+  width: 200%;
 }
 .tooltip-content {
   margin: 20px;
@@ -430,5 +436,15 @@ export default {
   font-size: 1rem;
   text-align: center;
   width: 100%;
+}
+.trait-tootip-champ{
+  height: 30px;
+  width: 30px;
+}
+.trait-tooltip-champ-row{
+  width: 100%;
+  display: flex;
+  direction: row;
+  align-content: space-around;
 }
 </style>

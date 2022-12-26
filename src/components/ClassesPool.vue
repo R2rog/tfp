@@ -38,7 +38,7 @@ export default {
 </template>
 
 <style>
-.class-champs-row{
+.class-champs-row {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -48,7 +48,7 @@ export default {
   margin-top: 5%;
   margin-bottom: 6%;
 }
-.class-logo{
+.class-logo {
   height: 3rem;
   background-color: black;
 }

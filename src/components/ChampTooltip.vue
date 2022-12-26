@@ -1,6 +1,5 @@
 <script>
 export default {
-  //props: ["champion", "champArr","elArr"], TODO: uncomment all this if it fails
   props: ["elArr", "champArr"],
   emits: ["sendChampChild"],
   data() {
@@ -12,14 +11,12 @@ export default {
   },
   methods: {
     champInfo: function (champ) {
-      console.log("Champ recieved: ", champ);
       for (let i = 0; i < this.champArr.length; i++) {
         if (this.champArr[i].name == champ) {
           this.champ = this.champArr[i];
           break;
         }
       }
-      console.log("This champ: ", this.champ);
       if (this.champ.origins.length == 1)
         this.champOrigins = this.champ.origins[0];
       else {
@@ -34,7 +31,6 @@ export default {
           this.champTraits += trait + " ";
         });
       }
-      console.log("champTraits: ", this.champTraits, "champOrigins: ", this.champOrigins);
     },
     hideInfo: function () {
       this.champ = {};
@@ -64,7 +60,7 @@ export default {
     <div>
       <a href="#">
         <img
-          v-bind:class="'cost' + champ.cost"
+          v-bind:class="'tooltip-cost-' + champ.cost"
           v-bind:src="champ.icon"
           alt="{{element}} image"
           v-on:mouseover="champInfo(champ.name)"
@@ -100,33 +96,37 @@ export default {
   margin: 5px;
   border: solid white 3px;
 }
-.cost1 {
+.tooltip-cost-1 {
   height: 3rem;
-  margin: 4px;
+  margin-right: 8px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(187, 187, 187, 0.933);
 }
-.cost2 {
+.tooltip-cost-2 {
   height: 3rem;
+  margin-right: 8px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(20, 204, 115, 0.933);
 }
-.cost3 {
+.tooltip-cost-3 {
   height: 3rem;
+  margin-right: 8px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(84, 195, 255, 0.933);
 }
-.cost4 {
+.tooltip-cost-4 {
   height: 3rem;
+  margin-right: 8px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(222, 14, 189, 0.933);
 }
-.cost5{
+.tooltip-cost-5 {
   height: 3rem;
+  margin-right: 8px;
   border-style: solid;
   border-width: 4px;
   border-color: yellow;

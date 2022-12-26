@@ -33,7 +33,7 @@ export default {
 </template>
 
 <style>
-#origins-pool{
+#origins-pool {
   margin-top: 5%;
   margin-bottom: 6%;
 }
@@ -52,5 +52,4 @@ export default {
   width: 25%;
   text-align: center;
 }
-
 </style>
