@@ -3,9 +3,17 @@
 import CostPool from "./CostPool.vue";
 import ClassesPool from "./ClassesPool.vue";
 import OriginsPool from "./OriginsPool.vue";
+import Synergies from "./Synergies.vue";
 export default {
-  components: { CostPool, ClassesPool, OriginsPool },
-  props: ["champDragged", "propsJSON", "champArr", "classesArr", "originsArr", "traitsArr"],
+  components: { CostPool, ClassesPool, OriginsPool, Synergies },
+  props: [
+    "champDragged",
+    "propsJSON",
+    "champArr",
+    "classesArr",
+    "originsArr",
+    "traitsArr",
+  ],
   data() {
     return {
       selectedChamp: "",
@@ -28,7 +36,7 @@ export default {
           name: "A.D.M.I.N",
           value: 0,
         },
-        animasquad: {
+        "anima squad": {
           name: "Anima Squad",
           value: 0,
         },
@@ -44,19 +52,19 @@ export default {
           name: "Gadgeteen",
           value: 0,
         },
-        lasercorps: {
-          name: "LaserCorps",
+        "laser corps": {
+          name: "Laser Corps",
           value: 0,
         },
-        mechaprime: {
+        "mecha: prime": {
           name: "Mecha: PRIME",
           value: 0,
         },
-        oxforce: {
+        "ox force": {
           name: "Ox Force",
           value: 0,
         },
-        starguardian: {
+        "star guardian": {
           name: "Star Guardian",
           value: 0,
         },
@@ -136,44 +144,24 @@ export default {
     };
   },
   methods: {
-    traitInfo: function (selectedTrait) {
-      let traitsArr = [];
-      if (this.propsJSON.traitsArr.hasOwnProperty(selectedTrait.toLowerCase()))
-        traitsArr = this.propsJSON.traitsArr;
-      else traitsArr = this.propsJSON.originsArr;
-      console.log("Has own property: ", selectedTrait.toLowerCase());
-      this.selectedTrait = traitsArr[selectedTrait.toLowerCase()];
-    },
-    hideInfo: function () {
-      this.selectedTrait = "";
-    },
     innerDrag: function (e) {
       e.target.src = "";
       let i = e.target.id[0] - 1;
       let j = e.target.id[1] - 1;
       let currentChamp = this.boardValues[i][j];
       if (this.innerDragEvent == false && this.poolSelection == false) {
-        if(this.boardChamps[currentChamp.name].ocurrences == 1){
-          currentChamp.traits.forEach((trait) => {
-            let lowCaseTrait = trait.toLowerCase();
-            let value = this.boardTraits[lowCaseTrait].value;
-            let setArr = this.traitsArr[lowCaseTrait].sets;
-            let classIcon = document.getElementById(trait + "-img");
-            for (let i = 0; i < setArr.length; i++) {
-              let nextIndex = i + 1;
-              if (setArr[nextIndex] != undefined && value >= setArr[i].min && value < setArr[nextIndex].min) {
-                /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-                classIcon.style.backgroundImage = borderURL;*/
-                if (setArr[i].style == "bronze")
-                  classIcon.style.backgroundColor = "#CD7F32";
-                else classIcon[i].style == setArr[i].style;
-              } else if (value < setArr[i].min) classIcon.style.backgroundColor = "";
+        if (this.boardChamps[currentChamp.name].ocurrences == 1) {
+          currentChamp.classes.forEach((trait) => {
+            if (trait != "") {
+              this.boardTraits[trait.toLowerCase()].value -= 1;
+              delete this.boardChamps[currentChamp.name];
             }
-            if (currentChamp.traits.includes("Dragon") && currentChamp.traitBuff == trait){
-              console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
-              this.boardTraits[lowCaseTrait].value -= 3;
-            } else this.boardTraits[lowCaseTrait].value -= 1;
-            delete this.boardChamps[currentChamp.name];
+          });
+          currentChamp.origins.forEach((origin) => {
+            if (origin != "") {
+              this.boardTraits[origin.toLowerCase()].value -= 1;
+              delete this.boardChamps[currentChamp.name];
+            }
           });
         } else this.boardChamps[currentChamp.name].ocurrences -= 1;
         this.boardValues[i][j] = {};
@@ -194,40 +182,12 @@ export default {
       if (!this.boardChamps.hasOwnProperty(this.selectedChamp.name)) {
         this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
       } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
-      this.selectedChamp.traits.forEach((trait) => {
-        let lowCaseTrait = trait.toLowerCase();
-        let setArr = this.traitsArr[lowCaseTrait].sets;
-        let value = 0;
-        let classIcon = document.getElementById(trait + "-img");
-        if ( this.selectedChamp.traits.includes("Dragon") && this.selectedChamp.traitBuff == trait && this.boardChamps[this.selectedChamp.name].ocurrences <= 1){
-          this.boardTraits[lowCaseTrait].value += 3;
-        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
-          this.boardTraits[lowCaseTrait].value += 1;
-        }
-        value = this.boardTraits[lowCaseTrait].value;
-        for (let i = 0; i < setArr.length; i++) {
-          if (setArr[i].min == 1){
-            classIcon.style.backgroundColor = setArr[i].style;
-            break;
-            /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-            classIcon.style.backgroundImage = borderURL;
-            console.log("Border color: ", setArr[i].style);*/
-          } else if ( setArr[i + 1] != undefined && value >= setArr[i].min && value < setArr[i + 1].min) {
-            if (setArr[i].style == "bronze")
-              classIcon.style.backgroundColor = "#CD7F32";
-            else if (setArr[i].style == "chromatic") {
-              let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-              classIcon.style.backgroundColor = "";
-              classIcon.style.backgroundImage = borderURL;
-            } else classIcon[i].style == setArr[i].style;
-            break;
-            /*let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-            classIcon.style.backgroundImage = borderURL;*/
-
-          } else {
-            console.log("Trait: ", trait, "not active with value: ", value);
-          }
-        }
+      this.selectedChamp.classes.forEach((trait) => {
+        console.log("trait", trait);
+        if (trait != "") this.boardTraits[trait.toLowerCase()].value += 1;
+      });
+      this.selectedChamp.origins.forEach((origin) => {
+        if (origin != "") this.boardTraits[origin.toLowerCase()].value += 1;
       });
       if (target.hasChildNodes())
         target.children[0].src = this.selectedChamp.icon;
@@ -250,53 +210,78 @@ export default {
       console.log("Selected champ from the board", this.selectedChamp);
     },
   },
+  //let setArr = this.traitsArr[lowCaseTrait].sets;
+  //let value = 0;
+  //let classIcon = document.getElementById(trait + "-img");
+  /*if (
+          this.selectedChamp.classes.includes("Dragon") &&
+          this.selectedChamp.traitBuff == trait &&
+          this.boardChamps[this.selectedChamp.name].ocurrences <= 1
+        ) {
+          this.boardTraits[lowCaseTrait].value += 3;
+        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
+          this.boardTraits[lowCaseTrait].value += 1;
+        }
+        value = this.boardTraits[lowCaseTrait].value;
+        for (let i = 0; i < setArr.length; i++) {
+          if (setArr[i].min == 1) {
+            classIcon.style.backgroundColor = setArr[i].style;
+            break;
+            let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+            classIcon.style.backgroundImage = borderURL;
+            console.log("Border color: ", setArr[i].style);
+          } else if (
+            setArr[i + 1] != undefined &&
+            value >= setArr[i].min &&
+            value < setArr[i + 1].min
+          ) {
+            if (setArr[i].style == "bronze")
+              classIcon.style.backgroundColor = "#CD7F32";
+            else if (setArr[i].style == "chromatic") {
+              let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+              classIcon.style.backgroundColor = "";
+              classIcon.style.backgroundImage = borderURL;
+            } else classIcon[i].style == setArr[i].style;
+            break;
+            let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+            classIcon.style.backgroundImage = borderURL;
+          } else {
+            console.log("Trait: ", trait, "not active with value: ", value);
+          }
+    }*/
+  /*let value = this.boardTraits[lowCaseTrait].value;
+            let setArr = this.traitsArr[lowCaseTrait].stats;
+            let classIcon = document.getElementById(trait + "-img");
+            for (let i = 0; i < setArr.length; i++) {
+              let nextIndex = i + 1;
+              if (
+                setArr[nextIndex] != undefined &&
+                value >= setArr[i].min &&
+                value < setArr[nextIndex].min
+              ) {
+                let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
+                classIcon.style.backgroundImage = borderURL;
+                if (setArr[i].style == "bronze")
+                  classIcon.style.backgroundColor = "#CD7F32";
+                else classIcon[i].style == setArr[i].style;
+              } else if (value < setArr[i].min)
+                classIcon.style.backgroundColor = "";
+            }
+            if (
+              currentChamp.traits.includes("Dragon") &&
+              currentChamp.traitBuff == trait
+            ) {
+              console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
+              this.boardTraits[lowCaseTrait].value -= 3;
+            } else this.boardTraits[lowCaseTrait].value -= 1;*/
 };
 </script>
 
 <template>
-  <div id="synergies">
-    <div
-      v-bind:class="'synergy-slot'"
-      v-for="trait in traitsArr"
-      v-show="trait.value > 0"
-      :key="trait"
-    >
-      <img
-        v-bind:src="trait.logo"
-        v-bind:id="trait.name + '-img'"
-        v-bind:class="'trait-logo'"
-        v-on:mouseover="traitInfo(trait.name)"
-        v-on:mouseleave="hideInfo"
-      />
-      <div v-bind:class="'synergy-value'">
-        {{ trait.min }}
-      </div>
-      <div v-bind:class="'synergy-name'">
-        {{ trait.name }}
-      </div>
-      <span
-        class="synergies-tooltip"
-        v-show="this.selectedTrait.name == trait.name"
-      >
-        <div v-bind:class="'tooltip-content'">
-          <h2>Description</h2>
-          <p>{{ this.selectedTrait.description }}</p>
-          <h3 v-for="buff in this.selectedTrait.stats" :key="buff.count">
-            {{ buff.min }}: {{ buff.buff }}
-          </h3>
-          <div class="trait-tooltip-champ-row">
-            <div v-for="champ in this.selectedTrait.champions" :key="champ">
-              <img
-                v-bind:src="champ.icon"
-                class="trait-tootip-champ"
-                alt="Trait champion pool"
-              />
-            </div>
-          </div>
-        </div>
-      </span>
-    </div>
-  </div>
+  <Synergies
+    v-bind:traitsArr="traitsArr"
+    v-bind:boardTraits="boardTraits"
+  ></Synergies>
   <div>
     <div id="positions" v-on:mouseleave="champLeave">
       <div
@@ -437,11 +422,11 @@ export default {
   text-align: center;
   width: 100%;
 }
-.trait-tootip-champ{
+.trait-tootip-champ {
   height: 30px;
   width: 30px;
 }
-.trait-tooltip-champ-row{
+.trait-tooltip-champ-row {
   width: 100%;
   display: flex;
   direction: row;

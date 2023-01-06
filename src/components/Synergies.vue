@@ -1,27 +1,30 @@
 <script>
 export default {
+  props: ["traitsArr", "boardTraits"],
+  data() {
+    return {
+      selectedTrait: {},
+      traitValues: {},
+    };
+  },
   methods: {
-    traitInfo: function (selectedTrait) {
-      let traitsArr = [];
-      if (this.propsJSON.traitsArr.hasOwnProperty(selectedTrait.toLowerCase()))
-        traitsArr = this.propsJSON.traitsArr;
-      else traitsArr = this.propsJSON.originsArr;
-      this.selectedTrait = traitsArr[selectedTrait.toLowerCase()];
+    traitInfo: function (traitName) {
+      this.selectedTrait = this.traitsArr[traitName.toLowerCase()];
     },
     hideInfo: function () {
-      this.selectedTrait = "";
+      this.selectedTrait = {};
     },
   },
 };
 </script>
 
 <template>
-<div id="synergies">
+  <div id="synergies">
     <div
       v-bind:class="'synergy-slot'"
       v-for="trait in traitsArr"
-      v-show="trait.value > 0"
       :key="trait"
+      v-show="this.boardTraits[trait.name.toLowerCase()].value > 0"
     >
       <img
         v-bind:src="trait.logo"
@@ -31,7 +34,7 @@ export default {
         v-on:mouseleave="hideInfo"
       />
       <div v-bind:class="'synergy-value'">
-        {{ trait.min }}
+        {{ this.boardTraits[trait.name.toLowerCase()].value }}
       </div>
       <div v-bind:class="'synergy-name'">
         {{ trait.name }}
@@ -44,7 +47,7 @@ export default {
           <h2>Description</h2>
           <p>{{ this.selectedTrait.description }}</p>
           <h3 v-for="buff in this.selectedTrait.stats" :key="buff.count">
-            {{ buff.min }}: {{ buff.buff }}
+            {{ buff.buff }}
           </h3>
           <div class="trait-tooltip-champ-row">
             <div v-for="champ in this.selectedTrait.champions" :key="champ">
@@ -141,11 +144,11 @@ export default {
   text-align: center;
   width: 100%;
 }
-.trait-tootip-champ{
+.trait-tootip-champ {
   height: 30px;
   width: 30px;
 }
-.trait-tooltip-champ-row{
+.trait-tooltip-champ-row {
   width: 100%;
   display: flex;
   direction: row;

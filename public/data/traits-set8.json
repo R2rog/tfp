@@ -1,8 +1,8 @@
 {
-    "a.d.m.i.n":{
+    "admin":{
         "i": 0,
         "logo": "//cdn.lolchess.gg/upload/images/traits/ADMIN_normal_1668171639-A.D.M.I.N..svg",
-        "name": "A.D.M.I.N",
+        "name": "ADMIN",
         "description": "A.D.M.I.N programs a custom configuration per player each game.",
         "stats":[
             {
@@ -97,7 +97,7 @@
         "i": 2,
         "logo": "//cdn.lolchess.gg/upload/images/traits/Arsenal_normal_1668170415-Arsenal.svg",
         "name": "Arsenal",
-        "description": "description needed",
+        "description": "",
         "stats": [
             {
                 "style": "gold",
@@ -193,7 +193,7 @@
     "laser corps":{
         "i": 5,
         "logo": "//cdn.lolchess.gg/upload/images/traits/LaserCorps_normal_1668171618-LaserCorps.svg",
-        "name": "LaserCorps",
+        "name": "Laser Corps",
         "description": "When a LaserCorp agent attacks or is hit by an attack, their combat drone has a 50% chance to deal magic damage to the agent's target (0.5 second cooldown). When a LaserCorps agent dies, their drone is reassigned to the nearest living agent.Drones lasers deal:",
         "stats":[
             {
@@ -412,7 +412,7 @@
         "i": 9,
         "logo": "//cdn.lolchess.gg/upload/images/traits/Supers_normal_1668171631-Supers.svg",
         "name": "Supers",
-        "description": "description needed",
+        "description": "",
         "stats": [
             {
                 "style": "gold",
@@ -439,7 +439,7 @@
         "i": 10,
         "logo": "//cdn.lolchess.gg/upload/images/traits/Threat_normal_1668171635-Threat.svg",
         "name": "Threat",
-        "description": "description needed",
+        "description": "",
         "stats": [
             {
                 "style": "gold",
@@ -671,7 +671,7 @@
         "i": 15,
         "logo": "//cdn.lolchess.gg/upload/images/traits/Corrupted_normal_1668171552-Corrupted.svg",
         "name": "Corrupted",
-        "description": "description needed",
+        "description": "",
         "stats": [
             {
                 "style": "gold",
@@ -962,7 +962,7 @@
         "i": 22,
         "logo": "//cdn.lolchess.gg/upload/images/traits/Prankster_normal_1668171562-Prankster.svg",
         "name": "Prankster",
-        "description": "description needed",
+        "description": "",
         "stats": [
             {
                 "style":"bronce",

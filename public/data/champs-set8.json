@@ -16,7 +16,7 @@
         "cost": 1,
         "icon": "//cdn.lolchess.gg/upload/images/champions/Blitzcrank_1668168485-Blitzcrank.jpg",
         "skillName": "Static Defenses",
-        "origins": ["A.D.M.I.N"],
+        "origins": ["ADMIN"],
         "classes": ["Brawler"],
        "skill": "Blitzcrank creates an empowered field around himself, reducing all damage taken by for 4 seconds.",
         "skillIcon": "//cdn.lolchess.gg/upload/images/champion-skills/Blitzcrank_1668148964-blitzcrank_manabarrier.png"
@@ -159,7 +159,7 @@
         "cost": 2,
         "icon": "//cdn.lolchess.gg/upload/images/champions/Camille_1668168802-Camille.jpg",
         "skillName": "Tactical Sweep",
-        "origins": ["A.D.M.I.N"],
+        "origins": ["ADMIN"],
         "classes": ["Renegade"],
        "skill": "Camille sweeps with her leg, dealing physical damage and Disarming enemies hit for a few seconds.Disarm: target cannot move or attack",
         "skillIcon": "//cdn.lolchess.gg/upload/images/champion-skills/Camille_1668150383-camille_e2.png"
@@ -335,7 +335,7 @@
         "cost": 3,
         "icon": "//cdn.lolchess.gg/upload/images/champions/Leblanc_1668168381-Leblanc.jpg",
         "skillName": "Sigil of Malice",
-        "origins":["A.D.M.I.N"],
+        "origins":["ADMIN"],
         "classes":["Hacker","Spellslinger"],
        "skill": "Leblanc fires sigils at her target each dealing magic damage. If the target dies, she completes casting the remaining sigils at the nearest enemy but adds 1 more sigil.",
         "skillIcon": "//cdn.lolchess.gg/upload/images/champion-skills/Leblanc_1668150616-leblancrq.png"
@@ -511,7 +511,7 @@
         "cost": 4,
         "icon": "//cdn.lolchess.gg/upload/images/champions/Soraka_1668168584-Soraka.jpg",
         "skillName": "Starcall",
-        "origins":["A.D.M.I.N"],
+        "origins":["ADMIN"],
         "classes":["Heart"],
        "skill": "Soraka launches a star at her target, which deals magic damage and heals Soraka for 10% of her maximum Health. Every 3 casts, she launches stars at each of the nearest enemies.",
         "skillIcon": "//cdn.lolchess.gg/upload/images/champion-skills/Soraka_1668150291-soraka_q.png"
