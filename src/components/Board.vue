@@ -35,110 +35,137 @@ export default {
         admin: {
           name: "A.D.M.I.N",
           value: 0,
+          style: "black",
         },
         "anima squad": {
           name: "Anima Squad",
           value: 0,
+          style: "black",
         },
         arsenal: {
           name: "Arsenal",
           value: 0,
+          style: "black",
         },
         civilian: {
           name: "Civilian",
           value: 0,
+          style: "black",
         },
         gadgeteen: {
           name: "Gadgeteen",
           value: 0,
+          style: "black",
         },
         "laser corps": {
           name: "Laser Corps",
           value: 0,
+          style: "black",
         },
         "mecha: prime": {
           name: "Mecha: PRIME",
           value: 0,
+          style: "black",
         },
         "ox force": {
           name: "Ox Force",
           value: 0,
+          style: "black",
         },
         "star guardian": {
           name: "Star Guardian",
           value: 0,
+          style: "black",
         },
         supers: {
           name: "Supers",
           value: 0,
+          style: "black",
         },
         threat: {
           name: "Threat",
           value: 0,
+          style: "black",
         },
         underground: {
           name: "Underground",
           value: 0,
+          style: "black",
         },
         ace: {
           name: "Ace",
           value: 0,
+          style: "black",
         },
         aegis: {
           name: "Aegis",
           value: 0,
+          style: "black",
         },
         brawler: {
           name: "Brawler",
           value: 0,
+          style: "black",
         },
         corrupted: {
           name: "Corrupted",
           value: 0,
+          style: "black",
         },
         defender: {
           name: "Defender",
           value: 0,
+          style: "black",
         },
         duelist: {
           name: "Duelist",
           value: 0,
+          style: "black",
         },
         forecaster: {
           name: "Forecaster",
           value: 0,
+          style: "black",
         },
         hacker: {
           name: "Hacker",
           value: 0,
+          style: "black",
         },
         heart: {
           name: "Heart",
           value: 0,
+          style: "black",
         },
         mascot: {
           name: "Mascot",
           value: 0,
+          style: "black",
         },
         prankster: {
           name: "Prankster",
           value: 0,
+          style: "black",
         },
         recon: {
           name: "Recon",
           value: 0,
+          style: "black",
         },
         renegade: {
           name: "Renegade",
           value: 0,
+          style: "black",
         },
         spellslinger: {
           name: "Spellslinger",
           value: 0,
+          style: "black",
         },
         sureshot: {
           name: "Sureshot",
           value: 0,
+          style: "black",
         },
       },
     };
@@ -154,12 +181,14 @@ export default {
           currentChamp.classes.forEach((trait) => {
             if (trait != "") {
               this.boardTraits[trait.toLowerCase()].value -= 1;
+              this.changeStyle(trait);
               delete this.boardChamps[currentChamp.name];
             }
           });
           currentChamp.origins.forEach((origin) => {
             if (origin != "") {
               this.boardTraits[origin.toLowerCase()].value -= 1;
+              this.changeStyle(origin);
               delete this.boardChamps[currentChamp.name];
             }
           });
@@ -173,7 +202,6 @@ export default {
       }
     },
     champDrop: function (e) {
-      console.log("Selected champ getting droped: ", this.selectedChamp);
       let i = e.target.id[4] - 1;
       let j = e.target.id[11] - 1;
       let target = document.getElementById(e.target.id);
@@ -183,11 +211,12 @@ export default {
         this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
       } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
       this.selectedChamp.classes.forEach((trait) => {
-        console.log("trait", trait);
         if (trait != "") this.boardTraits[trait.toLowerCase()].value += 1;
+        this.changeStyle(trait);
       });
       this.selectedChamp.origins.forEach((origin) => {
         if (origin != "") this.boardTraits[origin.toLowerCase()].value += 1;
+        this.changeStyle(origin);
       });
       if (target.hasChildNodes())
         target.children[0].src = this.selectedChamp.icon;
@@ -196,84 +225,42 @@ export default {
       this.innerDragEvent = false;
       this.poolSelection = false;
       this.$emit("refresh");
-      console.log("Board values at drop: ", this.boardValues);
     },
     champLeave: function () {
       this.selectedChamp = "";
       this.innerDragEvent = false;
       this.champCounter -= 1;
-      console.log("champLeave");
     },
     refreshChamp: function (champSelected) {
       this.selectedChamp = champSelected;
       this.poolSelection = true;
-      console.log("Selected champ from the board", this.selectedChamp);
+    },
+    changeStyle(traitName) {
+      let trait = this.traitsArr[traitName.toLowerCase()];
+      console.log("Selected trait: ", trait);
+      if (trait.name == "Threat")
+        this.boardTraits[trait.name.toLowerCase()].style = "purple";
+      else if (trait.stats.lenght == 1)
+        this.boardTraits[trait.name.toLowerCase()].style = "gold";
+      else if (
+        this.boardTraits[trait.name.toLowerCase()].value < trait.stats[0].min
+      )
+        this.boardTraits[trait.name.toLowerCase()].style = "black";
+      else {
+        for (let i = 0; i < trait.stats.length; i++) {
+          let traitValue = this.boardTraits[trait.name.toLowerCase()].value;
+          if (
+            traitValue <= trait.stats[i].min &&
+            traitValue < trait.stats[i + 1].min
+          ) {
+            this.boardTraits[trait.name.toLowerCase()].style =
+              trait.stats[i].style;
+            break;
+          }
+        }
+      }
     },
   },
-  //let setArr = this.traitsArr[lowCaseTrait].sets;
-  //let value = 0;
-  //let classIcon = document.getElementById(trait + "-img");
-  /*if (
-          this.selectedChamp.classes.includes("Dragon") &&
-          this.selectedChamp.traitBuff == trait &&
-          this.boardChamps[this.selectedChamp.name].ocurrences <= 1
-        ) {
-          this.boardTraits[lowCaseTrait].value += 3;
-        } else if (this.boardChamps[this.selectedChamp.name].ocurrences <= 1) {
-          this.boardTraits[lowCaseTrait].value += 1;
-        }
-        value = this.boardTraits[lowCaseTrait].value;
-        for (let i = 0; i < setArr.length; i++) {
-          if (setArr[i].min == 1) {
-            classIcon.style.backgroundColor = setArr[i].style;
-            break;
-            let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-            classIcon.style.backgroundImage = borderURL;
-            console.log("Border color: ", setArr[i].style);
-          } else if (
-            setArr[i + 1] != undefined &&
-            value >= setArr[i].min &&
-            value < setArr[i + 1].min
-          ) {
-            if (setArr[i].style == "bronze")
-              classIcon.style.backgroundColor = "#CD7F32";
-            else if (setArr[i].style == "chromatic") {
-              let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-              classIcon.style.backgroundColor = "";
-              classIcon.style.backgroundImage = borderURL;
-            } else classIcon[i].style == setArr[i].style;
-            break;
-            let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-            classIcon.style.backgroundImage = borderURL;
-          } else {
-            console.log("Trait: ", trait, "not active with value: ", value);
-          }
-    }*/
-  /*let value = this.boardTraits[lowCaseTrait].value;
-            let setArr = this.traitsArr[lowCaseTrait].stats;
-            let classIcon = document.getElementById(trait + "-img");
-            for (let i = 0; i < setArr.length; i++) {
-              let nextIndex = i + 1;
-              if (
-                setArr[nextIndex] != undefined &&
-                value >= setArr[i].min &&
-                value < setArr[nextIndex].min
-              ) {
-                let borderURL = "url(./set7/traits/" + setArr[i].style + ".svg)";
-                classIcon.style.backgroundImage = borderURL;
-                if (setArr[i].style == "bronze")
-                  classIcon.style.backgroundColor = "#CD7F32";
-                else classIcon[i].style == setArr[i].style;
-              } else if (value < setArr[i].min)
-                classIcon.style.backgroundColor = "";
-            }
-            if (
-              currentChamp.traits.includes("Dragon") &&
-              currentChamp.traitBuff == trait
-            ) {
-              console.log("Dragon buff trait: ", this.selectedChamp.traitBuff);
-              this.boardTraits[lowCaseTrait].value -= 3;
-            } else this.boardTraits[lowCaseTrait].value -= 1;*/
 };
 </script>
 
@@ -362,12 +349,6 @@ export default {
 }
 .tooltip-content h2 {
   color: #ff4949;
-}
-.trait-logo {
-  height: 1.75rem;
-  margin: 3px;
-  background-color: white;
-  /*background-image: url("./set7/traits/default.svg");*/
 }
 .class-tag {
   display: flex;

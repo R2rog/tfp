@@ -29,6 +29,9 @@ export default {
       <img
         v-bind:src="trait.logo"
         v-bind:id="trait.name + '-img'"
+        :style="{
+          backgroundColor: this.boardTraits[trait.name.toLowerCase()].style,
+        }"
         v-bind:class="'trait-logo'"
         v-on:mouseover="traitInfo(trait.name)"
         v-on:mouseleave="hideInfo"
@@ -88,7 +91,7 @@ export default {
 .trait-logo {
   height: 1.75rem;
   margin: 3px;
-  background-color: white;
+  /*background-color: black;*/
   /*background-image: url("./set7/traits/default.svg");*/
 }
 .class-tag {
