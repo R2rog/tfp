@@ -23,7 +23,6 @@ export default {
       innerDragEvent: false,
       poolSelection: false,
       selectedOrigin: {},
-      champCounter: 0,
       boardValues: [
         [{}, {}, {}, {}, {}, {}, {}],
         [{}, {}, {}, {}, {}, {}, {}],
@@ -172,6 +171,7 @@ export default {
   },
   methods: {
     innerDrag: function (e) {
+      console.log("Inner drag champ counter: ", this.champCounter);
       e.target.src = "";
       let i = e.target.id[0] - 1;
       let j = e.target.id[1] - 1;
@@ -192,7 +192,9 @@ export default {
               delete this.boardChamps[currentChamp.name];
             }
           });
-        } else this.boardChamps[currentChamp.name].ocurrences -= 1;
+        } else {
+          this.boardChamps[currentChamp.name].ocurrences -= 1;
+        }
         this.boardValues[i][j] = {};
         this.selectedChamp = currentChamp;
         this.innerDragEvent = true;
@@ -207,29 +209,31 @@ export default {
       let target = document.getElementById(e.target.id);
       this.champCounter += 1;
       this.boardValues[i][j] = this.selectedChamp;
-      if (!this.boardChamps.hasOwnProperty(this.selectedChamp.name)) {
-        this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
-      } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
-      this.selectedChamp.classes.forEach((trait) => {
-        if (trait != "") this.boardTraits[trait.toLowerCase()].value += 1;
-        this.changeStyle(trait);
-      });
-      this.selectedChamp.origins.forEach((origin) => {
-        if (origin != "") this.boardTraits[origin.toLowerCase()].value += 1;
-        this.changeStyle(origin);
-      });
-      if (target.hasChildNodes())
-        target.children[0].src = this.selectedChamp.icon;
-      else target.src = this.selectedChamp.icon;
-      this.selectedChamp = "";
-      this.innerDragEvent = false;
-      this.poolSelection = false;
-      this.$emit("refresh");
+      if (Object.keys(this.boardChamps).length < 9) {
+        if (!this.boardChamps.hasOwnProperty(this.selectedChamp.name)) {
+          this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
+        } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
+        this.selectedChamp.classes.forEach((trait) => {
+          if (trait != "") this.boardTraits[trait.toLowerCase()].value += 1;
+          this.changeStyle(trait);
+        });
+        this.selectedChamp.origins.forEach((origin) => {
+          if (origin != "") this.boardTraits[origin.toLowerCase()].value += 1;
+          this.changeStyle(origin);
+        });
+        if (target.hasChildNodes())
+          target.children[0].src = this.selectedChamp.icon;
+        else target.src = this.selectedChamp.icon;
+        this.selectedChamp = "";
+        this.innerDragEvent = false;
+        this.poolSelection = false;
+        this.$emit("refresh");
+      } else alert("Full board");
     },
     champLeave: function () {
       this.selectedChamp = "";
       this.innerDragEvent = false;
-      this.champCounter -= 1;
+      console.log("Champ leave counter: ", this.champCounter);
     },
     refreshChamp: function (champSelected) {
       this.selectedChamp = champSelected;
@@ -237,7 +241,6 @@ export default {
     },
     changeStyle(traitName) {
       let trait = this.traitsArr[traitName.toLowerCase()];
-      console.log("Selected trait: ", trait);
       if (trait.name == "Threat")
         this.boardTraits[trait.name.toLowerCase()].style = "purple";
       else if (trait.stats.lenght == 1)
