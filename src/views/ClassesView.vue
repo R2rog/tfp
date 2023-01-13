@@ -44,7 +44,7 @@ export default {
           v-on:mouseleave="quitTooltip"
         >
           <img
-            v-bind:src="champ.url"
+            v-bind:src="champ.icon"
             alt="Champion profile picture"
             v-bind:class="'cost-' + champ.cost"
           />
@@ -119,7 +119,7 @@ export default {
   justify-content: space-evenly;
   align-items: baseline;
 }
-.trait-champs img{
+.trait-champs img {
   height: 50px;
   width: 50px;
 }
@@ -137,12 +137,13 @@ export default {
   border-style: solid;
   border-color: aquamarine;
 }
-.champ-tooltip{
+.champ-tooltip {
   height: 30px;
   font-size: 1rem;
   width: 9rem;
-  margin-top: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
+  z-index: 2;
   background-color: #ff4949;
   color: black;
   text-align: center;
@@ -171,7 +172,7 @@ export default {
   border-width: 4px;
   border-color: rgba(222, 14, 189, 0.933);
 }
-.cost-5{
+.cost-5 {
   border-style: solid;
   border-width: 4px;
   border-color: yellow;

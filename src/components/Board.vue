@@ -214,12 +214,16 @@ export default {
           this.boardChamps[this.selectedChamp.name] = { ocurrences: 1 };
         } else this.boardChamps[this.selectedChamp.name].ocurrences += 1;
         this.selectedChamp.classes.forEach((trait) => {
-          if (trait != "") this.boardTraits[trait.toLowerCase()].value += 1;
-          this.changeStyle(trait);
+          if (trait != "") {
+            this.boardTraits[trait.toLowerCase()].value += 1;
+            this.changeStyle(trait);
+          }
         });
         this.selectedChamp.origins.forEach((origin) => {
-          if (origin != "") this.boardTraits[origin.toLowerCase()].value += 1;
-          this.changeStyle(origin);
+          if (origin != "") {
+            this.boardTraits[origin.toLowerCase()].value += 1;
+            this.changeStyle(origin);
+          }
         });
         if (target.hasChildNodes())
           target.children[0].src = this.selectedChamp.icon;
@@ -233,16 +237,16 @@ export default {
     champLeave: function () {
       this.selectedChamp = "";
       this.innerDragEvent = false;
-      console.log("Champ leave counter: ", this.champCounter);
     },
     refreshChamp: function (champSelected) {
       this.selectedChamp = champSelected;
       this.poolSelection = true;
     },
     changeStyle(traitName) {
+      console.log("Traikt name:", traitName);
       let trait = this.traitsArr[traitName.toLowerCase()];
       if (trait.name == "Threat")
-        this.boardTraits[trait.name.toLowerCase()].style = "purple";
+        this.boardTraits[trait.name.toLowerCase()].style = "#5f04b5";
       else if (trait.stats.lenght == 1)
         this.boardTraits[trait.name.toLowerCase()].style = "gold";
       else if (

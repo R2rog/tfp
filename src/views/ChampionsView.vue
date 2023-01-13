@@ -22,7 +22,7 @@ export default {
       <div class="champ-name">
         <h1 style>
           {{ champion.name }}
-          <span class="champ-cost">	&#129689 {{ champion.cost }} </span>
+          <span class="champ-cost">&#129689;{{ champion.cost }} </span>
         </h1>
       </div>
       <div class="champ-logo">
